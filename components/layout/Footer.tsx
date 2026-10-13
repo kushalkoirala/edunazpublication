@@ -1,0 +1,117 @@
+import Link from "next/link";
+
+export default function Footer() {
+  return (
+    /* BEGIN: MainFooter */
+    <footer className="bg-brand-slateDark text-white pt-16 pb-8 border-t border-brand-slateLight">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 4-Column Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-14 text-xs font-body">
+          {/* Column 1: Brand & Registration */}
+          <div className="lg:col-span-4">
+            <div className="flex items-center space-x-3 mb-4">
+              <div
+                className="w-8 h-8 border border-white/60 bg-white/10 flex items-center justify-center text-white font-heading font-semibold text-lg"
+              >
+                E
+              </div>
+              <div>
+                <span className="block font-heading text-lg text-white tracking-wide">
+                  Edunaaz <span className="text-brand-gold">Publication</span>
+                </span>
+                <span
+                  className="block text-[9px] tracking-[0.25em] text-white/60 font-body uppercase font-medium"
+                >
+                  OPC PVT LTD
+                </span>
+              </div>
+            </div>
+            <p className="text-white/70 leading-relaxed mb-4">
+              CIN: <span className="text-white font-mono">U85499AS2025OPC028933</span><br />
+              A scholarly press registered with the Ministry of Corporate Affairs, dedicated to advancing
+              academic rigor and research dissemination across global platforms.
+            </p>
+          </div>
+          {/* Column 2: Explore Navigation */}
+          <div className="lg:col-span-2">
+            <h4
+              className="font-heading text-sm text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2"
+            >
+              Explore
+            </h4>
+            <ul className="space-y-2.5 text-white/70">
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#hero">Home</Link></li>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#about">About Us</Link></li>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#journals">Journals</Link>
+              </li>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#apex">APEX Program</Link>
+              </li>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#faq">FAQ</Link></li>
+            </ul>
+          </div>
+          {/* Column 3: Services */}
+          <div className="lg:col-span-3">
+            <h4
+              className="font-heading text-sm text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2"
+            >
+              Services
+            </h4>
+            <ul className="space-y-2.5 text-white/70">
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#areas">Research
+                Publication</Link></li>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#areas">Writing &amp;
+                Technical Editing</Link></li>
+              {/* NOTE: Original HTML has "ISBN Book Publication" pointing to #hero — kept as-is per fidelity rules */}
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#hero">ISBN Book
+                Publication</Link></li>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#process">Plagiarism &amp;
+                Formatting Audit</Link></li>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#areas">Theses &amp;
+                Review Support</Link></li>
+            </ul>
+          </div>
+          {/* Column 4: Contact Info */}
+          <div className="lg:col-span-3">
+            <h4
+              className="font-heading text-sm text-white uppercase tracking-wider mb-4 border-b border-white/10 pb-2"
+            >
+              Registered Office
+            </h4>
+            <address className="not-italic text-white/70 space-y-2.5 leading-relaxed">
+              <p className="">
+                Room No 8, Ground Floor, AL-HAYAT COMPLEX, Majgaon, Barpeta Road, Assam 781313, India
+              </p>
+              <p className="">
+                <span className="text-white/90">Email:</span>
+                <a className="hover:text-brand-gold transition-colors block"
+                  href="mailto:editor@edunaazpublication.com">editor@edunaazpublication.com</a>
+              </p>
+              <p className="">
+                <span className="text-white/90">Phone:</span>
+                <a className="hover:text-brand-gold transition-colors block" href="tel:+919395707581">+91
+                  9395707581</a>
+              </p>
+            </address>
+          </div>
+        </div>
+        {/* Hairline divider */}
+        <div className="hairline-divider-dark mb-6"></div>
+        {/* Bottom Copyright Bar */}
+        <div
+          className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/50 space-y-3 sm:space-y-0"
+        >
+          <div className="">
+            © 2025 EDUNAAZ PUBLICATION (OPC) PRIVATE LIMITED. All rights reserved.
+          </div>
+          <div className="flex space-x-6">
+            {/* NOTE: original links "Terms & Conditions", "Privacy Policy", "Editorial Ethics" all point to #contact */}
+            <Link className="hover:text-white transition-colors" href="/#contact">Terms &amp; Conditions</Link>
+            <Link className="hover:text-white transition-colors" href="/#contact">Privacy Policy</Link>
+            <Link className="hover:text-white transition-colors" href="/#contact">Editorial Ethics</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+    /* END: MainFooter */
+  );
+}

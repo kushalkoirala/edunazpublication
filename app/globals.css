@@ -1,26 +1,95 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* ─── :root image variables ─── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --img-library: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=2400&q=80');
+  --img-svc1: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1600&q=80');
+  --img-svc2: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1600&q=80');
+  --img-svc3: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1600&q=80');
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Global reset: strictly square corners everywhere ─── */
+* {
+  border-radius: 0px !important;
+  /* Strict replication: completely square corners everywhere */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ─── Base typography ─── */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jost), 'Jost', sans-serif;
+  color: #1A1A1A;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-marcellus {
+  font-family: var(--font-marcellus), 'Marcellus', serif;
+}
+
+/* ─── Hairline dividers ─── */
+.hairline-divider {
+  height: 1px;
+  background-color: #E5E5E5;
+  width: 100%;
+}
+
+.hairline-divider-dark {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 100%;
+}
+
+/* ─── Centered icon over hairline rule ─── */
+.icon-divider-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1.25rem 0;
+}
+
+.icon-divider-wrap::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #E5E5E5;
+  z-index: 1;
+}
+
+.icon-divider-wrap.gold-card::before {
+  background: rgba(26, 26, 26, 0.25);
+}
+
+.icon-divider-badge {
+  position: relative;
+  z-index: 2;
+  padding: 0 14px;
+  background-color: #FFFFFF;
+}
+
+.icon-divider-badge.bg-gold {
+  background-color: #D9A93F;
+}
+
+/* ─── Site header: transparent-to-solid scroll behaviour ─── */
+#site-header {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .55), rgba(0, 0, 0, 0));
+  border-bottom: 1px solid transparent;
+  transition: background .3s ease, border-color .3s ease;
+}
+
+#site-header.solid {
+  background: #3F4056;
+  border-bottom-color: rgba(255, 255, 255, .1);
 }
