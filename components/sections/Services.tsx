@@ -105,7 +105,7 @@ export default function Services() {
             {/* 6. Bottom text link */}
             <div className="pt-8 mt-auto">
               <Link
-                href="/#contact"
+                href="/services/research-publication"
                 className="inline-flex items-center text-[12px] uppercase tracking-[0.1em] font-medium font-body text-brand-dark hover:underline hover:decoration-[#D9A93F] hover:decoration-1 underline-offset-4 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A93F]"
               >
                 Explore this service <span className="ml-1.5 font-mono">→</span>
@@ -198,7 +198,7 @@ export default function Services() {
             {/* 6. Bottom text link */}
             <div className="pt-8 mt-auto">
               <Link
-                href="/#contact"
+                href="/services/writing-and-editing"
                 className="inline-flex items-center text-[12px] uppercase tracking-[0.1em] font-medium font-body text-white hover:underline hover:decoration-[#D9A93F] hover:decoration-1 underline-offset-4 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A93F]"
               >
                 Explore this service <span className="ml-1.5 font-mono text-[#D9A93F]">→</span>
@@ -295,7 +295,7 @@ export default function Services() {
             {/* 6. Bottom text link */}
             <div className="pt-8 mt-auto">
               <Link
-                href="/#contact"
+                href="/services/isbn-book-publication"
                 className="inline-flex items-center text-[12px] uppercase tracking-[0.1em] font-medium font-body text-brand-dark hover:underline hover:decoration-[#D9A93F] hover:decoration-1 underline-offset-4 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D9A93F]"
               >
                 Explore this service <span className="ml-1.5 font-mono">→</span>

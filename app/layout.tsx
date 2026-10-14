@@ -27,9 +27,16 @@ const greatVibes = Great_Vibes({
   display: "swap",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://edunaazpublication.com";
+
 export const metadata: Metadata = {
-  title:
-    "Edunaaz Publication (OPC) Private Limited | Academic Publishing & Research Support",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default:
+      "Edunaaz Publication (OPC) Private Limited | Academic Publishing & Research Support",
+    template: "%s | Edunaaz Publication",
+  },
   description:
     "Expert writing, editing and publication support for scholars, researchers and professionals. Registered under the Ministry of Corporate Affairs, Government of India.",
 };

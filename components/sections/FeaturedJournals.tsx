@@ -36,7 +36,7 @@ export default function FeaturedJournals() {
             <div className="pt-8">
               <Link
                 className="text-xs font-semibold uppercase tracking-wider text-brand-gold hover:text-brand-dark transition-colors flex items-center group"
-                href="/#contact"
+                href="/contact"
               >
                 SUBMIT ARTICLE <span
                   className="ml-2 transition-transform duration-200 group-hover:translate-x-1"
@@ -64,7 +64,7 @@ export default function FeaturedJournals() {
             <div className="pt-8">
               <Link
                 className="text-xs font-semibold uppercase tracking-wider text-brand-gold hover:text-brand-dark transition-colors flex items-center group"
-                href="/#contact"
+                href="/contact"
               >
                 SUBMIT ARTICLE <span
                   className="ml-2 transition-transform duration-200 group-hover:translate-x-1"
@@ -92,7 +92,7 @@ export default function FeaturedJournals() {
             <div className="pt-8">
               <Link
                 className="text-xs font-semibold uppercase tracking-wider text-brand-gold hover:text-brand-dark transition-colors flex items-center group"
-                href="/#contact"
+                href="/contact"
               >
                 SUBMIT ARTICLE <span
                   className="ml-2 transition-transform duration-200 group-hover:translate-x-1"

@@ -2,17 +2,23 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   const [isSolid, setIsSolid] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeHref, setActiveHref] = useState("/#hero");
+  const pathname = usePathname();
 
   const scrollYRef = useRef(0);
-  const navigatingRef = useRef(false);
   const prevOpenRef = useRef(false);
   const hamburgerBtnRef = useRef<HTMLButtonElement>(null);
+
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setMobileOpen(false);
+  }
 
   // Scroll listener for solid background transition
   useEffect(() => {
@@ -24,17 +30,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Sync active href with current hash on hash change
-  useEffect(() => {
-    const handleHashChange = () => {
-      if (window.location.hash) {
-        setActiveHref(`/#${window.location.hash.replace("#", "")}`);
-      }
-    };
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
-
   // Lock body scroll and restore position on close
   useEffect(() => {
     if (mobileOpen) {
@@ -44,13 +39,9 @@ export default function Header() {
     } else {
       document.body.classList.remove("mobile-menu-open");
       document.body.style.overflow = "";
-      if (prevOpenRef.current && !navigatingRef.current) {
-        window.scrollTo(0, scrollYRef.current);
-      }
       if (prevOpenRef.current) {
         hamburgerBtnRef.current?.focus();
       }
-      navigatingRef.current = false;
     }
     prevOpenRef.current = mobileOpen;
   }, [mobileOpen]);
@@ -75,17 +66,11 @@ export default function Header() {
     };
   }, []);
 
-  const handleNavigate = (href: string) => {
-    navigatingRef.current = true;
-    setActiveHref(href);
-    setMobileOpen(false);
-    const targetId = href.replace("/#", "").replace("#", "");
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      setTimeout(() => {
-        targetElement.scrollIntoView({ behavior: "smooth" });
-      }, 10);
+  const isRouteActive = (route: string) => {
+    if (route === "/") {
+      return pathname === "/";
     }
+    return pathname.startsWith(route);
   };
 
   const isHeaderSolid = isSolid || mobileOpen;
@@ -100,7 +85,7 @@ export default function Header() {
           {/* Brand Wordmark & Circle Logo Emblem */}
           <Link
             className="flex items-center space-x-3 group text-left flex-shrink-0"
-            href="/#hero"
+            href="/"
           >
             <div className="w-9 h-9 !rounded-full bg-white flex items-center justify-center text-brand-dark font-heading font-semibold text-lg tracking-wider shadow-none flex-shrink-0">
               E
@@ -116,23 +101,29 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation: Exactly 6 links on ONE line */}
-          <nav className="hidden lg:flex items-center space-x-8 text-[12px] font-body font-medium uppercase tracking-[0.08em] text-white/90 whitespace-nowrap">
+          <nav className="hidden lg:flex items-center space-x-8 text-[12px] font-body font-medium uppercase tracking-[0.08em] whitespace-nowrap">
             <Link
-              className="hover:text-[#D9A93F] transition-colors py-2 text-[#D9A93F]"
-              href="/#hero"
+              className={`hover:text-[#D9A93F] transition-colors py-2 ${
+                isRouteActive("/") ? "text-[#D9A93F]" : "text-white/90"
+              }`}
+              href="/"
             >
               HOME
             </Link>
             <Link
-              className="hover:text-[#D9A93F] transition-colors py-2"
-              href="/#about"
+              className={`hover:text-[#D9A93F] transition-colors py-2 ${
+                isRouteActive("/about") ? "text-[#D9A93F]" : "text-white/90"
+              }`}
+              href="/about"
             >
               ABOUT
             </Link>
             <div className="relative inline-flex items-center">
               <Link
-                className="inline-flex items-center hover:text-[#D9A93F] transition-colors py-2"
-                href="/#areas"
+                className={`inline-flex items-center hover:text-[#D9A93F] transition-colors py-2 ${
+                  isRouteActive("/services") ? "text-[#D9A93F]" : "text-white/90"
+                }`}
+                href="/services"
               >
                 <span className="">SERVICES</span>
                 <svg
@@ -151,20 +142,26 @@ export default function Header() {
               </Link>
             </div>
             <Link
-              className="hover:text-[#D9A93F] transition-colors py-2"
-              href="/#journals"
+              className={`hover:text-[#D9A93F] transition-colors py-2 ${
+                isRouteActive("/journals") ? "text-[#D9A93F]" : "text-white/90"
+              }`}
+              href="/journals"
             >
               JOURNALS
             </Link>
             <Link
-              className="hover:text-[#D9A93F] transition-colors py-2"
-              href="/#apex"
+              className={`hover:text-[#D9A93F] transition-colors py-2 ${
+                isRouteActive("/apex") ? "text-[#D9A93F]" : "text-white/90"
+              }`}
+              href="/apex"
             >
               APEX
             </Link>
             <Link
-              className="hover:text-[#D9A93F] transition-colors py-2"
-              href="/#contact"
+              className={`hover:text-[#D9A93F] transition-colors py-2 ${
+                isRouteActive("/contact") ? "text-[#D9A93F]" : "text-white/90"
+              }`}
+              href="/contact"
             >
               CONTACT
             </Link>
@@ -240,8 +237,6 @@ export default function Header() {
       <MobileMenu
         isOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
-        activeHref={activeHref}
-        onNavigate={handleNavigate}
       />
     </header>
   );

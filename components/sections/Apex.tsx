@@ -54,7 +54,7 @@ export default function Apex() {
             <div className="inline-flex">
               <Link
                 className="inline-flex items-stretch bg-brand-gold hover:bg-brand-goldHover transition-colors duration-150 text-brand-dark group shadow-none"
-                href="/#contact"
+                href="/apex"
               >
                 <span className="px-7 py-3.5 text-xs font-semibold uppercase tracking-wider flex items-center">
                   LEARN MORE

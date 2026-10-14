@@ -105,7 +105,7 @@ export default function Hero() {
               <div className="pt-4">
                 <Link
                   className="text-[11px] font-semibold uppercase tracking-wider text-brand-muted hover:text-brand-gold flex items-center group transition-colors"
-                  href="/#areas"
+                  href="/services/research-publication"
                 >
                   GET STARTED <span
                     className="ml-2 transition-transform duration-200 group-hover:translate-x-1"
@@ -143,7 +143,7 @@ export default function Hero() {
               <div className="pt-4">
                 <Link
                   className="text-[11px] font-semibold uppercase tracking-wider text-brand-dark hover:text-white flex items-center group transition-colors"
-                  href="/#areas"
+                  href="/services/writing-and-editing"
                 >
                   GET STARTED <span
                     className="ml-2 transition-transform duration-200 group-hover:translate-x-1"
@@ -181,7 +181,7 @@ export default function Hero() {
               <div className="pt-4">
                 <Link
                   className="text-[11px] font-semibold uppercase tracking-wider text-brand-muted hover:text-brand-gold flex items-center group transition-colors"
-                  href="/#areas"
+                  href="/services/isbn-book-publication"
                 >
                   GET STARTED <span
                     className="ml-2 transition-transform duration-200 group-hover:translate-x-1"

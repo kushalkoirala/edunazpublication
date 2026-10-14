@@ -40,13 +40,13 @@ export default function Footer() {
               Explore
             </h4>
             <ul className="space-y-2.5 text-white/70">
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#hero">Home</Link></li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#about">About Us</Link></li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#journals">Journals</Link>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/">Home</Link></li>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/about">About Us</Link></li>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/journals">Journals</Link>
               </li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#apex">APEX Program</Link>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/apex">APEX Program</Link>
               </li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#faq">FAQ</Link></li>
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/faq">FAQ</Link></li>
             </ul>
           </div>
           {/* Column 3: Services */}
@@ -57,16 +57,15 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-2.5 text-white/70">
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#areas">Research
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/services/research-publication">Research
                 Publication</Link></li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#areas">Writing &amp;
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/services/writing-and-editing">Writing &amp;
                 Technical Editing</Link></li>
-              {/* NOTE: Original HTML has "ISBN Book Publication" pointing to #hero — kept as-is per fidelity rules */}
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#hero">ISBN Book
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/services/isbn-book-publication">ISBN Book
                 Publication</Link></li>
               <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#process">Plagiarism &amp;
                 Formatting Audit</Link></li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#areas">Theses &amp;
+              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/services/writing-and-editing">Theses &amp;
                 Review Support</Link></li>
             </ul>
           </div>
@@ -104,10 +103,9 @@ export default function Footer() {
             © 2025 EDUNAAZ PUBLICATION (OPC) PRIVATE LIMITED. All rights reserved.
           </div>
           <div className="flex space-x-6">
-            {/* NOTE: original links "Terms & Conditions", "Privacy Policy", "Editorial Ethics" all point to #contact */}
-            <Link className="hover:text-white transition-colors" href="/#contact">Terms &amp; Conditions</Link>
-            <Link className="hover:text-white transition-colors" href="/#contact">Privacy Policy</Link>
-            <Link className="hover:text-white transition-colors" href="/#contact">Editorial Ethics</Link>
+            <Link className="hover:text-white transition-colors" href="/terms">Terms &amp; Conditions</Link>
+            <Link className="hover:text-white transition-colors" href="/privacy">Privacy Policy</Link>
+            <Link className="hover:text-white transition-colors" href="/editorial-ethics">Editorial Ethics</Link>
           </div>
         </div>
       </div>

@@ -2,30 +2,32 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  activeHref: string;
-  onNavigate: (href: string) => void;
 }
 
 const navLinks = [
-  { num: "01", label: "Home", href: "/#hero" },
-  { num: "02", label: "About", href: "/#about" },
-  { num: "03", label: "Services", href: "/#areas" },
-  { num: "04", label: "Journals", href: "/#journals" },
-  { num: "05", label: "Apex", href: "/#apex" },
-  { num: "06", label: "Contact", href: "/#contact" },
+  { num: "01", label: "Home", href: "/" },
+  { num: "02", label: "About", href: "/about" },
+  { num: "03", label: "Services", href: "/services" },
+  { num: "04", label: "Journals", href: "/journals" },
+  { num: "05", label: "Apex", href: "/apex" },
+  { num: "06", label: "Contact", href: "/contact" },
 ];
 
-export default function MobileMenu({
-  isOpen,
-  onClose,
-  activeHref,
-  onNavigate,
-}: MobileMenuProps) {
+export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const panelRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  const isRouteActive = (route: string) => {
+    if (route === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(route);
+  };
 
   // Focus trap inside panel & Escape key listener
   useEffect(() => {
@@ -80,10 +82,6 @@ export default function MobileMenu({
     }
   }, [isOpen]);
 
-  const handleLinkClick = (href: string) => {
-    onNavigate(href);
-  };
-
   return (
     <div
       id="mobile-nav-panel"
@@ -118,9 +116,7 @@ export default function MobileMenu({
           {/* Links with 1px white/15% hairlines */}
           <nav className="divide-y divide-white/15 border-t border-b border-white/15">
             {navLinks.map((link, idx) => {
-              const isActive =
-                activeHref === link.href ||
-                activeHref === link.href.replace("/", "");
+              const isActive = isRouteActive(link.href);
               const delayClass = `mobile-nav-link-${idx + 1}`;
 
               return (
@@ -130,11 +126,9 @@ export default function MobileMenu({
                 >
                   <Link
                     href={link.href}
-                    onClick={() => handleLinkClick(link.href)}
+                    onClick={onClose}
                     className={`mobile-nav-link group flex items-baseline py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
-                      isActive
-                        ? "text-brand-gold"
-                        : "text-white"
+                      isActive ? "text-brand-gold" : "text-white"
                     }`}
                   >
                     <span className="font-mono text-xs sm:text-sm text-[#D9A93F] tracking-widest mr-4 opacity-90 select-none">
@@ -178,8 +172,8 @@ export default function MobileMenu({
 
           <div className="pt-2">
             <Link
-              href="/#contact"
-              onClick={() => handleLinkClick("/#contact")}
+              href="/contact"
+              onClick={onClose}
               className="inline-flex items-stretch bg-[#D9A93F] hover:bg-[#C4942B] transition-colors duration-150 text-brand-dark group shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <span className="px-6 py-3 text-xs font-semibold uppercase tracking-wider flex items-center">
