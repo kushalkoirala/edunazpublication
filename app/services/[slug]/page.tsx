@@ -60,27 +60,28 @@ export default async function ServiceDetailPage({ params }: Props) {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Scope & Deliverables */}
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-8" data-reveal="up">
               <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
                 SERVICE OVERVIEW
               </p>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-brand-dark font-heading leading-tight mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl text-brand-dark font-heading leading-tight mb-6" data-split="lines">
                 Comprehensive Support for {service.title}
               </h2>
               <p className="text-brand-muted font-body text-base leading-relaxed mb-8">
                 {service.fullDescription}
               </p>
 
-              <div className="hairline-divider mb-8" />
+              <div className="hairline-divider mb-8" data-line />
 
               <h3 className="font-heading text-xl text-brand-dark mb-6">
                 Key Deliverables &amp; Scope
               </h3>
 
-              <ul className="space-y-4 mb-10" role="list">
+              <ul className="space-y-4 mb-10" role="list" data-stagger>
                 {service.items.map((item, index) => (
                   <li
                     key={index}
+                    data-reveal="up"
                     className="p-4 bg-brand-bgGray border border-brand-borderHairline flex items-center justify-between"
                   >
                     <div className="flex items-center space-x-3">
@@ -101,7 +102,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               </ul>
 
               {/* Consultation / Direct Action */}
-              <div className="bg-[#3F4056] text-white p-8">
+              <div className="bg-[#3F4056] text-white p-8" data-reveal="up">
                 <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-2">
                   START YOUR SUBMISSION
                 </p>
@@ -111,38 +112,40 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <p className="text-white/80 font-body text-sm leading-relaxed mb-6 font-light">
                   Get in touch with our editorial board to schedule a preliminary review and scope evaluation.
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-stretch bg-[#D9A93F] hover:bg-[#C4942B] transition-colors duration-150 text-brand-dark group shadow-none"
-                >
-                  <span className="px-7 py-3 text-xs font-semibold uppercase tracking-wider flex items-center">
-                    SUBMIT MANUSCRIPT
-                  </span>
-                  <span className="w-10 bg-white border-l border-[#D9A93F] flex items-center justify-center text-brand-dark transition-transform duration-200 group-hover:translate-x-0.5">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        d="M9 5l7 7-7 7"
-                        strokeLinecap="square"
-                        strokeLinejoin="miter"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                  </span>
-                </Link>
+                <div className="inline-flex" data-magnetic>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-stretch bg-[#D9A93F] hover:bg-[#C4942B] transition-colors duration-150 text-brand-dark group shadow-none"
+                  >
+                    <span className="px-7 py-3 text-xs font-semibold uppercase tracking-wider flex items-center">
+                      SUBMIT MANUSCRIPT
+                    </span>
+                    <span className="w-10 bg-white border-l border-[#D9A93F] flex items-center justify-center text-brand-dark transition-transform duration-200 group-hover:translate-x-0.5">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M9 5l7 7-7 7"
+                          strokeLinecap="square"
+                          strokeLinejoin="miter"
+                          strokeWidth="2"
+                        />
+                      </svg>
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Right Column: Other Services Navigation */}
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-4" data-reveal="up">
               <div className="bg-brand-bgGray border border-brand-borderHairline p-6 lg:p-8">
                 <h3 className="font-heading text-lg text-brand-dark uppercase tracking-wider mb-4 border-b border-brand-borderHairline pb-3">
                   All Services
                 </h3>
-                <ul className="space-y-3 font-body text-sm">
+                <ul className="space-y-3 font-body text-sm" data-stagger>
                   {SERVICES_DATA.map((item) => {
                     const isCurrent = item.slug === service.slug;
                     return (
-                      <li key={item.slug}>
+                      <li key={item.slug} data-reveal="up">
                         <Link
                           href={`/services/${item.slug}`}
                           className={`flex items-center justify-between p-3 transition-colors ${
@@ -159,7 +162,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   })}
                 </ul>
 
-                <div className="hairline-divider my-6" />
+                <div className="hairline-divider my-6" data-line />
 
                 <div className="text-xs text-brand-muted space-y-2">
                   <p className="font-semibold text-brand-dark uppercase tracking-wider">

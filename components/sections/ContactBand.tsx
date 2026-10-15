@@ -14,7 +14,7 @@ export default function ContactBand() {
     /* BEGIN: ContactBandSection */
     <section className="relative py-24 bg-brand-slate text-white" id="contact">
       {/* Full-Width Background Photo with Slate Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div data-parallax="0.1" className="absolute inset-0 z-0 scale-105">
         <img
           alt="Books in academic library"
           className="w-full h-full object-cover opacity-20"
@@ -24,19 +24,19 @@ export default function ContactBand() {
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Eyebrow */}
-        <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+        <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
           GET IN TOUCH
         </p>
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl font-heading text-white mb-4">
+        <h2 data-split="lines" className="text-3xl sm:text-4xl font-heading text-white mb-4">
           Ready to <span className="text-brand-gold font-normal">Publish</span> Your Research?
         </h2>
-        <p className="text-white/80 font-body text-sm max-w-2xl mx-auto mb-10 font-light">
+        <p data-reveal="up" className="text-white/80 font-body text-sm max-w-2xl mx-auto mb-10 font-light">
           Get expert guidance for your manuscript, from first draft to submission. Fill in your inquiry below.
         </p>
         {/* Compact Form Row */}
         <form className="max-w-4xl mx-auto mb-8 text-left" onSubmit={handleSubmit}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div data-stagger className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div>
               <label
                 className="block text-[11px] uppercase tracking-wider text-white/70 mb-1"
@@ -83,8 +83,9 @@ export default function ContactBand() {
               />
             </div>
           </div>
-          <div className="flex justify-center mt-6">
+          <div data-reveal="up" className="flex justify-center mt-6">
             <button
+              data-magnetic
               className="inline-flex items-stretch bg-brand-gold hover:bg-brand-goldHover transition-colors duration-150 text-brand-dark group shadow-none cursor-pointer"
               type="submit"
             >

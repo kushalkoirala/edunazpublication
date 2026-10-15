@@ -1,7 +1,7 @@
 export default function WhatsAppFloat() {
   return (
     /* BEGIN: FloatingWhatsAppWidget */
-    <div className="fixed bottom-6 left-6 z-50">
+    <div id="whatsapp-float-btn" className="fixed bottom-6 left-6 z-50">
       <a
         aria-label="Direct WhatsApp Consultation with Edunaaz"
         className="bg-[#25D366] hover:bg-[#1EBE5D] text-white p-3.5 flex items-center justify-center transition-transform hover:scale-105 shadow-md group"

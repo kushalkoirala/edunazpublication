@@ -60,14 +60,14 @@ export default async function JournalDetailPage({ params }: Props) {
             {/* Left Content Column */}
             <div className="lg:col-span-8 space-y-12">
               {/* Section 1: About the Journal */}
-              <div>
+              <div data-reveal="up">
                 <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
                   OVERVIEW
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4">
+                <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4" data-split="lines">
                   About the Journal
                 </h2>
-                <div className="hairline-divider mb-6" />
+                <div className="hairline-divider mb-6" data-line />
                 <p className="text-brand-muted font-body text-sm sm:text-base leading-relaxed mb-4">
                   {journal.description}
                 </p>
@@ -94,28 +94,28 @@ export default async function JournalDetailPage({ params }: Props) {
               </div>
 
               {/* Section 2: Scope */}
-              <div>
+              <div data-reveal="up">
                 <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
                   AIMS &amp; FOCUS
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4">
                   Aims &amp; Scope
                 </h2>
-                <div className="hairline-divider mb-6" />
+                <div className="hairline-divider mb-6" data-line />
                 <p className="text-brand-muted font-body text-sm sm:text-base leading-relaxed">
                   {journal.scope}
                 </p>
               </div>
 
               {/* Section 3: Author Guidelines */}
-              <div>
+              <div data-reveal="up">
                 <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
                   SUBMISSION INSTRUCTIONS
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4">
                   Author Guidelines
                 </h2>
-                <div className="hairline-divider mb-6" />
+                <div className="hairline-divider mb-6" data-line />
                 <div className="p-6 bg-brand-bgGray border border-brand-borderHairline">
                   {/* TODO: Author guidelines to be provided by client */}
                   <p className="text-sm font-body text-brand-muted italic">
@@ -125,14 +125,14 @@ export default async function JournalDetailPage({ params }: Props) {
               </div>
 
               {/* Section 4: Editorial Board */}
-              <div>
+              <div data-reveal="up">
                 <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
                   GOVERNANCE
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4">
                   Editorial Board
                 </h2>
-                <div className="hairline-divider mb-6" />
+                <div className="hairline-divider mb-6" data-line />
                 <div className="p-6 bg-brand-bgGray border border-brand-borderHairline">
                   {/* TODO: Editorial board list to be provided by client */}
                   <p className="text-sm font-body text-brand-muted italic">
@@ -142,7 +142,7 @@ export default async function JournalDetailPage({ params }: Props) {
               </div>
 
               {/* Section 5: Submit Article */}
-              <div className="bg-[#3F4056] text-white p-8">
+              <div className="bg-[#3F4056] text-white p-8" data-reveal="up">
                 <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-2">
                   MANUSCRIPT SUBMISSION
                 </p>
@@ -152,38 +152,40 @@ export default async function JournalDetailPage({ params }: Props) {
                 <p className="text-white/80 font-body text-sm leading-relaxed mb-6 font-light">
                   Authors interested in submitting their research to this journal can transmit their manuscript details directly to our editorial liaison team.
                 </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-stretch bg-[#D9A93F] hover:bg-[#C4942B] transition-colors duration-150 text-brand-dark group shadow-none"
-                >
-                  <span className="px-7 py-3 text-xs font-semibold uppercase tracking-wider flex items-center">
-                    SUBMIT ARTICLE
-                  </span>
-                  <span className="w-10 bg-white border-l border-[#D9A93F] flex items-center justify-center text-brand-dark transition-transform duration-200 group-hover:translate-x-0.5">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path
-                        d="M9 5l7 7-7 7"
-                        strokeLinecap="square"
-                        strokeLinejoin="miter"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                  </span>
-                </Link>
+                <div className="inline-flex" data-magnetic>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-stretch bg-[#D9A93F] hover:bg-[#C4942B] transition-colors duration-150 text-brand-dark group shadow-none"
+                  >
+                    <span className="px-7 py-3 text-xs font-semibold uppercase tracking-wider flex items-center">
+                      SUBMIT ARTICLE
+                    </span>
+                    <span className="w-10 bg-white border-l border-[#D9A93F] flex items-center justify-center text-brand-dark transition-transform duration-200 group-hover:translate-x-0.5">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                          d="M9 5l7 7-7 7"
+                          strokeLinecap="square"
+                          strokeLinejoin="miter"
+                          strokeWidth="2"
+                        />
+                      </svg>
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
 
             {/* Right Sidebar: All Journals */}
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-4" data-reveal="up">
               <div className="bg-brand-bgGray border border-brand-borderHairline p-6 lg:p-8">
                 <h3 className="font-heading text-lg text-brand-dark uppercase tracking-wider mb-4 border-b border-brand-borderHairline pb-3">
                   All Journals
                 </h3>
-                <ul className="space-y-4 font-body text-sm">
+                <ul className="space-y-4 font-body text-sm" data-stagger>
                   {JOURNALS_DATA.map((j) => {
                     const isCurrent = j.slug === journal.slug;
                     return (
-                      <li key={j.slug}>
+                      <li key={j.slug} data-reveal="up">
                         <Link
                           href={`/journals/${j.slug}`}
                           className={`block p-3 transition-colors ${
@@ -202,7 +204,7 @@ export default async function JournalDetailPage({ params }: Props) {
                   })}
                 </ul>
 
-                <div className="hairline-divider my-6" />
+                <div className="hairline-divider my-6" data-line />
 
                 <div className="text-xs text-brand-muted space-y-2">
                   <p className="font-semibold text-brand-dark uppercase tracking-wider">

@@ -27,12 +27,12 @@ export default function ContactPage() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Left Column: Office & Communication Channels */}
-            <div className="lg:col-span-5 space-y-8">
+            <div className="lg:col-span-5 space-y-8" data-reveal="up">
               <div>
                 <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
                   COMMUNICATION CHANNELS
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4">
+                <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4" data-split="lines">
                   Registered <span className="text-brand-gold font-normal">Headquarters</span>
                 </h2>
                 <p className="text-sm font-body text-brand-muted leading-relaxed">
@@ -40,11 +40,11 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="hairline-divider" />
+              <div className="hairline-divider" data-line />
 
-              <div className="space-y-6 text-xs sm:text-sm font-body">
+              <div className="space-y-6 text-xs sm:text-sm font-body" data-stagger>
                 {/* Registered Address */}
-                <div>
+                <div data-reveal="up">
                   <h3 className="font-heading text-sm text-brand-dark uppercase tracking-wider mb-2">
                     Registered Office
                   </h3>
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Email */}
-                <div>
+                <div data-reveal="up">
                   <h3 className="font-heading text-sm text-brand-dark uppercase tracking-wider mb-2">
                     Email Correspondence
                   </h3>
@@ -67,7 +67,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Phone */}
-                <div>
+                <div data-reveal="up">
                   <h3 className="font-heading text-sm text-brand-dark uppercase tracking-wider mb-2">
                     Telephone
                   </h3>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* WhatsApp */}
-                <div>
+                <div data-reveal="up">
                   <h3 className="font-heading text-sm text-brand-dark uppercase tracking-wider mb-2">
                     Instant Messaging
                   </h3>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Registration Details */}
-                <div className="pt-2">
+                <div className="pt-2" data-reveal="up">
                   <div className="p-4 bg-brand-bgGray border border-brand-borderHairline text-xs text-brand-muted leading-relaxed">
                     <p className="font-mono text-brand-dark font-medium mb-1">
                       CIN: {COMPANY_INFO.cin}
@@ -107,12 +107,12 @@ export default function ContactPage() {
             </div>
 
             {/* Right Column: Contact Inquiry Form */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7" data-reveal="up">
               <div className="bg-white border border-brand-borderHairline p-8 sm:p-10 shadow-none">
                 <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
                   MANUSCRIPT INQUIRY
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-2">
+                <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-2" data-split="lines">
                   Send Your <span className="text-brand-gold font-normal">Manuscript</span> Details
                 </h2>
                 <p className="text-xs text-brand-muted font-body mb-8">

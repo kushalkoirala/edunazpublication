@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-brand-slateDark text-white pt-16 pb-8 border-t border-brand-slateLight">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 4-Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-14 text-xs font-body">
+        <div data-stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 mb-14 text-xs font-body">
           {/* Column 1: Brand & Registration */}
           <div className="lg:col-span-4">
             <div className="flex items-center space-x-3 mb-4">
@@ -40,13 +40,13 @@ export default function Footer() {
               Explore
             </h4>
             <ul className="space-y-2.5 text-white/70">
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/">Home</Link></li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/about">About Us</Link></li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/journals">Journals</Link>
+              <li className=""><Link data-sweep className="hover:text-brand-gold transition-colors" href="/">Home</Link></li>
+              <li className=""><Link data-sweep className="hover:text-brand-gold transition-colors" href="/about">About Us</Link></li>
+              <li className=""><Link data-sweep className="hover:text-brand-gold transition-colors" href="/journals">Journals</Link>
               </li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/apex">APEX Program</Link>
+              <li className=""><Link data-sweep className="hover:text-brand-gold transition-colors" href="/apex">APEX Program</Link>
               </li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/faq">FAQ</Link></li>
+              <li className=""><Link data-sweep className="hover:text-brand-gold transition-colors" href="/faq">FAQ</Link></li>
             </ul>
           </div>
           {/* Column 3: Services */}
@@ -57,15 +57,15 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-2.5 text-white/70">
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/services/research-publication">Research
+              <li className=""><Link data-sweep className="hover:text-brand-gold transition-colors" href="/services/research-publication">Research
                 Publication</Link></li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/services/writing-and-editing">Writing &amp;
+              <li className=""><Link data-sweep className="hover:text-brand-gold transition-colors" href="/services/writing-and-editing">Writing &amp;
                 Technical Editing</Link></li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/services/isbn-book-publication">ISBN Book
+              <li className=""><Link data-sweep className="hover:text-brand-gold transition-colors" href="/services/isbn-book-publication">ISBN Book
                 Publication</Link></li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/#process">Plagiarism &amp;
+              <li className=""><Link data-sweep className="hover:text-brand-gold transition-colors" href="/#process">Plagiarism &amp;
                 Formatting Audit</Link></li>
-              <li className=""><Link className="hover:text-brand-gold transition-colors" href="/services/writing-and-editing">Theses &amp;
+              <li className=""><Link data-sweep className="hover:text-brand-gold transition-colors" href="/services/writing-and-editing">Theses &amp;
                 Review Support</Link></li>
             </ul>
           </div>
@@ -94,7 +94,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Hairline divider */}
-        <div className="hairline-divider-dark mb-6"></div>
+        <div data-line className="hairline-divider-dark mb-6"></div>
         {/* Bottom Copyright Bar */}
         <div
           className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/50 space-y-3 sm:space-y-0"
@@ -103,9 +103,9 @@ export default function Footer() {
             © 2025 EDUNAAZ PUBLICATION (OPC) PRIVATE LIMITED. All rights reserved.
           </div>
           <div className="flex space-x-6">
-            <Link className="hover:text-white transition-colors" href="/terms">Terms &amp; Conditions</Link>
-            <Link className="hover:text-white transition-colors" href="/privacy">Privacy Policy</Link>
-            <Link className="hover:text-white transition-colors" href="/editorial-ethics">Editorial Ethics</Link>
+            <Link data-sweep className="hover:text-white transition-colors" href="/terms">Terms &amp; Conditions</Link>
+            <Link data-sweep className="hover:text-white transition-colors" href="/privacy">Privacy Policy</Link>
+            <Link data-sweep className="hover:text-white transition-colors" href="/editorial-ethics">Editorial Ethics</Link>
           </div>
         </div>
       </div>

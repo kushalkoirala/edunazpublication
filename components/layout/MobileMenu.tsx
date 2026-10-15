@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLenis } from "@/components/motion/MotionProvider";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -28,6 +29,18 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     }
     return pathname.startsWith(route);
   };
+
+  const lenis = useLenis();
+
+  // Pause Lenis smooth scrolling when mobile menu is open, resume when closed
+  useEffect(() => {
+    if (!lenis) return;
+    if (isOpen) {
+      lenis.stop();
+    } else {
+      lenis.start();
+    }
+  }, [isOpen, lenis]);
 
   // Focus trap inside panel & Escape key listener
   useEffect(() => {
@@ -92,6 +105,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       aria-hidden={!isOpen}
       inert={!isOpen ? true : undefined}
       tabIndex={-1}
+      data-lenis-prevent
       className={`mobile-menu-panel lg:hidden fixed top-[72px] left-0 w-full h-[calc(100dvh-72px)] z-40 bg-[#2C2D3E] text-white flex flex-col justify-between overflow-y-auto overscroll-contain ${
         isOpen ? "is-open" : ""
       }`}

@@ -249,3 +249,91 @@ body.mobile-menu-open .fixed.bottom-6.left-6 {
   }
 }
 
+/* ─── Lenis Scroll Integration ─── */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ─── Premium Motion Layer: Initial States (No-Flash Rule) ─── */
+@media (prefers-reduced-motion: no-preference) {
+  html.js:not(.motion-failsafe):not(.reduced-motion) [data-reveal="up"],
+  html.js:not(.motion-failsafe):not(.reduced-motion) [data-reveal="fade"],
+  html.js:not(.motion-failsafe):not(.reduced-motion) [data-reveal="scale"],
+  html.js:not(.motion-failsafe):not(.reduced-motion) [data-reveal="clip-up"],
+  html.js:not(.motion-failsafe):not(.reduced-motion) [data-reveal="clip-left"],
+  html.js:not(.motion-failsafe):not(.reduced-motion) [data-stagger] > * {
+    opacity: 0;
+  }
+
+  html.js:not(.motion-failsafe):not(.reduced-motion) [data-line] {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+
+/* Failsafe override: ensure content is always visible if failsafe triggers or without JS */
+html.motion-failsafe [data-reveal],
+html.motion-failsafe [data-split],
+html.motion-failsafe [data-stagger] > *,
+html.motion-failsafe [data-line] {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+}
+
+/* SplitText masked line container */
+.split-line-overflow {
+  overflow: hidden;
+  display: block;
+}
+
+/* ─── Desktop Nav Links & Footer Links Underline Sweep (250ms scaleX from left) ─── */
+@media (hover: hover) and (pointer: fine) {
+  .nav-sweep-link,
+  [data-sweep] {
+    position: relative;
+    display: inline-flex;
+  }
+  .nav-sweep-link::after,
+  [data-sweep]::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #D9A93F;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+  }
+  .nav-sweep-link:hover::after,
+  [data-sweep]:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* ─── Journal Cards CSS-only Hover (fine-pointer only: -4px and gold border tint, 300ms) ─── */
+@media (hover: hover) and (pointer: fine) {
+  [data-hover="journal-card"] {
+    transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1), border-color 300ms ease;
+  }
+  [data-hover="journal-card"]:hover {
+    transform: translateY(-4px);
+    border-color: #D9A93F !important;
+  }
+}
+

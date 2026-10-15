@@ -10,31 +10,40 @@ export default function Apex() {
           <div className="lg:col-span-6 relative">
             <div className="relative max-w-lg mx-auto">
               {/* Square Gold Offset Border Behind Image */}
-              <div className="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold z-0 pointer-events-none" />
-              {/* Actual Image */}
-              <img
-                alt="Institutional Mentorship & Research Program"
-                className="relative z-10 w-full h-[400px] object-cover border border-brand-borderHairline shadow-none"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8SykcoqvFrV2J_Uzthc2tluoOUvgKD3zdM6lpkVpFA6yn9YRIrsaXP1nLNDrt_xmXdlz_-VBxMap6gpY5GYNcxpjf4eezENULgagWpyL3vRitVr3_66lojJdsC-cEfRZDp5T_ybthzx0M8dEKmtZNUHn_Hn57p_uqFESLaQ74MBdcOc5GltlV_jRI8_tAaC0YQEB-J94ea7NJ8PflvjNXiRZUShCfWPvKSgsoFVT2FW8IwRpXwyw"
+              <div
+                data-reveal="clip-left"
+                className="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold z-0 pointer-events-none"
               />
+              {/* Actual Image */}
+              <div
+                data-reveal="clip-up"
+                className="relative z-10 w-full h-[400px] overflow-hidden border border-brand-borderHairline shadow-none"
+              >
+                <img
+                  data-parallax="0.08"
+                  alt="Institutional Mentorship & Research Program"
+                  className="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8SykcoqvFrV2J_Uzthc2tluoOUvgKD3zdM6lpkVpFA6yn9YRIrsaXP1nLNDrt_xmXdlz_-VBxMap6gpY5GYNcxpjf4eezENULgagWpyL3vRitVr3_66lojJdsC-cEfRZDp5T_ybthzx0M8dEKmtZNUHn_Hn57p_uqFESLaQ74MBdcOc5GltlV_jRI8_tAaC0YQEB-J94ea7NJ8PflvjNXiRZUShCfWPvKSgsoFVT2FW8IwRpXwyw"
+                />
+              </div>
             </div>
           </div>
           {/* Right Column: Program Details */}
           <div className="lg:col-span-6">
-            <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+            <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
               APEX PROGRAM
             </p>
-            <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight mb-6">
+            <h2 data-split="lines" className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight mb-6">
               Institutional Research <span className="text-brand-gold font-normal">Acceleration</span>
             </h2>
-            <p className="text-brand-muted font-body text-sm leading-relaxed mb-6">
+            <p data-reveal="up" className="text-brand-muted font-body text-sm leading-relaxed mb-6">
               The APEX Program by Edunaaz Publication is a structured institutional mentorship and
               publication acceleration initiative. Designed specifically for colleges, universities, and
               departmental research centers, APEX provides faculty members and postgraduate candidates
               with hands-on manuscript clinics, indexing literacy workshops, and dedicated publication
               pipelines.
             </p>
-            <ul className="space-y-3 mb-8 text-xs text-brand-dark font-medium">
+            <ul data-stagger className="space-y-3 mb-8 text-xs text-brand-dark font-medium">
               <li className="flex items-center space-x-3">
                 <span className="w-1.5 h-1.5 bg-brand-gold" />
                 <span className="">Dedicated Institutional Coordinator & Editorial Liaison</span>
@@ -53,6 +62,7 @@ export default function Apex() {
             {/* Primary Button Style */}
             <div className="inline-flex">
               <Link
+                data-magnetic
                 className="inline-flex items-stretch bg-brand-gold hover:bg-brand-goldHover transition-colors duration-150 text-brand-dark group shadow-none"
                 href="/apex"
               >

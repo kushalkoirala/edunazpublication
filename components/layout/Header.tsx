@@ -3,11 +3,37 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { gsap } from "gsap";
 import MobileMenu from "./MobileMenu";
+
+function useHeaderVisibility(mobileOpen: boolean) {
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (mobileOpen || currentScrollY <= 200) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY.current && currentScrollY > 200) {
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY.current) {
+        setIsVisible(true);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [mobileOpen]);
+
+  return isVisible;
+}
 
 export default function Header() {
   const [isSolid, setIsSolid] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isHeaderVisible = useHeaderVisibility(mobileOpen);
   const pathname = usePathname();
 
   const scrollYRef = useRef(0);
@@ -28,6 +54,33 @@ export default function Header() {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Header entrance on first load: logo, nav links and phone fade down in short stagger
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    const brandEl = document.getElementById("header-brand");
+    const navEl = document.getElementById("header-nav");
+    const rightEl = document.getElementById("header-right");
+
+    if (brandEl && navEl && rightEl) {
+      gsap.fromTo(
+        [brandEl, navEl, rightEl],
+        { opacity: 0, y: -16 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power3.out",
+          clearProps: "all",
+        }
+      );
+    }
   }, []);
 
   // Lock body scroll and restore position on close
@@ -78,12 +131,15 @@ export default function Header() {
   return (
     <header
       id="site-header"
-      className={`fixed top-0 left-0 w-full z-50${isHeaderSolid ? " solid" : ""}`}
+      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+        isHeaderVisible ? "translate-y-0" : "-translate-y-full"
+      }${isHeaderSolid ? " solid" : ""}`}
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[72px]">
           {/* Brand Wordmark & Circle Logo Emblem */}
           <Link
+            id="header-brand"
             className="flex items-center space-x-3 group text-left flex-shrink-0"
             href="/"
           >
@@ -101,8 +157,12 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation: Exactly 6 links on ONE line */}
-          <nav className="hidden lg:flex items-center space-x-8 text-[12px] font-body font-medium uppercase tracking-[0.08em] whitespace-nowrap">
+          <nav
+            id="header-nav"
+            className="hidden lg:flex items-center space-x-8 text-[12px] font-body font-medium uppercase tracking-[0.08em] whitespace-nowrap"
+          >
             <Link
+              data-sweep
               className={`hover:text-[#D9A93F] transition-colors py-2 ${
                 isRouteActive("/") ? "text-[#D9A93F]" : "text-white/90"
               }`}
@@ -111,6 +171,7 @@ export default function Header() {
               HOME
             </Link>
             <Link
+              data-sweep
               className={`hover:text-[#D9A93F] transition-colors py-2 ${
                 isRouteActive("/about") ? "text-[#D9A93F]" : "text-white/90"
               }`}
@@ -120,6 +181,7 @@ export default function Header() {
             </Link>
             <div className="relative inline-flex items-center">
               <Link
+                data-sweep
                 className={`inline-flex items-center hover:text-[#D9A93F] transition-colors py-2 ${
                   isRouteActive("/services") ? "text-[#D9A93F]" : "text-white/90"
                 }`}
@@ -142,6 +204,7 @@ export default function Header() {
               </Link>
             </div>
             <Link
+              data-sweep
               className={`hover:text-[#D9A93F] transition-colors py-2 ${
                 isRouteActive("/journals") ? "text-[#D9A93F]" : "text-white/90"
               }`}
@@ -150,6 +213,7 @@ export default function Header() {
               JOURNALS
             </Link>
             <Link
+              data-sweep
               className={`hover:text-[#D9A93F] transition-colors py-2 ${
                 isRouteActive("/apex") ? "text-[#D9A93F]" : "text-white/90"
               }`}
@@ -158,6 +222,7 @@ export default function Header() {
               APEX
             </Link>
             <Link
+              data-sweep
               className={`hover:text-[#D9A93F] transition-colors py-2 ${
                 isRouteActive("/contact") ? "text-[#D9A93F]" : "text-white/90"
               }`}
@@ -168,7 +233,10 @@ export default function Header() {
           </nav>
 
           {/* Right Header: Phone & Search only */}
-          <div className="hidden md:flex items-center space-x-6 text-xs text-white/90 font-medium flex-shrink-0">
+          <div
+            id="header-right"
+            className="hidden md:flex items-center space-x-6 text-xs text-white/90 font-medium flex-shrink-0"
+          >
             <a
               className="flex items-center space-x-2 hover:text-[#D9A93F] transition-colors whitespace-nowrap"
               href="tel:+919395707581"

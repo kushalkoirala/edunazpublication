@@ -7,17 +7,17 @@ export default function FeaturedJournals() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-xl mx-auto mb-16">
-          <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+          <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
             OUR JOURNALS
           </p>
-          <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight">
+          <h2 data-split="lines" className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight">
             Featured <span className="text-brand-gold font-normal">Academic</span> Journals
           </h2>
         </div>
         {/* 3 Flat White Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div data-stagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Journal 1 */}
-          <div className="bg-white p-8 border border-brand-borderHairline flex flex-col justify-between">
+          <div data-hover="journal-card" className="bg-white p-8 border border-brand-borderHairline flex flex-col justify-between">
             <div>
               <span
                 className="text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mb-2"
@@ -45,7 +45,7 @@ export default function FeaturedJournals() {
             </div>
           </div>
           {/* Journal 2 */}
-          <div className="bg-white p-8 border border-brand-borderHairline flex flex-col justify-between">
+          <div data-hover="journal-card" className="bg-white p-8 border border-brand-borderHairline flex flex-col justify-between">
             <div>
               <span
                 className="text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mb-2"
@@ -73,7 +73,7 @@ export default function FeaturedJournals() {
             </div>
           </div>
           {/* Journal 3 */}
-          <div className="bg-white p-8 border border-brand-borderHairline flex flex-col justify-between">
+          <div data-hover="journal-card" className="bg-white p-8 border border-brand-borderHairline flex flex-col justify-between">
             <div>
               <span
                 className="text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mb-2"

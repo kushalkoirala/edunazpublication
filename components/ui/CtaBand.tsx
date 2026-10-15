@@ -36,7 +36,7 @@ export default function CtaBand({
   return (
     <section className="relative py-24 bg-brand-slate text-white">
       {/* Full-Width Background Photo with Slate Overlay (matching ContactBand) */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div data-parallax="0.1" className="absolute inset-0 z-0 pointer-events-none scale-105">
         <img
           alt="Books in academic library"
           className="w-full h-full object-cover opacity-20"
@@ -47,21 +47,22 @@ export default function CtaBand({
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Eyebrow */}
-        <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+        <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
           {eyebrow}
         </p>
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl font-heading text-white mb-4">
+        <h2 data-split="lines" className="text-3xl sm:text-4xl font-heading text-white mb-4">
           {renderTitle()}
         </h2>
         {/* Description */}
-        <p className="text-white/80 font-body text-sm max-w-2xl mx-auto mb-8 font-light">
+        <p data-reveal="up" className="text-white/80 font-body text-sm max-w-2xl mx-auto mb-8 font-light">
           {description}
         </p>
 
         {/* Gold Button with White Arrow Box */}
-        <div className="flex justify-center mb-6">
+        <div data-reveal="up" className="flex justify-center mb-6">
           <Link
+            data-magnetic
             href="/contact"
             className="inline-flex items-stretch bg-brand-gold hover:bg-brand-goldHover transition-colors duration-150 text-brand-dark group shadow-none"
           >

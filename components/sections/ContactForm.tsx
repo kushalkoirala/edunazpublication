@@ -12,8 +12,8 @@ export default function ContactForm() {
   };
 
   return (
-    <form className="space-y-5 text-left" onSubmit={handleSubmit}>
-      <div>
+    <form className="space-y-5 text-left" data-stagger onSubmit={handleSubmit}>
+      <div data-reveal="up">
         <label
           className="block text-[11px] uppercase tracking-wider text-brand-dark font-medium mb-1.5"
           htmlFor="contact-name"
@@ -30,7 +30,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <div>
+      <div data-reveal="up">
         <label
           className="block text-[11px] uppercase tracking-wider text-brand-dark font-medium mb-1.5"
           htmlFor="contact-email"
@@ -47,7 +47,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <div>
+      <div data-reveal="up">
         <label
           className="block text-[11px] uppercase tracking-wider text-brand-dark font-medium mb-1.5"
           htmlFor="contact-manuscript"
@@ -64,7 +64,7 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className="pt-2">
+      <div className="pt-2" data-reveal="up" data-magnetic>
         <button
           className="w-full sm:w-auto inline-flex items-stretch bg-brand-gold hover:bg-brand-goldHover transition-colors duration-150 text-brand-dark group shadow-none cursor-pointer"
           type="submit"

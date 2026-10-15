@@ -44,15 +44,16 @@ export default function PageHero({
 
   return (
     <section className="relative bg-[#3F4056] text-white overflow-hidden pt-[140px] pb-16 sm:pb-20">
-      {/* Faint library photo background (~10% opacity, grayscale, same as stats band) */}
+      {/* Faint library photo background (~10% opacity, grayscale, same as stats band) with slow scale */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none grayscale"
+        data-pagehero-bg
+        className="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none grayscale scale-105"
         style={{ backgroundImage: "var(--img-library)" }}
       />
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="mb-4">
+        <nav data-reveal="fade" aria-label="Breadcrumb" className="mb-4">
           <ol className="flex items-center space-x-2 text-xs font-body text-white/60">
             {breadcrumbs.map((crumb, idx) => {
               const isLast = idx === breadcrumbs.length - 1;
@@ -78,18 +79,18 @@ export default function PageHero({
         </nav>
 
         {/* Eyebrow */}
-        <p className="text-xs uppercase tracking-eyebrow text-[#D9A93F] font-medium mb-3">
+        <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-[#D9A93F] font-medium mb-3">
           {eyebrow}
         </p>
 
         {/* Marcellus H1 with one gold accent word */}
-        <h1 className="text-3xl sm:text-4xl lg:text-[46px] text-white font-heading leading-tight max-w-4xl">
+        <h1 data-split="lines" className="text-3xl sm:text-4xl lg:text-[46px] text-white font-heading leading-tight max-w-4xl">
           {renderTitle()}
         </h1>
 
         {/* Optional one-line intro */}
         {intro && (
-          <p className="text-white/80 font-body text-sm sm:text-base max-w-2xl mt-4 leading-relaxed font-light">
+          <p data-reveal="up" className="text-white/80 font-body text-sm sm:text-base max-w-2xl mt-4 leading-relaxed font-light">
             {intro}
           </p>
         )}

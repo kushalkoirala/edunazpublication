@@ -27,20 +27,22 @@ export default function JournalsPage() {
       {/* Journals Listing Grid */}
       <section className="py-24 bg-brand-bgGray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-xl mx-auto mb-16">
+          <div className="text-center max-w-xl mx-auto mb-16" data-reveal="up">
             <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
               PUBLICATIONS
             </p>
-            <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight">
+            <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight" data-split="lines">
               Peer-Reviewed <span className="text-brand-gold font-normal">Scholarly</span> Outlets
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-stagger>
             {JOURNALS_DATA.map((journal) => (
               <div
                 key={journal.slug}
                 className="bg-white p-8 border border-brand-borderHairline flex flex-col justify-between"
+                data-reveal="up"
+                data-hover="journal-card"
               >
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mb-2">
@@ -57,7 +59,7 @@ export default function JournalsPage() {
                   <p className="text-xs font-mono text-brand-muted mb-4">
                     ISSN: {journal.issn}
                   </p>
-                  <div className="hairline-divider my-4" />
+                  <div className="hairline-divider my-4" data-line />
                   <p className="text-xs text-brand-muted leading-relaxed font-body">
                     {journal.description}
                   </p>

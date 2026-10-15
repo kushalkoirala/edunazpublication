@@ -26,11 +26,11 @@ export default function FaqPage() {
       {/* FAQ Accordion Section */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-xl mx-auto mb-16">
+          <div className="text-center max-w-xl mx-auto mb-16" data-reveal="up">
             <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
               FAQ
             </p>
-            <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight">
+            <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight" data-split="lines">
               Common <span className="text-brand-gold font-normal">Questions</span>
             </h2>
             <p className="text-brand-muted font-body text-sm mt-3 leading-relaxed">

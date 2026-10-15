@@ -1,9 +1,9 @@
 export default function WhyChooseUs() {
   return (
     /* BEGIN: WhyChooseUsSection */
-    <section className="py-24 bg-brand-slate text-white relative overflow-hidden">
+    <section className="py-24 bg-brand-slate text-white relative overflow-hidden" id="why-choose-us">
       {/* Faint Academic Background */}
-      <div className="absolute inset-0 opacity-10">
+      <div data-parallax="0.1" className="absolute inset-0 opacity-10 scale-105">
         <img
           alt="Library shelves background"
           className="w-full h-full object-cover"
@@ -13,20 +13,22 @@ export default function WhyChooseUs() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center max-w-xl mx-auto mb-16">
-          <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+          <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
             DISTINCT ADVANTAGES
           </p>
-          <h2 className="text-3xl sm:text-4xl font-heading text-white leading-tight">
+          <h2 data-split="lines" className="text-3xl sm:text-4xl font-heading text-white leading-tight">
             Why <span className="text-brand-gold font-normal">Choose</span> Us
           </h2>
         </div>
         {/* 3x2 Grid separated by thin hairlines */}
         <div
+          data-stagger
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 border-t border-b border-white/15"
         >
           {/* Item 1 */}
           <div className="p-8 border-b lg:border-b border-white/15 md:border-r border-white/15">
             <div
+              data-reveal="scale"
               className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,6 +46,7 @@ export default function WhyChooseUs() {
           {/* Item 2 */}
           <div className="p-8 border-b lg:border-b border-white/15 lg:border-r border-white/15">
             <div
+              data-reveal="scale"
               className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,6 +62,7 @@ export default function WhyChooseUs() {
           {/* Item 3 */}
           <div className="p-8 border-b lg:border-b border-white/15">
             <div
+              data-reveal="scale"
               className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,6 +78,7 @@ export default function WhyChooseUs() {
           {/* Item 4 */}
           <div className="p-8 md:border-r border-white/15 border-b md:border-b-0">
             <div
+              data-reveal="scale"
               className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,6 +96,7 @@ export default function WhyChooseUs() {
           {/* Item 5 */}
           <div className="p-8 lg:border-r border-white/15 border-b md:border-b-0">
             <div
+              data-reveal="scale"
               className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,6 +114,7 @@ export default function WhyChooseUs() {
           {/* Item 6 */}
           <div className="p-8">
             <div
+              data-reveal="scale"
               className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

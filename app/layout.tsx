@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
+import MotionProvider from "@/components/motion/MotionProvider";
 
 const marcellus = Marcellus({
   weight: "400",
@@ -51,11 +52,20 @@ export default function RootLayout({
       lang="en"
       className={`scroll-smooth ${marcellus.variable} ${jost.variable} ${greatVibes.variable}`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.classList.add('js');`,
+          }}
+        />
+      </head>
       <body className="antialiased">
-        <Header />
-        {children}
-        <Footer />
-        <WhatsAppFloat />
+        <MotionProvider>
+          <Header />
+          {children}
+          <Footer />
+          <WhatsAppFloat />
+        </MotionProvider>
       </body>
     </html>
   );

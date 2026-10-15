@@ -7,13 +7,16 @@ export default function Hero() {
       {/* Hero Outer Frame with desktop height ~720px */}
       <div className="relative bg-[#3F4056] min-h-[640px] lg:min-h-[720px] flex items-center overflow-hidden">
         {/* Background Photography with subject positioned at 70% center and moody filter */}
-        <div className="absolute inset-0 z-0">
-          <img
-            alt="Scholarly Classical Library Architecture"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: "70% center", filter: "grayscale(1) contrast(1.1)" }}
-            src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=2400&q=80"
-          />
+        <div id="hero-bg-wrapper" className="absolute inset-0 z-0 overflow-hidden">
+          <div id="hero-image-wrapper" className="absolute inset-0 w-full h-full">
+            <img
+              id="hero-image"
+              alt="Scholarly Classical Library Architecture"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: "70% center", filter: "grayscale(1) contrast(1.1)" }}
+              src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=2400&q=80"
+            />
+          </div>
           {/* Precise Linear Gradient Overlay */}
           <div
             className="absolute inset-0"
@@ -25,31 +28,40 @@ export default function Hero() {
         <div
           className="relative z-10 w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-[130px] lg:pt-[150px] pb-32 lg:pb-36"
         >
-          <div className="max-w-full lg:max-w-[760px] text-left">
+          <div id="hero-text-col" className="max-w-full lg:max-w-[760px] text-left">
             {/* Eyebrow with gold dash prefix */}
             <div className="flex items-center space-x-2.5 mb-5">
-              <span className="w-6 h-[1.5px] bg-[#D9A93F] inline-block"></span>
-              <p className="text-[12px] uppercase tracking-[0.2em] text-[#D9A93F] font-body font-medium">
+              <span id="hero-eyebrow-dash" className="w-6 h-[1.5px] bg-[#D9A93F] inline-block origin-left"></span>
+              <p id="hero-eyebrow-text" className="text-[12px] uppercase tracking-[0.2em] text-[#D9A93F] font-body font-medium">
                 RESEARCH MADE EASIER
               </p>
             </div>
 
             {/* Marcellus Two-Line Headline (~68px on desktop) */}
             <h1
+              id="hero-title"
+              aria-label="Research That Reaches The World"
               className="text-4xl sm:text-5xl lg:text-[68px] lg:whitespace-nowrap text-white font-heading font-normal tracking-tight leading-[1.12] mb-6"
             >
-              Research That<br />
-              <span className="text-[#D9A93F] font-normal">Reaches</span> The World
+              <span className="block overflow-hidden">
+                <span className="hero-title-line block">Research That</span>
+              </span>
+              <span className="block overflow-hidden">
+                <span className="hero-title-line block">
+                  <span className="text-[#D9A93F] font-normal">Reaches</span> The World
+                </span>
+              </span>
             </h1>
 
             {/* Body Description Paragraph */}
-            <p className="text-white/90 font-body text-[15px] leading-relaxed mb-8 max-w-[440px] font-light">
+            <p id="hero-paragraph" className="text-white/90 font-body text-[15px] leading-relaxed mb-8 max-w-[440px] font-light">
               Expert writing, editing and publication support for scholars, researchers and professionals.
             </p>
 
             {/* Primary Button with attached white square icon box */}
-            <div className="inline-flex">
+            <div id="hero-button" className="inline-flex">
               <Link
+                data-magnetic
                 className="inline-flex items-stretch bg-[#D9A93F] hover:bg-[#C4942B] transition-colors duration-150 text-brand-dark group shadow-none"
                 href="/#contact"
               >
@@ -75,9 +87,10 @@ export default function Hero() {
       {/* 3 Overlapping Bridging Cards Straddling the Bottom Edge of Hero */}
       <div className="relative z-20 -mt-16 lg:mt-0 lg:absolute lg:left-0 lg:right-0 lg:bottom-0 lg:translate-y-1/2">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:h-[280px] shadow-none">
+          <div id="hero-cards-grid" className="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:h-[280px] shadow-none">
             {/* Card 1: Research Publication (#F3F3F3 background) */}
             <div
+              id="hero-card-1"
               className="bg-[#F3F3F3] p-8 border border-[#E5E5E5] flex flex-col justify-between rounded-none shadow-none h-auto lg:h-full"
             >
               <div>
@@ -116,6 +129,7 @@ export default function Hero() {
 
             {/* Card 2: Writing & Editorial Support (Solid Gold #D9A93F) */}
             <div
+              id="hero-card-2"
               className="bg-[#D9A93F] p-8 border border-[#D9A93F] flex flex-col justify-between rounded-none shadow-none h-auto lg:h-full"
             >
               <div>
@@ -154,6 +168,7 @@ export default function Hero() {
 
             {/* Card 3: ISBN Book & Monograph Publication (#F3F3F3 background) */}
             <div
+              id="hero-card-3"
               className="bg-[#F3F3F3] p-8 border border-[#E5E5E5] flex flex-col justify-between rounded-none shadow-none h-auto lg:h-full"
             >
               <div>

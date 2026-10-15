@@ -27,13 +27,14 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch" data-stagger>
             {SERVICES_DATA.map((service) => {
               const isMiddle = service.slug === "writing-and-editing";
 
               return (
                 <article
                   key={service.slug}
+                  data-reveal={isMiddle ? "clip-up" : "up"}
                   className={`p-6 lg:p-10 flex flex-col justify-between h-full text-left rounded-none shadow-none ${
                     isMiddle
                       ? "bg-[#3F4056] text-white lg:-translate-y-6 lg:h-[calc(100%+48px)] relative z-10"
@@ -43,6 +44,7 @@ export default function ServicesPage() {
                   <div>
                     {/* Outline box with icon */}
                     <div
+                      data-reveal="scale"
                       className={`w-12 h-12 flex items-center justify-center flex-shrink-0 mb-6 rounded-none border ${
                         isMiddle
                           ? "border-[#D9A93F] text-[#D9A93F]"
@@ -81,11 +83,12 @@ export default function ServicesPage() {
                       )}
                     </div>
 
-                    <h2 className="font-heading text-[28px] leading-snug mb-4">
+                    <h2 className="font-heading text-[28px] leading-snug mb-4" data-split="lines">
                       {service.title}
                     </h2>
 
                     <div
+                      data-line
                       className={`h-[1px] w-full mb-4 ${
                         isMiddle ? "bg-white/20" : "bg-[#E5E5E5]"
                       }`}
@@ -141,55 +144,68 @@ export default function ServicesPage() {
       {/* Publication Process Section */}
       <section className="py-24 bg-brand-bgGray border-t border-brand-borderHairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-xl mx-auto mb-16">
+          <div className="text-center max-w-xl mx-auto mb-16" data-reveal="up">
             <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
               HOW IT WORKS
             </p>
-            <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight">
+            <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight" data-split="lines">
               Our <span className="text-brand-gold font-normal">Publication</span> Process
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-brand-borderHairline border-t border-b border-brand-borderHairline bg-white">
-            <div className="py-10 px-6 text-left flex flex-col justify-between">
+          <div
+            className="grid grid-cols-1 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x divide-brand-borderHairline border-t border-b border-brand-borderHairline bg-white"
+            data-stagger
+          >
+            <div className="py-10 px-6 text-left flex flex-col justify-between" data-reveal="up">
               <div>
-                <span className="font-heading text-4xl text-brand-gold block mb-4">01</span>
+                <div className="overflow-hidden mb-4">
+                  <span className="font-heading text-4xl text-brand-gold block" data-roll>01</span>
+                </div>
                 <h3 className="font-heading text-lg text-brand-dark mb-2">Submit</h3>
                 <p className="text-xs text-brand-muted leading-relaxed font-normal">
                   Authors transmit initial draft, data tables, and specific scope requirements.
                 </p>
               </div>
             </div>
-            <div className="py-10 px-6 text-left flex flex-col justify-between">
+            <div className="py-10 px-6 text-left flex flex-col justify-between" data-reveal="up">
               <div>
-                <span className="font-heading text-4xl text-brand-gold block mb-4">02</span>
+                <div className="overflow-hidden mb-4">
+                  <span className="font-heading text-4xl text-brand-gold block" data-roll>02</span>
+                </div>
                 <h3 className="font-heading text-lg text-brand-dark mb-2">Review</h3>
                 <p className="text-xs text-brand-muted leading-relaxed font-normal">
                   Preliminary evaluation for novelty, citation accuracy, and plagiarism checks.
                 </p>
               </div>
             </div>
-            <div className="py-10 px-6 text-left flex flex-col justify-between">
+            <div className="py-10 px-6 text-left flex flex-col justify-between" data-reveal="up">
               <div>
-                <span className="font-heading text-4xl text-brand-gold block mb-4">03</span>
+                <div className="overflow-hidden mb-4">
+                  <span className="font-heading text-4xl text-brand-gold block" data-roll>03</span>
+                </div>
                 <h3 className="font-heading text-lg text-brand-dark mb-2">Edit &amp; Format</h3>
                 <p className="text-xs text-brand-muted leading-relaxed font-normal">
                   Academic proofreading, LaTeX/Word layout, and journal style formatting.
                 </p>
               </div>
             </div>
-            <div className="py-10 px-6 text-left flex flex-col justify-between">
+            <div className="py-10 px-6 text-left flex flex-col justify-between" data-reveal="up">
               <div>
-                <span className="font-heading text-4xl text-brand-gold block mb-4">04</span>
+                <div className="overflow-hidden mb-4">
+                  <span className="font-heading text-4xl text-brand-gold block" data-roll>04</span>
+                </div>
                 <h3 className="font-heading text-lg text-brand-dark mb-2">Journal Selection</h3>
                 <p className="text-xs text-brand-muted leading-relaxed font-normal">
                   Targeting appropriate UGC CARE, Scopus, or peer-reviewed international avenues.
                 </p>
               </div>
             </div>
-            <div className="py-10 px-6 text-left flex flex-col justify-between">
+            <div className="py-10 px-6 text-left flex flex-col justify-between" data-reveal="up">
               <div>
-                <span className="font-heading text-4xl text-brand-gold block mb-4">05</span>
+                <div className="overflow-hidden mb-4">
+                  <span className="font-heading text-4xl text-brand-gold block" data-roll>05</span>
+                </div>
                 <h3 className="font-heading text-lg text-brand-dark mb-2">Submission &amp; Follow-up</h3>
                 <p className="text-xs text-brand-muted leading-relaxed font-normal">
                   Submission portal assistance, tracking, and peer review revision management.
