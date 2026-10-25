@@ -5,11 +5,15 @@ export default function Process() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-xl mx-auto mb-16">
-          <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
-            HOW IT WORKS
-          </p>
+          <div className="flex items-center justify-center gap-2 mb-3" data-reveal="up">
+            <span className="w-5 h-[1.5px] bg-[#7B2FBE]"></span>
+            <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-semibold">
+              HOW IT WORKS
+            </p>
+            <span className="w-5 h-[1.5px] bg-[#7B2FBE]"></span>
+          </div>
           <h2 data-split="lines" className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight">
-            Our <span className="text-brand-gold font-normal">Publication</span> Process
+            Our <span className="text-[#7B2FBE] font-normal">Publication</span> Process
           </h2>
         </div>
         {/* 5 Steps In Horizontal Row Separated by Thin Vertical Hairlines */}
@@ -21,7 +25,7 @@ export default function Process() {
           <div className="py-10 px-6 text-left flex flex-col justify-between">
             <div>
               <span className="block overflow-hidden mb-4">
-                <span data-roll className="font-heading text-4xl text-brand-gold block">01</span>
+                <span data-roll className="font-heading text-4xl text-[#7B2FBE] block">01</span>
               </span>
               <h4 className="font-heading text-lg text-brand-dark mb-2">Submit</h4>
               <p className="text-xs text-brand-muted leading-relaxed font-normal">
@@ -33,7 +37,7 @@ export default function Process() {
           <div className="py-10 px-6 text-left flex flex-col justify-between">
             <div>
               <span className="block overflow-hidden mb-4">
-                <span data-roll className="font-heading text-4xl text-brand-gold block">02</span>
+                <span data-roll className="font-heading text-4xl text-[#7B2FBE] block">02</span>
               </span>
               <h4 className="font-heading text-lg text-brand-dark mb-2">Review</h4>
               <p className="text-xs text-brand-muted leading-relaxed font-normal">
@@ -45,7 +49,7 @@ export default function Process() {
           <div className="py-10 px-6 text-left flex flex-col justify-between">
             <div>
               <span className="block overflow-hidden mb-4">
-                <span data-roll className="font-heading text-4xl text-brand-gold block">03</span>
+                <span data-roll className="font-heading text-4xl text-[#7B2FBE] block">03</span>
               </span>
               <h4 className="font-heading text-lg text-brand-dark mb-2">Edit &amp; Format</h4>
               <p className="text-xs text-brand-muted leading-relaxed font-normal">
@@ -57,7 +61,7 @@ export default function Process() {
           <div className="py-10 px-6 text-left flex flex-col justify-between">
             <div>
               <span className="block overflow-hidden mb-4">
-                <span data-roll className="font-heading text-4xl text-brand-gold block">04</span>
+                <span data-roll className="font-heading text-4xl text-[#7B2FBE] block">04</span>
               </span>
               <h4 className="font-heading text-lg text-brand-dark mb-2">Journal Selection</h4>
               <p className="text-xs text-brand-muted leading-relaxed font-normal">
@@ -69,7 +73,7 @@ export default function Process() {
           <div className="py-10 px-6 text-left flex flex-col justify-between">
             <div>
               <span className="block overflow-hidden mb-4">
-                <span data-roll className="font-heading text-4xl text-brand-gold block">05</span>
+                <span data-roll className="font-heading text-4xl text-[#7B2FBE] block">05</span>
               </span>
               <h4 className="font-heading text-lg text-brand-dark mb-2">Submission &amp; Follow-up</h4>
               <p className="text-xs text-brand-muted leading-relaxed font-normal">

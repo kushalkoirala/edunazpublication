@@ -71,7 +71,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: "Research Publication",
     heroAccentWord: "Publication",
     shortDescription:
-      "Guidance through journal selection, manuscript preparation, formatting and submission.",
+      "Guidance through journal selection, manuscript preparation, formatting and submission, ensuring higher chances of acceptance.",
     fullDescription:
       "Comprehensive end-to-end guidance for scholars and researchers navigating academic publishing. Our advisors assist in aligning manuscripts with journal scope, indexing criteria, and strict editorial mandates.",
     iconName: "publication",
@@ -84,17 +84,17 @@ export const SERVICES_DATA: ServiceItem[] = [
   },
   {
     slug: "writing-and-editing",
-    title: "Writing & Editing",
+    title: "Writing & Editing Excellence",
     heroAccentWord: "Editing",
     shortDescription:
-      "Writing and editing support for research articles, review papers and theses.",
+      "Professional writing and editorial support for research articles, review papers, theses and dissertations, ensuring clarity, structure and academic rigor.",
     fullDescription:
       "Professional technical proofreading, structural editing, and language refinement for research articles, review papers, and dissertations across engineering, pure sciences, medicine, and management.",
     iconName: "editing",
     items: [
       "Research articles",
       "Review papers",
-      "Theses",
+      "Theses & dissertations",
       "Proofreading and editing",
     ],
   },
@@ -103,15 +103,15 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: "ISBN Book Publication",
     heroAccentWord: "Book",
     shortDescription:
-      "Support for publishing academic books and monographs with an ISBN.",
+      "Support for publishing academic books and monographs with an ISBN, from manuscript preparation to final publication.",
     fullDescription:
       "Dedicated publishing assistance for authored books, edited academic volumes, and scholarly monographs with official ISBN allocation and cataloging support.",
     iconName: "isbn",
     items: [
-      PLACEHOLDERS.ISBN_SERVICE_DETAIL,
-      PLACEHOLDERS.ISBN_SERVICE_DETAIL,
-      PLACEHOLDERS.ISBN_SERVICE_DETAIL,
-      PLACEHOLDERS.ISBN_SERVICE_DETAIL,
+      "ISBN application assistance",
+      "Book formatting & layout design",
+      "Cover design support",
+      "Publication and distribution support",
     ],
   },
 ];

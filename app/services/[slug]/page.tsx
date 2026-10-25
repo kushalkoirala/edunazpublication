@@ -61,7 +61,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Scope & Deliverables */}
             <div className="lg:col-span-8" data-reveal="up">
-              <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+              <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
                 SERVICE OVERVIEW
               </p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-brand-dark font-heading leading-tight mb-6" data-split="lines">
@@ -85,7 +85,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     className="p-4 bg-brand-bgGray border border-brand-borderHairline flex items-center justify-between"
                   >
                     <div className="flex items-center space-x-3">
-                      <span className="w-1.5 h-1.5 bg-[#D9A93F] flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 bg-[#7B2FBE] flex-shrink-0" />
                       <span className="text-sm font-body text-brand-dark font-medium">
                         {item}
                         {isIsbn && (
@@ -94,7 +94,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                         )}
                       </span>
                     </div>
-                    <span className="font-mono text-xs text-brand-gold font-semibold">
+                    <span className="font-mono text-xs text-[#7B2FBE] font-semibold">
                       0{index + 1}
                     </span>
                   </li>
@@ -103,7 +103,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
               {/* Consultation / Direct Action */}
               <div className="bg-[#3F4056] text-white p-8" data-reveal="up">
-                <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-2">
+                <p className="text-xs uppercase tracking-eyebrow text-[#C084FC] font-medium mb-2">
                   START YOUR SUBMISSION
                 </p>
                 <h3 className="font-heading text-2xl text-white mb-3">
@@ -112,24 +112,22 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <p className="text-white/80 font-body text-sm leading-relaxed mb-6 font-light">
                   Get in touch with our editorial board to schedule a preliminary review and scope evaluation.
                 </p>
-                <div className="inline-flex" data-magnetic>
+                <div className="flex flex-wrap items-center gap-4">
                   <Link
-                    href="/contact"
-                    className="inline-flex items-stretch bg-[#D9A93F] hover:bg-[#C4942B] transition-colors duration-150 text-brand-dark group shadow-none"
+                    href="/contact?type=consultation"
+                    className="inline-flex items-center justify-center px-7 py-3 bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-all duration-200 group shadow-[0_0_15px_rgba(123,47,190,0.4)]"
+                    style={{ borderRadius: "8px" }}
                   >
-                    <span className="px-7 py-3 text-xs font-semibold uppercase tracking-wider flex items-center">
-                      SUBMIT MANUSCRIPT
-                    </span>
-                    <span className="w-10 bg-white border-l border-[#D9A93F] flex items-center justify-center text-brand-dark transition-transform duration-200 group-hover:translate-x-0.5">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          d="M9 5l7 7-7 7"
-                          strokeLinecap="square"
-                          strokeLinejoin="miter"
-                          strokeWidth="2"
-                        />
-                      </svg>
-                    </span>
+                    <span>BOOK A CONSULTANT</span>
+                    <span className="ml-2 font-mono transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                  </Link>
+                  <Link
+                    href="/contact?type=inquiry"
+                    className="inline-flex items-center justify-center px-7 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white font-bold text-xs uppercase tracking-wider rounded-lg backdrop-blur-sm transition-all duration-200 group"
+                    style={{ borderRadius: "8px" }}
+                  >
+                    <span>INQUIRE NOW</span>
+                    <span className="ml-2 font-mono transition-transform duration-200 group-hover:translate-x-0.5">→</span>
                   </Link>
                 </div>
               </div>
@@ -150,7 +148,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                           href={`/services/${item.slug}`}
                           className={`flex items-center justify-between p-3 transition-colors ${
                             isCurrent
-                              ? "bg-white border-l-2 border-brand-gold text-brand-dark font-medium shadow-none"
+                              ? "bg-white border-l-2 border-[#7B2FBE] text-brand-dark font-medium shadow-none"
                               : "text-brand-muted hover:text-brand-dark hover:bg-white"
                           }`}
                         >
@@ -173,7 +171,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   </p>
                   <Link
                     href="/contact"
-                    className="text-brand-gold font-semibold hover:underline inline-block pt-1"
+                    className="text-[#7B2FBE] font-semibold hover:text-[#6620A0] hover:underline inline-block pt-1"
                   >
                     Contact Editorial Office →
                   </Link>

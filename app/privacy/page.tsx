@@ -71,7 +71,7 @@ export default function PrivacyPage() {
             {privacySections.map((sec) => (
               <div key={sec.number} className="space-y-3">
                 <div className="flex items-baseline space-x-3">
-                  <span className="font-mono text-xs text-brand-gold font-semibold">
+                  <span className="font-mono text-xs text-brand-purple font-semibold">
                     {sec.number}
                   </span>
                   <h2 className="font-heading text-xl sm:text-2xl text-brand-dark">

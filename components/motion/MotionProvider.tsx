@@ -160,11 +160,11 @@ export default function MotionProvider({
 
   return (
     <>
-      {/* 2px gold scroll progress bar above header */}
+      {/* 2px purple scroll progress bar above header */}
       <div
         id="scroll-progress-bar"
         ref={progressBarRef}
-        className="fixed top-0 left-0 right-0 h-[2px] bg-[#D9A93F] z-[60] origin-left pointer-events-none"
+        className="fixed top-0 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#7B2FBE] via-[#A855F7] to-[#C084FC] z-[60] origin-left pointer-events-none shadow-[0_0_8px_rgba(168,85,247,0.7)]"
         style={{ transform: "scaleX(0)", willChange: "transform" }}
         aria-hidden="true"
       />

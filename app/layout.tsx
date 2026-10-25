@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import MotionProvider from "@/components/motion/MotionProvider";
+import { InquiryModalProvider } from "@/components/ui/InquiryModal";
 
 const marcellus = Marcellus({
   weight: "400",
@@ -61,10 +62,12 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <MotionProvider>
-          <Header />
-          {children}
-          <Footer />
-          <WhatsAppFloat />
+          <InquiryModalProvider>
+            <Header />
+            {children}
+            <Footer />
+            <WhatsAppFloat />
+          </InquiryModalProvider>
         </MotionProvider>
       </body>
     </html>

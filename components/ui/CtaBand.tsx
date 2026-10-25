@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import InquiryButton from "@/components/ui/InquiryButton";
 import { COMPANY_INFO } from "@/lib/content";
 
 interface CtaBandProps {
@@ -7,7 +8,6 @@ interface CtaBandProps {
   title?: string;
   accentWord?: string;
   description?: string;
-  buttonText?: string;
 }
 
 export default function CtaBand({
@@ -15,7 +15,6 @@ export default function CtaBand({
   title = "Ready to Publish Your Research?",
   accentWord = "Publish",
   description = "Get expert guidance for your manuscript, from first draft to submission.",
-  buttonText = "SUBMIT MANUSCRIPT",
 }: CtaBandProps) {
   const renderTitle = () => {
     if (!accentWord) return title;
@@ -24,7 +23,7 @@ export default function CtaBand({
     return parts.map((part, index) => {
       if (part.toLowerCase() === accentWord.toLowerCase()) {
         return (
-          <span key={index} className="text-brand-gold font-normal">
+          <span key={index} className="text-[#C084FC] font-normal">
             {part}
           </span>
         );
@@ -43,11 +42,16 @@ export default function CtaBand({
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuAeCSgWJ3Yt_AjZxwKcLHNd1oW2I91bhHyrWOEUHyqQNmlwAPP854uZWnAflbuDwTaVvW-qW1LDl1WazAF_XM4tee6lP1mLtlCc4JwKBzwASciNA0wor0cLdicTOsTcXF0k8l6HczVuw1CB6lHhlBKNL1aoCJMY9KLGedf_04eHUcFnTXxKe0fSez95qHcPZ8J9hE0uvHl_zoanVFC3m3Unbkfw4Uki6MTL3gu9-kGYspIA4tG88"
         />
         <div className="absolute inset-0 bg-[#3F4056]/90" />
+        {/* Purple logo glow — left edge */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "radial-gradient(ellipse 55% 60% at 5% 50%, rgba(123,47,190,0.22) 0%, transparent 70%)" }}
+        />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Eyebrow */}
-        <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+        <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-[#C084FC] font-medium mb-3">
           {eyebrow}
         </p>
         {/* Heading */}
@@ -59,27 +63,24 @@ export default function CtaBand({
           {description}
         </p>
 
-        {/* Gold Button with White Arrow Box */}
-        <div data-reveal="up" className="flex justify-center mb-6">
+        {/* Dual Action Buttons: Book a Consultant & Inquire Now */}
+        <div data-reveal="up" className="flex flex-wrap justify-center items-center gap-4 mb-6">
           <Link
             data-magnetic
-            href="/contact"
-            className="inline-flex items-stretch bg-brand-gold hover:bg-brand-goldHover transition-colors duration-150 text-brand-dark group shadow-none"
+            href="/contact?type=consultation"
+            className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-all duration-200 group shadow-[0_0_20px_rgba(123,47,190,0.4)]"
+            style={{ borderRadius: "8px" }}
           >
-            <span className="px-8 py-3.5 text-xs font-semibold uppercase tracking-wider flex items-center">
-              {buttonText}
-            </span>
-            <span className="w-11 bg-white border-l border-brand-gold flex items-center justify-center text-brand-dark transition-transform duration-200 group-hover:translate-x-0.5">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M9 5l7 7-7 7"
-                  strokeLinecap="square"
-                  strokeLinejoin="miter"
-                  strokeWidth="2"
-                />
-              </svg>
-            </span>
+            <span>BOOK A CONSULTANT</span>
+            <span className="ml-2 font-mono transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </Link>
+          <InquiryButton
+            className="inline-flex items-center justify-center px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white font-bold text-xs uppercase tracking-wider rounded-lg backdrop-blur-sm transition-all duration-200 group cursor-pointer"
+            style={{ borderRadius: "8px" }}
+          >
+            <span>INQUIRE NOW</span>
+            <span className="ml-2 font-mono transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+          </InquiryButton>
         </div>
 
         {/* Direct WhatsApp Link Below Button */}
@@ -89,7 +90,7 @@ export default function CtaBand({
           </svg>
           <span>Chat on WhatsApp:</span>
           <a
-            className="text-brand-gold hover:underline font-semibold"
+            className="text-[#C084FC] hover:text-white hover:underline font-semibold transition-colors"
             href={COMPANY_INFO.whatsappUrl}
             rel="noopener noreferrer"
             target="_blank"

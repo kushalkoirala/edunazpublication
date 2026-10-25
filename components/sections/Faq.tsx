@@ -7,11 +7,11 @@ export default function Faq() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-xl mx-auto mb-16">
-          <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+          <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
             FAQ
           </p>
           <h2 data-split="lines" className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight">
-            Common <span className="text-brand-gold font-normal">Questions</span>
+            Common <span className="text-[#7B2FBE] font-normal">Questions</span>
           </h2>
         </div>
         {/* Accordion Container */}

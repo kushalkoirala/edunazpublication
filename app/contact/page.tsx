@@ -29,11 +29,11 @@ export default function ContactPage() {
             {/* Left Column: Office & Communication Channels */}
             <div className="lg:col-span-5 space-y-8" data-reveal="up">
               <div>
-                <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+                <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
                   COMMUNICATION CHANNELS
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4" data-split="lines">
-                  Registered <span className="text-brand-gold font-normal">Headquarters</span>
+                  Registered <span className="text-[#7B2FBE] font-normal">Headquarters</span>
                 </h2>
                 <p className="text-sm font-body text-brand-muted leading-relaxed">
                   Our editorial and customer assistance desks are available to address author queries, journal scope questions, and institutional partnerships.
@@ -60,7 +60,7 @@ export default function ContactPage() {
                   </h3>
                   <a
                     href={`mailto:${COMPANY_INFO.email}`}
-                    className="text-brand-dark hover:text-brand-gold transition-colors font-medium block"
+                    className="text-brand-dark hover:text-[#7B2FBE] transition-colors font-medium block"
                   >
                     {COMPANY_INFO.email}
                   </a>
@@ -73,7 +73,7 @@ export default function ContactPage() {
                   </h3>
                   <a
                     href={`tel:${COMPANY_INFO.phone.replace(/\s+/g, "")}`}
-                    className="text-brand-dark hover:text-brand-gold transition-colors font-medium block"
+                    className="text-brand-dark hover:text-[#7B2FBE] transition-colors font-medium block"
                   >
                     {COMPANY_INFO.phone}
                   </a>
@@ -109,11 +109,11 @@ export default function ContactPage() {
             {/* Right Column: Contact Inquiry Form */}
             <div className="lg:col-span-7" data-reveal="up">
               <div className="bg-white border border-brand-borderHairline p-8 sm:p-10 shadow-none">
-                <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+                <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
                   MANUSCRIPT INQUIRY
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-2" data-split="lines">
-                  Send Your <span className="text-brand-gold font-normal">Manuscript</span> Details
+                  Send Your <span className="text-[#7B2FBE] font-normal">Manuscript</span> Details
                 </h2>
                 <p className="text-xs text-brand-muted font-body mb-8">
                   Fill in your academic and manuscript details below. An editor will get back to you shortly.

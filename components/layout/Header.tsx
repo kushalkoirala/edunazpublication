@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import MobileMenu from "./MobileMenu";
+import InquiryButton from "@/components/ui/InquiryButton";
 
 function useHeaderVisibility(mobileOpen: boolean) {
   const [isVisible, setIsVisible] = useState(true);
@@ -140,17 +142,27 @@ export default function Header() {
           {/* Brand Wordmark & Circle Logo Emblem */}
           <Link
             id="header-brand"
-            className="flex items-center space-x-3 group text-left flex-shrink-0"
+            className="flex items-center space-x-3.5 group text-left flex-shrink-0"
             href="/"
           >
-            <div className="w-9 h-9 !rounded-full bg-white flex items-center justify-center text-brand-dark font-heading font-semibold text-lg tracking-wider shadow-none flex-shrink-0">
-              E
+            <div
+              className="w-12 h-12 sm:w-[54px] sm:h-[54px] flex items-center justify-center flex-shrink-0 rounded-full bg-[#FFFFFF] p-[2px] shadow-[0_2px_10px_rgba(0,0,0,0.3)] transition-all duration-300 group-hover:scale-105"
+              style={{ borderRadius: "50%" }}
+            >
+              <Image
+                src="/logo.png"
+                alt="Edunaaz Publication Logo"
+                width={52}
+                height={52}
+                className="w-full h-full object-contain"
+                priority
+              />
             </div>
             <div>
               <span className="block font-heading text-lg sm:text-xl text-white tracking-wide leading-tight whitespace-nowrap">
-                Edunaaz <span className="text-[#D9A93F]">Publication</span>
+                Edunaaz <span className="text-[#C084FC]">Publication</span>
               </span>
-              <span className="block text-[9px] tracking-[0.25em] text-white/70 font-body uppercase font-medium mt-0.5 whitespace-nowrap">
+              <span className="block text-[9px] tracking-[0.25em] text-[#C084FC] font-body uppercase font-medium mt-0.5 whitespace-nowrap">
                 OPC PVT LTD
               </span>
             </div>
@@ -163,8 +175,8 @@ export default function Header() {
           >
             <Link
               data-sweep
-              className={`hover:text-[#D9A93F] transition-colors py-2 ${
-                isRouteActive("/") ? "text-[#D9A93F]" : "text-white/90"
+              className={`hover:text-[#C084FC] transition-colors py-2 ${
+                isRouteActive("/") ? "text-[#C084FC]" : "text-white/90"
               }`}
               href="/"
             >
@@ -172,8 +184,8 @@ export default function Header() {
             </Link>
             <Link
               data-sweep
-              className={`hover:text-[#D9A93F] transition-colors py-2 ${
-                isRouteActive("/about") ? "text-[#D9A93F]" : "text-white/90"
+              className={`hover:text-[#C084FC] transition-colors py-2 ${
+                isRouteActive("/about") ? "text-[#C084FC]" : "text-white/90"
               }`}
               href="/about"
             >
@@ -182,8 +194,8 @@ export default function Header() {
             <div className="relative inline-flex items-center">
               <Link
                 data-sweep
-                className={`inline-flex items-center hover:text-[#D9A93F] transition-colors py-2 ${
-                  isRouteActive("/services") ? "text-[#D9A93F]" : "text-white/90"
+                className={`inline-flex items-center hover:text-[#C084FC] transition-colors py-2 ${
+                  isRouteActive("/services") ? "text-[#C084FC]" : "text-white/90"
                 }`}
                 href="/services"
               >
@@ -205,8 +217,8 @@ export default function Header() {
             </div>
             <Link
               data-sweep
-              className={`hover:text-[#D9A93F] transition-colors py-2 ${
-                isRouteActive("/journals") ? "text-[#D9A93F]" : "text-white/90"
+              className={`hover:text-[#C084FC] transition-colors py-2 ${
+                isRouteActive("/journals") ? "text-[#C084FC]" : "text-white/90"
               }`}
               href="/journals"
             >
@@ -214,8 +226,8 @@ export default function Header() {
             </Link>
             <Link
               data-sweep
-              className={`hover:text-[#D9A93F] transition-colors py-2 ${
-                isRouteActive("/apex") ? "text-[#D9A93F]" : "text-white/90"
+              className={`hover:text-[#C084FC] transition-colors py-2 ${
+                isRouteActive("/apex") ? "text-[#C084FC]" : "text-white/90"
               }`}
               href="/apex"
             >
@@ -223,8 +235,8 @@ export default function Header() {
             </Link>
             <Link
               data-sweep
-              className={`hover:text-[#D9A93F] transition-colors py-2 ${
-                isRouteActive("/contact") ? "text-[#D9A93F]" : "text-white/90"
+              className={`hover:text-[#C084FC] transition-colors py-2 ${
+                isRouteActive("/contact") ? "text-[#C084FC]" : "text-white/90"
               }`}
               href="/contact"
             >
@@ -232,35 +244,20 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Right Header: Phone & Search only */}
+          {/* Right Header: Inquire Now Button & Search */}
           <div
             id="header-right"
-            className="hidden md:flex items-center space-x-6 text-xs text-white/90 font-medium flex-shrink-0"
+            className="hidden md:flex items-center space-x-4 text-xs font-medium flex-shrink-0"
           >
-            <a
-              className="flex items-center space-x-2 hover:text-[#D9A93F] transition-colors whitespace-nowrap"
-              href="tel:+919395707581"
+            <InquiryButton
+              className="inline-flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 rounded-lg shadow-[0_0_15px_rgba(123,47,190,0.4)] hover:shadow-[0_0_20px_rgba(123,47,190,0.6)] cursor-pointer"
+              style={{ borderRadius: "8px" }}
             >
-              <svg
-                className="w-3.5 h-3.5 text-[#D9A93F] flex-shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  strokeLinecap="square"
-                  strokeLinejoin="miter"
-                  strokeWidth="2"
-                />
-              </svg>
-              <span className="font-semibold tracking-wider">
-                +91 9395707581
-              </span>
-            </a>
+              INQUIRE NOW
+            </InquiryButton>
             <button
               aria-label="Search"
-              className="text-white hover:text-[#D9A93F] transition-colors p-1"
+              className="text-white hover:text-[#C084FC] transition-colors p-1"
               type="button"
             >
               <svg
@@ -286,7 +283,7 @@ export default function Header() {
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-panel"
-            className={`lg:hidden w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-white hover:text-[#D9A93F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold cursor-pointer z-50 ${
+            className={`lg:hidden w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-white hover:text-[#C084FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FBE] cursor-pointer z-50 ${
               mobileOpen ? "is-active" : ""
             }`}
             type="button"

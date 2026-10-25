@@ -21,15 +21,24 @@ export default function ContactBand() {
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuAeCSgWJ3Yt_AjZxwKcLHNd1oW2I91bhHyrWOEUHyqQNmlwAPP854uZWnAflbuDwTaVvW-qW1LDl1WazAF_XM4tee6lP1mLtlCc4JwKBzwASciNA0wor0cLdicTOsTcXF0k8l6HczVuw1CB6lHhlBKNL1aoCJMY9KLGedf_04eHUcFnTXxKe0fSez95qHcPZ8J9hE0uvHl_zoanVFC3m3Unbkfw4Uki6MTL3gu9-kGYspIA4tG88"
         />
         <div className="absolute inset-0 bg-[#3F4056]/90" />
+        {/* Purple logo glow — right edge */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "radial-gradient(ellipse 55% 60% at 95% 50%, rgba(123,47,190,0.20) 0%, transparent 65%)" }}
+        />
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Eyebrow */}
-        <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
-          GET IN TOUCH
-        </p>
+        <div className="flex items-center justify-center gap-2.5 mb-3" data-reveal="up">
+          <span className="w-5 h-[1.5px] bg-[#7B2FBE]"></span>
+          <p className="text-xs uppercase tracking-eyebrow text-[#C084FC] font-medium">
+            GET IN TOUCH
+          </p>
+          <span className="w-5 h-[1.5px] bg-[#7B2FBE]"></span>
+        </div>
         {/* Heading */}
         <h2 data-split="lines" className="text-3xl sm:text-4xl font-heading text-white mb-4">
-          Ready to <span className="text-brand-gold font-normal">Publish</span> Your Research?
+          Ready to <span className="text-[#C084FC] font-normal">Publish</span> Your Research?
         </h2>
         <p data-reveal="up" className="text-white/80 font-body text-sm max-w-2xl mx-auto mb-10 font-light">
           Get expert guidance for your manuscript, from first draft to submission. Fill in your inquiry below.
@@ -45,7 +54,7 @@ export default function ContactBand() {
                 Full Name
               </label>
               <input
-                className="w-full bg-white text-brand-dark text-xs px-4 py-3.5 border-0 focus:ring-1 focus:ring-brand-gold placeholder:text-gray-400"
+                className="w-full bg-white text-brand-dark text-xs px-4 py-3.5 border-0 focus:ring-1 focus:ring-[#7B2FBE] placeholder:text-gray-400 rounded-lg"
                 id="name"
                 placeholder="Dr. / Prof. / Scholar Name"
                 required
@@ -60,7 +69,7 @@ export default function ContactBand() {
                 Email Address
               </label>
               <input
-                className="w-full bg-white text-brand-dark text-xs px-4 py-3.5 border-0 focus:ring-1 focus:ring-brand-gold placeholder:text-gray-400"
+                className="w-full bg-white text-brand-dark text-xs px-4 py-3.5 border-0 focus:ring-1 focus:ring-[#7B2FBE] placeholder:text-gray-400 rounded-lg"
                 id="email"
                 placeholder="author@university.edu"
                 required
@@ -75,7 +84,7 @@ export default function ContactBand() {
                 Brief Manuscript Details
               </label>
               <input
-                className="w-full bg-white text-brand-dark text-xs px-4 py-3.5 border-0 focus:ring-1 focus:ring-brand-gold placeholder:text-gray-400"
+                className="w-full bg-white text-brand-dark text-xs px-4 py-3.5 border-0 focus:ring-1 focus:ring-[#7B2FBE] placeholder:text-gray-400 rounded-lg"
                 id="manuscript"
                 placeholder="Discipline, Title, or Research Scope"
                 required
@@ -86,13 +95,13 @@ export default function ContactBand() {
           <div data-reveal="up" className="flex justify-center mt-6">
             <button
               data-magnetic
-              className="inline-flex items-stretch bg-brand-gold hover:bg-brand-goldHover transition-colors duration-150 text-brand-dark group shadow-none cursor-pointer"
+              className="inline-flex items-stretch bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] transition-all duration-200 text-white rounded-lg overflow-hidden shadow-[0_0_20px_rgba(123,47,190,0.4)] hover:shadow-[0_0_25px_rgba(123,47,190,0.6)] group cursor-pointer"
               type="submit"
             >
               <span className="px-8 py-3.5 text-xs font-semibold uppercase tracking-wider flex items-center">
                 SUBMIT ENQUIRY
               </span>
-              <span className="w-11 bg-white border-l border-brand-gold flex items-center justify-center text-brand-dark transition-transform duration-200 group-hover:translate-x-0.5">
+              <span className="w-11 bg-white/10 border-l border-white/20 flex items-center justify-center text-white transition-transform duration-200 group-hover:translate-x-0.5">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M9 5l7 7-7 7"
@@ -112,7 +121,7 @@ export default function ContactBand() {
           </svg>
           <span className="">Chat on WhatsApp:</span>
           <a
-            className="text-brand-gold hover:underline font-semibold"
+            className="text-[#C084FC] hover:text-white hover:underline font-semibold transition-colors"
             href="https://wa.me/919395707581"
             rel="noopener noreferrer"
             target="_blank"

@@ -33,7 +33,7 @@ export default function PageHero({
     return parts.map((part, index) => {
       if (part.toLowerCase() === accentWord.toLowerCase()) {
         return (
-          <span key={index} className="text-[#D9A93F] font-normal">
+          <span key={index} className="text-[#C084FC] font-normal">
             {part}
           </span>
         );
@@ -50,6 +50,11 @@ export default function PageHero({
         className="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none grayscale scale-105"
         style={{ backgroundImage: "var(--img-library)" }}
       />
+      {/* Purple logo glow — top-right atmospheric accent */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 50% 80% at 95% 10%, rgba(123,47,190,0.22) 0%, transparent 65%)" }}
+      />
 
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
@@ -62,7 +67,7 @@ export default function PageHero({
                   {crumb.href && !isLast ? (
                     <Link
                       href={crumb.href}
-                      className="hover:text-[#D9A93F] transition-colors"
+                      className="hover:text-[#C084FC] transition-colors"
                     >
                       {crumb.label}
                     </Link>
@@ -79,7 +84,7 @@ export default function PageHero({
         </nav>
 
         {/* Eyebrow */}
-        <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-[#D9A93F] font-medium mb-3">
+        <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-[#C084FC] font-medium mb-3">
           {eyebrow}
         </p>
 

@@ -13,11 +13,16 @@ export default function WhyChooseUs() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center max-w-xl mx-auto mb-16">
-          <p data-reveal="up" className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
-            DISTINCT ADVANTAGES
-          </p>
+          <div className="purple-hairline mb-6" aria-hidden="true" />
+          <div className="flex items-center justify-center gap-2.5 mb-3" data-reveal="up">
+            <span className="w-5 h-[1.5px] bg-[#7B2FBE]"></span>
+            <p className="text-xs uppercase tracking-eyebrow text-[#C084FC] font-medium">
+              DISTINCT ADVANTAGES
+            </p>
+            <span className="w-5 h-[1.5px] bg-[#7B2FBE]"></span>
+          </div>
           <h2 data-split="lines" className="text-3xl sm:text-4xl font-heading text-white leading-tight">
-            Why <span className="text-brand-gold font-normal">Choose</span> Us
+            Why <span className="text-[#C084FC] font-normal">Choose</span> Us
           </h2>
         </div>
         {/* 3x2 Grid separated by thin hairlines */}
@@ -29,7 +34,7 @@ export default function WhyChooseUs() {
           <div className="p-8 border-b lg:border-b border-white/15 md:border-r border-white/15">
             <div
               data-reveal="scale"
-              className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
+              className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#C084FC] mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -47,7 +52,7 @@ export default function WhyChooseUs() {
           <div className="p-8 border-b lg:border-b border-white/15 lg:border-r border-white/15">
             <div
               data-reveal="scale"
-              className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
+              className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#C084FC] mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="square"
@@ -59,11 +64,11 @@ export default function WhyChooseUs() {
               Transparent similarity score analytics via licensed software prior to journal dispatch.
             </p>
           </div>
-          {/* Item 3 */}
+          {/* Item 3 — purple accent */}
           <div className="p-8 border-b lg:border-b border-white/15">
             <div
               data-reveal="scale"
-              className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
+              className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#C084FC] mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="square"
@@ -79,7 +84,7 @@ export default function WhyChooseUs() {
           <div className="p-8 md:border-r border-white/15 border-b md:border-b-0">
             <div
               data-reveal="scale"
-              className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
+              className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#C084FC] mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -97,7 +102,7 @@ export default function WhyChooseUs() {
           <div className="p-8 lg:border-r border-white/15 border-b md:border-b-0">
             <div
               data-reveal="scale"
-              className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
+              className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#C084FC] mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -111,11 +116,11 @@ export default function WhyChooseUs() {
               One-on-one virtual coordination to discuss revisions, reviewer feedback and author queries.
             </p>
           </div>
-          {/* Item 6 */}
+          {/* Item 6 — purple accent */}
           <div className="p-8">
             <div
               data-reveal="scale"
-              className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6"
+              className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#A855F7] mb-6"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path

@@ -122,7 +122,7 @@ export default function FaqAccordion({
                 ref={(el) => {
                   iconRefs.current[index] = el;
                 }}
-                className="faq-icon text-brand-gold font-mono text-xl font-bold flex-shrink-0 inline-block origin-center"
+                className="faq-icon text-[#7B2FBE] font-mono text-xl font-bold flex-shrink-0 inline-block origin-center"
               >
                 {isOpen ? "−" : "+"}
               </span>

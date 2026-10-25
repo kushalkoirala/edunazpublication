@@ -27,11 +27,11 @@ export default function FaqPage() {
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-16" data-reveal="up">
-            <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+            <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
               FAQ
             </p>
             <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight" data-split="lines">
-              Common <span className="text-brand-gold font-normal">Questions</span>
+              Common <span className="text-[#7B2FBE] font-normal">Questions</span>
             </h2>
             <p className="text-brand-muted font-body text-sm mt-3 leading-relaxed">
               Transparent guidance for scholars, authors, and institutional partners.

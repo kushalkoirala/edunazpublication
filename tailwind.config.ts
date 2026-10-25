@@ -15,13 +15,20 @@ const config: Config = {
           slate: "#3F4056",
           slateDark: "#2C2D3E",
           slateLight: "#55566C",
-          gold: "#D9A93F",
-          goldHover: "#C4942B",
+          gold: "#7B2FBE", // Changed to logo purple
+          goldHover: "#6620A0", // Changed to logo purple hover
           bgGray: "#F3F3F3",
           dark: "#1A1A1A",
           muted: "#777777",
           borderHairline: "#E5E5E5",
           borderDark: "#55566C",
+          // Logo purple palette
+          purple: "#7B2FBE",
+          purpleHover: "#6620A0",
+          purpleLight: "#A855F7",
+          purpleAccent: "#C084FC",
+          purpleDark: "#200B36",
+          purpleMuted: "rgba(123,47,190,0.15)",
         },
       },
       fontFamily: {

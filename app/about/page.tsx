@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import CtaBand from "@/components/ui/CtaBand";
+import AboutCollage from "@/components/sections/AboutCollage";
 import { PLACEHOLDERS, COMPANY_INFO } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -29,11 +30,14 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Column: Editorial Information */}
             <div className="lg:col-span-7" data-reveal="up">
-              <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
-                EDITORIAL INTEGRITY
-              </p>
+              <div className="flex items-center space-x-2.5 mb-3">
+                <span className="w-5 h-[1.5px] bg-[#7B2FBE] inline-block"></span>
+                <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-semibold">
+                  EDITORIAL INTEGRITY
+                </p>
+              </div>
               <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight mb-6" data-split="lines">
-                Scholarly Press <span className="text-brand-gold font-normal">Dedicated</span> to Rigor
+                Scholarly Press <span className="text-[#7B2FBE] font-normal">Dedicated</span> to Rigor
               </h2>
               <p className="text-brand-muted font-body text-sm leading-relaxed mb-6">
                 EDUNAAZ PUBLICATION (OPC) PRIVATE LIMITED is registered under the Ministry of Corporate
@@ -48,7 +52,7 @@ export default function AboutPage() {
               {/* Founder Signature & Small Caps Subtitle */}
               <div className="flex flex-col items-start" data-reveal="clip-left">
                 {/* TODO: Replace with official signature and confirmed name of founder */}
-                <span className="font-signature text-3xl sm:text-4xl text-brand-gold tracking-wide leading-none pb-1">
+                <span className="font-signature text-3xl sm:text-4xl text-[#7B2FBE] tracking-wide leading-none pb-1">
                   {PLACEHOLDERS.FOUNDER_NAME}
                 </span>
                 <span className="text-[11px] font-body tracking-[0.2em] uppercase text-brand-muted font-medium mt-1">
@@ -57,27 +61,9 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right Column: Scholar Portrait with 15+ Badge Overlay */}
+            {/* Right Column: Three-Image Visual Composition with 15+ Badge */}
             <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md overflow-hidden" data-reveal="clip-up">
-                <img
-                  alt="Academic Scholar and Researcher"
-                  className="w-full h-[460px] object-cover object-top border border-brand-borderHairline shadow-none"
-                  data-parallax="0.1"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkYUdG8bQEbSQimBDMA6FJKmqiIbqH8IZEe2CILqUScj_UAIvx7peT3HlqEM6oUBzmbctMldrQPPXXEIx6MAP49-tB-wkSaWir9y5h8mjfiXPpi1Ubjtw2aOfgQpKDsIl33mDHpZAO3KFE9OUzBy2L4K9TPSfl1lfERu6qEKATcKvTQ4zyxVWSttTWGxrOdSpRkfP4c4MhiIZeWiwtQW8lcjXfl_o4g1BeoqNLS8VO3yj00XwUrk0"
-                />
-                <div
-                  className="absolute bottom-6 -left-4 sm:-left-8 bg-brand-bgGray border border-brand-borderHairline px-6 py-4 flex items-center space-x-3 shadow-none"
-                  data-reveal="scale"
-                >
-                  <span className="font-heading text-3xl sm:text-4xl text-brand-gold leading-none font-normal">
-                    15+
-                  </span>
-                  <span className="text-[10px] tracking-widest font-body uppercase text-brand-dark font-semibold leading-tight">
-                    SKILLED<br />PROFESSIONALS
-                  </span>
-                </div>
-              </div>
+              <AboutCollage />
             </div>
           </div>
         </div>
@@ -92,9 +78,9 @@ export default function AboutPage() {
         />
         <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-stagger>
-            <div className="border-l-2 border-[#D9A93F] pl-6" data-reveal="up">
+            <div className="border-l-2 border-[#7B2FBE] pl-6" data-reveal="up">
               <div
-                className="font-heading text-4xl sm:text-5xl text-[#D9A93F] leading-none mb-2"
+                className="font-heading text-4xl sm:text-5xl text-[#C084FC] leading-none mb-2"
                 data-count="15"
                 data-suffix="+"
               >
@@ -104,9 +90,9 @@ export default function AboutPage() {
                 Skilled professionals
               </p>
             </div>
-            <div className="border-l-2 border-[#D9A93F] pl-6" data-reveal="up">
+            <div className="border-l-2 border-[#7B2FBE] pl-6" data-reveal="up">
               <div
-                className="font-heading text-4xl sm:text-5xl text-[#D9A93F] leading-none mb-2"
+                className="font-heading text-4xl sm:text-5xl text-[#C084FC] leading-none mb-2"
                 data-count="10"
                 data-suffix="+"
               >
@@ -116,8 +102,8 @@ export default function AboutPage() {
                 Years&apos; experience of our experts
               </p>
             </div>
-            <div className="border-l-2 border-[#D9A93F] pl-6 sm:col-span-2 lg:col-span-1" data-reveal="up">
-              <div className="font-heading text-4xl sm:text-5xl text-[#D9A93F] leading-none mb-2">
+            <div className="border-l-2 border-[#7B2FBE] pl-6 sm:col-span-2 lg:col-span-1" data-reveal="up">
+              <div className="font-heading text-4xl sm:text-5xl text-[#C084FC] leading-none mb-2">
                 24x7
               </div>
               <p className="font-body text-[12px] uppercase tracking-[0.12em] text-white/80 font-medium">
@@ -132,18 +118,18 @@ export default function AboutPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-16" data-reveal="up">
-            <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+            <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
               DISTINCT ADVANTAGES
             </p>
             <h2 className="text-3xl sm:text-4xl font-heading text-brand-dark leading-tight" data-split="lines">
-              Why <span className="text-brand-gold font-normal">Choose</span> Us
+              Why <span className="text-[#7B2FBE] font-normal">Choose</span> Us
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 border-t border-b border-brand-borderHairline" data-stagger>
             {/* Item 1 */}
             <div className="p-8 border-b lg:border-b border-brand-borderHairline md:border-r" data-reveal="up">
-              <div className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6" data-reveal="scale">
+              <div className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#7B2FBE] mb-6" data-reveal="scale">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
@@ -159,7 +145,7 @@ export default function AboutPage() {
 
             {/* Item 2 */}
             <div className="p-8 border-b lg:border-b border-brand-borderHairline lg:border-r" data-reveal="up">
-              <div className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6" data-reveal="scale">
+              <div className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#7B2FBE] mb-6" data-reveal="scale">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1.5" />
                 </svg>
@@ -172,7 +158,7 @@ export default function AboutPage() {
 
             {/* Item 3 */}
             <div className="p-8 border-b lg:border-b border-brand-borderHairline" data-reveal="up">
-              <div className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6" data-reveal="scale">
+              <div className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#7B2FBE] mb-6" data-reveal="scale">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1.5" />
                 </svg>
@@ -185,7 +171,7 @@ export default function AboutPage() {
 
             {/* Item 4 */}
             <div className="p-8 md:border-r border-brand-borderHairline border-b md:border-b-0" data-reveal="up">
-              <div className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6" data-reveal="scale">
+              <div className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#7B2FBE] mb-6" data-reveal="scale">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
@@ -201,7 +187,7 @@ export default function AboutPage() {
 
             {/* Item 5 */}
             <div className="p-8 lg:border-r border-brand-borderHairline border-b md:border-b-0" data-reveal="up">
-              <div className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6" data-reveal="scale">
+              <div className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#7B2FBE] mb-6" data-reveal="scale">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
@@ -217,7 +203,7 @@ export default function AboutPage() {
 
             {/* Item 6 */}
             <div className="p-8" data-reveal="up">
-              <div className="w-10 h-10 border border-brand-gold flex items-center justify-center text-brand-gold mb-6" data-reveal="scale">
+              <div className="w-10 h-10 border border-[#7B2FBE] flex items-center justify-center text-[#7B2FBE] mb-6" data-reveal="scale">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"

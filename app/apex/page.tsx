@@ -54,7 +54,7 @@ export default function ApexPage() {
             <div className="lg:col-span-6 relative">
               <div className="relative max-w-lg mx-auto overflow-hidden">
                 <div
-                  className="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold z-0 pointer-events-none"
+                  className="absolute -top-4 -left-4 w-full h-full border-2 border-[#7B2FBE] z-0 pointer-events-none"
                   data-reveal="clip-left"
                 />
                 <img
@@ -68,11 +68,11 @@ export default function ApexPage() {
 
             {/* Right Column: Program Details */}
             <div className="lg:col-span-6" data-reveal="up">
-              <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+              <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
                 INSTITUTIONAL MENTORSHIP
               </p>
               <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight mb-6" data-split="lines">
-                Institutional Research <span className="text-brand-gold font-normal">Acceleration</span>
+                Institutional Research <span className="text-[#7B2FBE] font-normal">Acceleration</span>
               </h2>
               <p className="text-brand-muted font-body text-sm leading-relaxed mb-6">
                 The APEX Program by Edunaaz Publication is a structured institutional mentorship and
@@ -84,28 +84,28 @@ export default function ApexPage() {
 
               <ul className="space-y-3 mb-8 text-xs text-brand-dark font-medium" data-stagger>
                 <li className="flex items-center space-x-3" data-reveal="up">
-                  <span className="w-1.5 h-1.5 bg-brand-gold" />
+                  <span className="w-1.5 h-1.5 bg-[#7B2FBE]" />
                   <span>Dedicated Institutional Coordinator &amp; Editorial Liaison</span>
                 </li>
                 <li className="flex items-center space-x-3" data-reveal="up">
-                  <span className="w-1.5 h-1.5 bg-brand-gold" />
+                  <span className="w-1.5 h-1.5 bg-[#7B2FBE]" />
                   <span>Workshops on UGC CARE, Scopus &amp; Web of Science Compliance</span>
                 </li>
                 <li className="flex items-center space-x-3" data-reveal="up">
-                  <span className="w-1.5 h-1.5 bg-brand-gold" />
+                  <span className="w-1.5 h-1.5 bg-[#7B2FBE]" />
                   <span>Priority Manuscript Formatting and Conference Proceeding Publication</span>
                 </li>
               </ul>
 
               <div className="inline-flex" data-magnetic>
                 <Link
-                  className="inline-flex items-stretch bg-brand-gold hover:bg-brand-goldHover transition-colors duration-150 text-brand-dark group shadow-none"
+                  className="inline-flex items-stretch bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] transition-all duration-200 text-white rounded-lg overflow-hidden shadow-[0_0_15px_rgba(123,47,190,0.4)] group"
                   href="/contact"
                 >
                   <span className="px-7 py-3.5 text-xs font-semibold uppercase tracking-wider flex items-center">
                     ENQUIRE ABOUT APEX
                   </span>
-                  <span className="w-11 bg-white border-l border-brand-gold flex items-center justify-center text-brand-dark transition-transform duration-200 group-hover:translate-x-0.5">
+                  <span className="w-11 bg-white/10 border-l border-white/20 flex items-center justify-center text-white transition-transform duration-200 group-hover:translate-x-0.5">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         d="M9 5l7 7-7 7"
@@ -126,11 +126,11 @@ export default function ApexPage() {
       <section className="py-24 bg-brand-bgGray border-t border-brand-borderHairline">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-16" data-reveal="up">
-            <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+            <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
               TARGET AUDIENCE
             </p>
             <h2 className="text-3xl sm:text-4xl text-brand-dark font-heading leading-tight" data-split="lines">
-              Who <span className="text-brand-gold font-normal">APEX</span> Is For
+              Who <span className="text-[#7B2FBE] font-normal">APEX</span> Is For
             </h2>
             <p className="text-brand-muted font-body text-sm mt-3 leading-relaxed">
               Tailored academic mentorship built to serve diverse tiers within higher education and research ecosystems.
@@ -146,7 +146,7 @@ export default function ApexPage() {
               >
                 <div>
                   <div className="flex items-center space-x-3 mb-4">
-                    <span className="w-2 h-2 bg-brand-gold inline-block" />
+                    <span className="w-2 h-2 bg-[#7B2FBE] inline-block" />
                     <h3 className="font-heading text-xl text-brand-dark">
                       {item.title}
                     </h3>

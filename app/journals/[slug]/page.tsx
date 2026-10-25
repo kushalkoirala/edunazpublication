@@ -61,7 +61,7 @@ export default async function JournalDetailPage({ params }: Props) {
             <div className="lg:col-span-8 space-y-12">
               {/* Section 1: About the Journal */}
               <div data-reveal="up">
-                <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+                <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
                   OVERVIEW
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4" data-split="lines">
@@ -76,7 +76,7 @@ export default async function JournalDetailPage({ params }: Props) {
                     <span className="text-brand-muted uppercase tracking-wider block mb-1">
                       Status
                     </span>
-                    <span className="font-semibold text-brand-gold">{journal.badge}</span>
+                    <span className="font-semibold text-[#7B2FBE]">{journal.badge}</span>
                   </div>
                   <div>
                     <span className="text-brand-muted uppercase tracking-wider block mb-1">
@@ -95,7 +95,7 @@ export default async function JournalDetailPage({ params }: Props) {
 
               {/* Section 2: Scope */}
               <div data-reveal="up">
-                <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+                <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
                   AIMS &amp; FOCUS
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4">
@@ -109,7 +109,7 @@ export default async function JournalDetailPage({ params }: Props) {
 
               {/* Section 3: Author Guidelines */}
               <div data-reveal="up">
-                <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+                <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
                   SUBMISSION INSTRUCTIONS
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4">
@@ -126,7 +126,7 @@ export default async function JournalDetailPage({ params }: Props) {
 
               {/* Section 4: Editorial Board */}
               <div data-reveal="up">
-                <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-3">
+                <p className="text-xs uppercase tracking-eyebrow text-[#7B2FBE] font-medium mb-3">
                   GOVERNANCE
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-heading text-brand-dark mb-4">
@@ -143,7 +143,7 @@ export default async function JournalDetailPage({ params }: Props) {
 
               {/* Section 5: Submit Article */}
               <div className="bg-[#3F4056] text-white p-8" data-reveal="up">
-                <p className="text-xs uppercase tracking-eyebrow text-brand-gold font-medium mb-2">
+                <p className="text-xs uppercase tracking-eyebrow text-[#C084FC] font-medium mb-2">
                   MANUSCRIPT SUBMISSION
                 </p>
                 <h3 className="font-heading text-2xl text-white mb-3">
@@ -155,12 +155,12 @@ export default async function JournalDetailPage({ params }: Props) {
                 <div className="inline-flex" data-magnetic>
                   <Link
                     href="/contact"
-                    className="inline-flex items-stretch bg-[#D9A93F] hover:bg-[#C4942B] transition-colors duration-150 text-brand-dark group shadow-none"
+                    className="inline-flex items-stretch bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] transition-all duration-200 text-white rounded-lg overflow-hidden shadow-[0_0_15px_rgba(123,47,190,0.4)] group"
                   >
                     <span className="px-7 py-3 text-xs font-semibold uppercase tracking-wider flex items-center">
                       SUBMIT ARTICLE
                     </span>
-                    <span className="w-10 bg-white border-l border-[#D9A93F] flex items-center justify-center text-brand-dark transition-transform duration-200 group-hover:translate-x-0.5">
+                    <span className="w-10 bg-white/10 border-l border-white/20 flex items-center justify-center text-white transition-transform duration-200 group-hover:translate-x-0.5">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                           d="M9 5l7 7-7 7"
@@ -190,11 +190,11 @@ export default async function JournalDetailPage({ params }: Props) {
                           href={`/journals/${j.slug}`}
                           className={`block p-3 transition-colors ${
                             isCurrent
-                              ? "bg-white border-l-2 border-brand-gold text-brand-dark font-medium shadow-none"
+                              ? "bg-white border-l-2 border-[#7B2FBE] text-brand-dark font-medium shadow-none"
                               : "text-brand-muted hover:text-brand-dark hover:bg-white"
                           }`}
                         >
-                          <span className="text-[10px] uppercase tracking-wider text-brand-gold font-semibold block mb-1">
+                          <span className="text-[10px] uppercase tracking-wider text-[#7B2FBE] font-semibold block mb-1">
                             {j.badge}
                           </span>
                           <span className="leading-snug block">{j.title}</span>
@@ -215,7 +215,7 @@ export default async function JournalDetailPage({ params }: Props) {
                   </p>
                   <Link
                     href="/contact"
-                    className="text-brand-gold font-semibold hover:underline inline-block pt-1"
+                    className="text-[#7B2FBE] font-semibold hover:text-[#6620A0] hover:underline inline-block pt-1"
                   >
                     Contact Editorial Liaison →
                   </Link>
