@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -21,6 +21,7 @@ const navLinks = [
 ];
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+  const [servicesExpanded, setServicesExpanded] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
@@ -160,20 +161,85 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   key={link.num}
                   className={`mobile-nav-link-row ${delayClass} py-3 sm:py-3.5`}
                 >
-                  <Link
-                    href={link.href}
-                    onClick={onClose}
-                    className={`mobile-nav-link group flex items-baseline py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FBE] ${
-                      isActive ? "text-[#C084FC]" : "text-white"
-                    }`}
-                  >
-                    <span className="font-mono text-xs sm:text-sm text-[#C084FC] tracking-widest mr-4 opacity-90 select-none">
-                      {link.num}
-                    </span>
-                    <span className="font-heading text-[32px] sm:text-4xl leading-none tracking-wide">
-                      {link.label}
-                    </span>
-                  </Link>
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href={link.href}
+                      onClick={onClose}
+                      className={`mobile-nav-link group flex items-baseline py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FBE] ${
+                        isActive ? "text-[#C084FC]" : "text-white"
+                      }`}
+                    >
+                      <span className="font-mono text-xs sm:text-sm text-[#C084FC] tracking-widest mr-4 opacity-90 select-none">
+                        {link.num}
+                      </span>
+                      <span className="font-heading text-[32px] sm:text-4xl leading-none tracking-wide">
+                        {link.label}
+                      </span>
+                    </Link>
+
+                    {link.href === "/services" && (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setServicesExpanded((prev) => !prev);
+                        }}
+                        aria-label="Toggle Services submenu"
+                        aria-expanded={servicesExpanded}
+                        className="w-10 h-10 flex items-center justify-center text-white/80 hover:text-[#C084FC] transition-colors rounded-lg bg-white/5 border border-white/10"
+                      >
+                        <svg
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            servicesExpanded ? "rotate-180 text-[#C084FC]" : ""
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M19 9l-7 7-7-7"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                          />
+                        </svg>
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Submenu for Services on Mobile */}
+                  {link.href === "/services" && servicesExpanded && (
+                    <div className="mt-3 pl-8 sm:pl-10 space-y-2 border-l-2 border-[#7B2FBE]/50 ml-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                      <Link
+                        href="/services"
+                        onClick={onClose}
+                        className="block text-xs uppercase tracking-wider text-[#C084FC] font-semibold py-1.5 hover:underline"
+                      >
+                        All Services Overview →
+                      </Link>
+                      <Link
+                        href="/services/research-publication"
+                        onClick={onClose}
+                        className="block text-sm text-white/90 hover:text-[#C084FC] py-1 transition-colors"
+                      >
+                        • Research Publication
+                      </Link>
+                      <Link
+                        href="/services/writing-and-editing"
+                        onClick={onClose}
+                        className="block text-sm text-white/90 hover:text-[#C084FC] py-1 transition-colors"
+                      >
+                        • Writing & Editing Excellence
+                      </Link>
+                      <Link
+                        href="/services/isbn-book-publication"
+                        onClick={onClose}
+                        className="block text-sm text-white/90 hover:text-[#C084FC] py-1 transition-colors"
+                      >
+                        • ISBN Book Publication
+                      </Link>
+                    </div>
+                  )}
                 </div>
               );
             })}

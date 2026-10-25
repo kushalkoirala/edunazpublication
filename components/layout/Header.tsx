@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import MobileMenu from "./MobileMenu";
 import InquiryButton from "@/components/ui/InquiryButton";
+import { SERVICES_DATA } from "@/lib/content";
 
 function useHeaderVisibility(mobileOpen: boolean) {
   const [isVisible, setIsVisible] = useState(true);
@@ -42,11 +43,25 @@ export default function Header() {
   const prevOpenRef = useRef(false);
   const hamburgerBtnRef = useRef<HTMLButtonElement>(null);
 
+  const [servicesOpen, setServicesOpen] = useState(false);
+
   const [prevPathname, setPrevPathname] = useState(pathname);
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);
     setMobileOpen(false);
+    setServicesOpen(false);
   }
+
+  // Close dropdown on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setServicesOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   // Scroll listener for solid background transition
   useEffect(() => {
@@ -191,29 +206,86 @@ export default function Header() {
             >
               ABOUT
             </Link>
-            <div className="relative inline-flex items-center">
+            {/* Services Navigation with Interactive Dropdown */}
+            <div
+              className="relative group py-2"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
               <Link
                 data-sweep
-                className={`inline-flex items-center hover:text-[#C084FC] transition-colors py-2 ${
+                className={`inline-flex items-center hover:text-[#C084FC] transition-colors py-1 ${
                   isRouteActive("/services") ? "text-[#C084FC]" : "text-white/90"
                 }`}
                 href="/services"
+                aria-haspopup="true"
+                aria-expanded={servicesOpen}
               >
-                <span className="">SERVICES</span>
+                <span>SERVICES</span>
                 <svg
-                  className="w-3 h-3 ml-1 text-white/80"
+                  className={`w-3.5 h-3.5 ml-1 text-white/80 transition-transform duration-200 ${
+                    servicesOpen ? "rotate-180 text-[#C084FC]" : "group-hover:rotate-180"
+                  }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path
                     d="M19 9l-7 7-7-7"
-                    strokeLinecap="square"
-                    strokeLinejoin="miter"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     strokeWidth="2"
                   />
                 </svg>
               </Link>
+
+              {/* Invisible hover bridge to eliminate gap */}
+              <div className="absolute top-full left-0 w-full h-3" />
+
+              {/* Dropdown Menu Panel */}
+              <div
+                className={`absolute top-[calc(100%+6px)] left-1/2 -translate-x-1/2 w-[320px] rounded-xl bg-[#1A092C]/95 backdrop-blur-xl border border-[#7B2FBE]/35 shadow-[0_16px_40px_rgba(0,0,0,0.65),0_0_20px_rgba(123,47,190,0.25)] p-2 transition-all duration-200 z-50 ${
+                  servicesOpen
+                    ? "opacity-100 translate-y-0 pointer-events-auto visible"
+                    : "opacity-0 translate-y-2 pointer-events-none invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-hover:visible"
+                }`}
+              >
+                {/* Header */}
+                <div className="px-3 py-2 border-b border-white/10 flex items-center justify-between">
+                  <span className="text-[10px] font-mono tracking-widest text-[#C084FC] uppercase font-semibold">
+                    OUR SERVICES
+                  </span>
+                  <Link
+                    href="/services"
+                    onClick={() => setServicesOpen(false)}
+                    className="text-[10px] font-mono text-white/70 hover:text-white transition-colors uppercase tracking-wider"
+                  >
+                    View All →
+                  </Link>
+                </div>
+
+                {/* Service items */}
+                <div className="py-1">
+                  {SERVICES_DATA.map((srv) => (
+                    <Link
+                      key={srv.slug}
+                      href={`/services/${srv.slug}`}
+                      onClick={() => setServicesOpen(false)}
+                      className="group/item flex flex-col px-3 py-2.5 rounded-lg hover:bg-white/5 transition-all text-left"
+                    >
+                      <span className="text-xs font-semibold text-white/95 group-hover/item:text-[#C084FC] flex items-center justify-between tracking-normal normal-case transition-colors">
+                        <span>{srv.title}</span>
+                        <span className="text-[10px] opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 transition-all text-[#C084FC]">
+                          →
+                        </span>
+                      </span>
+                      <span className="text-[11px] text-white/60 group-hover/item:text-white/80 line-clamp-1 mt-0.5 tracking-normal normal-case font-normal font-body">
+                        {srv.shortDescription}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
             <Link
               data-sweep
