@@ -115,7 +115,7 @@ export default function Hero() {
                 </div>
                 <div className="hairline-divider my-3.5"></div>
                 <p className="text-[12px] text-brand-muted leading-relaxed font-normal">
-                  Guidance on journal selection, manuscript preparation and submission.
+                  Guidance on journal selection, manuscript preparation, submission & publication.
                 </p>
               </div>
               <div className="pt-4">

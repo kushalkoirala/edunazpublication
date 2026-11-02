@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
 import CtaBand from "@/components/ui/CtaBand";
+import IsbnPublicationSections from "@/components/sections/IsbnPublicationSections";
 import { SERVICES_DATA, getServiceBySlug } from "@/lib/content";
 
 type Props = {
@@ -101,6 +102,9 @@ export default async function ServiceDetailPage({ params }: Props) {
                 ))}
               </ul>
 
+              {/* Enhanced Sections for ISBN Book Publication */}
+              {isIsbn && <IsbnPublicationSections />}
+
               {/* Consultation / Direct Action */}
               <div className="bg-[#3F4056] text-white p-8" data-reveal="up">
                 <p className="text-xs uppercase tracking-eyebrow text-[#C084FC] font-medium mb-2">
@@ -135,7 +139,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
             {/* Right Column: Other Services Navigation */}
             <div className="lg:col-span-4" data-reveal="up">
-              <div className="bg-brand-bgGray border border-brand-borderHairline p-6 lg:p-8">
+              <div className="bg-brand-bgGray border border-brand-borderHairline p-6 lg:p-8 sticky top-28">
                 <h3 className="font-heading text-lg text-brand-dark uppercase tracking-wider mb-4 border-b border-brand-borderHairline pb-3">
                   All Services
                 </h3>

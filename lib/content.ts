@@ -166,11 +166,6 @@ export const JOURNALS_DATA: JournalItem[] = [
 // ─────────────────────────────────────────────────────────────
 export const FAQ_DATA: FaqItem[] = [
   {
-    question: "Does Edunaaz guarantee manuscript acceptance?",
-    answer:
-      "No. Acceptance is decided solely by independent journal editors and blind peer reviewers. Edunaaz provides professional guidance, formatting, similarity reporting, and editorial support only.",
-  },
-  {
     question: "What is the typical turnaround time for manuscript editing?",
     answer:
       "Standard editorial cycles take between 3 to 7 business days depending on word count, technical complexity, and required citation standardization (IEEE, APA, Harvard, or Nature format).",

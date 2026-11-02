@@ -62,17 +62,16 @@ export default function StatsBand() {
             </p>
           </div>
 
-          {/* Stat 4: [Add figure] | [Add label] */}
-          {/* TODO: only fill in with a number the client can prove */}
+          {/* Stat 4: 200+ Manuscripts Supported */}
           <div className="pl-4 sm:pl-6 lg:px-8 py-6 lg:py-0 text-left">
             <div className="font-heading text-4xl sm:text-5xl lg:text-[64px] text-[#C084FC] leading-none mb-3">
-              <span className="stat-num">[--]</span>
+              <span className="stat-num" data-count data-target="200" data-suffix="+">200+</span>
             </div>
             <div data-line className="w-8 h-[1px] bg-[#7B2FBE] mb-3"></div>
             <p
               className="font-body text-[12px] uppercase tracking-[0.12em] text-white/80 font-medium leading-relaxed"
             >
-              [Add label, e.g. Manuscripts supported]
+              Manuscripts supported
             </p>
           </div>
         </div>

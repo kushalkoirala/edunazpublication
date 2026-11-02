@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Column 1: Brand & Registration */}
           <div className="lg:col-span-4">
             <div className="flex items-center space-x-3.5 mb-4">
-              <div className="w-14 h-14 flex items-center justify-center flex-shrink-0 rounded-full bg-white/10 p-0.5 ring-2 ring-[#7B2FBE]/60 shadow-[0_0_16px_rgba(123,47,190,0.4)]">
+              <div className="w-14 h-14 flex items-center justify-center flex-shrink-0 rounded-full bg-white p-0.5 ring-2 ring-[#7B2FBE]/60 shadow-[0_0_16px_rgba(123,47,190,0.4)]">
                 <Image
                   src="/logo.png"
                   alt="Edunaaz Publication Logo"
@@ -33,8 +33,7 @@ export default function Footer() {
             </div>
             <p className="text-white/70 leading-relaxed mb-4">
               CIN: <span className="text-white font-mono">U85499AS2025OPC028933</span><br />
-              A scholarly press registered with the Ministry of Corporate Affairs, dedicated to advancing
-              academic rigor and research dissemination across global platforms.
+              Edunaaz Publication (OPC) Pvt. Ltd. is registered with the Ministry of Corporate Affairs, Government of India, and is dedicated to advancing academic rigour and research dissemination across global platforms.
             </p>
           </div>
           {/* Column 2: Explore Navigation */}
@@ -109,8 +108,6 @@ export default function Footer() {
           </div>
           <div className="flex space-x-6">
             <Link data-sweep className="hover:text-white transition-colors" href="/terms">Terms &amp; Conditions</Link>
-            <Link data-sweep className="hover:text-white transition-colors" href="/privacy">Privacy Policy</Link>
-            <Link data-sweep className="hover:text-white transition-colors" href="/editorial-ethics">Editorial Ethics</Link>
           </div>
         </div>
       </div>

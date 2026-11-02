@@ -53,7 +53,7 @@ export default function Services() {
 
         {/* Three Service Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-7 items-stretch">
-          
+
           {/* ─────────────────────────────────────────────────────────── */}
           {/* Card 1: Research Publication (Light Card)                   */}
           {/* ─────────────────────────────────────────────────────────── */}
@@ -176,7 +176,8 @@ export default function Services() {
                     </svg>
                   </span>
                   <span className="text-xs sm:text-[13px] font-body text-brand-dark font-medium">
-                    Submission support
+
+                    Support from submission to final publication.
                   </span>
                 </li>
               </ul>

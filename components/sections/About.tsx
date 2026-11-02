@@ -27,21 +27,29 @@ export default function About() {
               manuscript preparation, formatting and submission.
             </p>
             <div data-line className="hairline-divider mb-8"></div>
-            {/* Founder Signature & Small Caps Subtitle */}
-            <div className="flex flex-col items-start">
-              <span
-                id="about-signature"
-                data-reveal="clip-left"
-                className="font-signature text-3xl sm:text-4xl text-[#7B2FBE] tracking-wide leading-none pb-1"
+            {/* CTA Button */}
+            <div data-reveal="up">
+              <a
+                href="/about"
+                className="inline-flex items-center gap-3 bg-[#7B2FBE] text-white font-body font-semibold text-sm tracking-widest uppercase px-7 py-4 rounded-md hover:bg-[#6A25A8] transition-colors duration-200"
               >
-                Owners name
-              </span>
-              <span
-                data-reveal="up"
-                className="text-[11px] font-body tracking-[0.2em] uppercase text-brand-muted font-medium mt-1"
-              >
-                FOUNDER &amp; MANAGING DIRECTOR, EDUNAAZ
-              </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5 shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.8}
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                  />
+                </svg>
+                ABOUT US →
+              </a>
             </div>
           </div>
           {/* Right Column: Three-Image Visual Composition with 15+ Badge */}

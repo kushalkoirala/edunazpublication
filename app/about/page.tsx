@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import CtaBand from "@/components/ui/CtaBand";
 import AboutCollage from "@/components/sections/AboutCollage";
-import { PLACEHOLDERS, COMPANY_INFO } from "@/lib/content";
+import { COMPANY_INFO } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -48,17 +48,7 @@ export default function AboutPage() {
               <p className="text-brand-muted font-body text-sm leading-relaxed mb-8">
                 CIN: <span className="text-brand-dark font-mono font-medium">{COMPANY_INFO.cin}</span>. Our team of multi-disciplinary editors and doctoral reviewers brings dedicated expertise across engineering, pure sciences, management, and medicine to assist researchers at every phase of publication.
               </p>
-              <div className="hairline-divider mb-8" data-line />
-              {/* Founder Signature & Small Caps Subtitle */}
-              <div className="flex flex-col items-start" data-reveal="clip-left">
-                {/* TODO: Replace with official signature and confirmed name of founder */}
-                <span className="font-signature text-3xl sm:text-4xl text-[#7B2FBE] tracking-wide leading-none pb-1">
-                  {PLACEHOLDERS.FOUNDER_NAME}
-                </span>
-                <span className="text-[11px] font-body tracking-[0.2em] uppercase text-brand-muted font-medium mt-1">
-                  FOUNDER &amp; MANAGING DIRECTOR, EDUNAAZ
-                </span>
-              </div>
+
             </div>
 
             {/* Right Column: Three-Image Visual Composition with 15+ Badge */}

@@ -192,6 +192,16 @@ export function InquiryModalProvider({ children }: { children: React.ReactNode }
                       className="w-full text-xs sm:text-sm px-4 py-3 rounded-lg border border-[#E0D8CB] bg-white text-brand-dark focus:outline-none focus:ring-1 focus:ring-[#7B2FBE] focus:border-[#7B2FBE] transition-all"
                       style={{ borderRadius: "8px" }}
                     >
+                      {![
+                        "Research Publication Guidance",
+                        "Writing & Editorial Excellence",
+                        "Theses & Dissertations Support",
+                        "ISBN Book Publication",
+                        "Journal Scope & Indexing",
+                        "General Academic Inquiry",
+                      ].includes(category) && (
+                        <option value={category}>{category}</option>
+                      )}
                       <option value="Research Publication Guidance">Research Publication Guidance</option>
                       <option value="Writing & Editorial Excellence">Writing &amp; Editorial Excellence</option>
                       <option value="Theses & Dissertations Support">Theses &amp; Dissertations Support</option>

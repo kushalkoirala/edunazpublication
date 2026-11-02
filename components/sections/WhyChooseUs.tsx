@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
             </div>
             <h4 className="font-heading text-lg text-white mb-2">Skilled Multi-Disciplinary Professionals</h4>
             <p className="text-xs text-white/70 font-body leading-relaxed">
-              Subject experts covering Engineering, Pure Sciences, Medicine, and Management disciplines.
+              Subject experts covering Engineering, Science and Technology, Arts and Humanities, Social Sciences, Public Health, Medical, Commerce and Management, and Management disciplines.
             </p>
           </div>
           {/* Item 2 */}
