@@ -74,10 +74,20 @@ export default async function JournalDetailPage({ params }: Props) {
                 <div className="bg-brand-bgGray p-4 border border-brand-borderHairline flex flex-wrap gap-6 text-xs font-body text-brand-dark">
                   <div>
                     <span className="text-brand-muted uppercase tracking-wider block mb-1">
-                      Status
+                      Indexing
                     </span>
-                    <span className="font-semibold text-[#7B2FBE]">{journal.badge}</span>
+                    <span className="font-semibold text-[#7B2FBE]">
+                      {journal.indexing || journal.badge}
+                    </span>
                   </div>
+                  {journal.citeScore && (
+                    <div>
+                      <span className="text-brand-muted uppercase tracking-wider block mb-1">
+                        CiteScore
+                      </span>
+                      <span className="font-semibold text-brand-dark">{journal.citeScore}</span>
+                    </div>
+                  )}
                   <div>
                     <span className="text-brand-muted uppercase tracking-wider block mb-1">
                       Frequency

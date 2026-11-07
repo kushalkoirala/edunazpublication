@@ -20,6 +20,8 @@ export interface JournalItem {
   description: string;
   scope: string;
   frequency: string;
+  indexing?: string;
+  citeScore?: string;
 }
 
 export interface FaqItem {
@@ -87,9 +89,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: "Writing & Editing Excellence",
     heroAccentWord: "Editing",
     shortDescription:
-      "Professional writing and editorial support for research articles, review papers, theses and dissertations, ensuring clarity, structure and academic rigor.",
+      "Professional academic writing, editing, proofreading, and language refinement services for research articles, review papers, theses, dissertations, and research proposals.",
     fullDescription:
-      "Professional technical proofreading, structural editing, and language refinement for research articles, review papers, and dissertations across engineering, pure sciences, medicine, and management.",
+      "EduNaaz Publication provides comprehensive academic writing and editorial support to researchers, scholars, and students. Our experienced team of subject specialists and academic editors helps improve the clarity, structure, language, and presentation of scholarly manuscripts while maintaining academic integrity and research quality.",
     iconName: "editing",
     items: [
       "Research articles",
@@ -121,43 +123,44 @@ export const SERVICES_DATA: ServiceItem[] = [
 // ─────────────────────────────────────────────────────────────
 export const JOURNALS_DATA: JournalItem[] = [
   {
-    slug: "international-journal-of-advanced-engineering-scientific-research",
-    title:
-      "International Journal of Advanced Engineering & Scientific Research",
-    heroAccentWord: "Engineering",
-    badge: "PEER REVIEWED",
-    issn: PLACEHOLDERS.JOURNAL_ISSN,
+    slug: "acta-innovations",
+    title: "Acta Innovations",
+    heroAccentWord: "Innovations",
+    badge: "SCOPUS Q1",
+    issn: "e-ISSN: 2300-5599",
+    indexing: "Scopus Q1",
     description:
-      "Bi-annual multidisciplinary publication dedicated to contemporary engineering designs, computational innovations, and technological models.",
+      "Peer-reviewed multidisciplinary journal indexed in Scopus (Q1) dedicated to innovative scientific research, societal progress, environmental advances, and technological applications.",
     scope:
-      "Contemporary engineering designs, computational innovations, applied informatics, electrical and mechanical systems, and technological modeling across multidisciplinary fields.",
-    frequency: "Bi-annual",
+      "Social Sciences (miscellaneous), Arts and Humanities, Education, Engineering (miscellaneous), Medicine (miscellaneous), Environmental Sciences, Business, Management and Accounting, etc.",
+    frequency: "Quarterly",
   },
   {
-    slug: "edunaaz-review-of-global-management-applied-economics",
-    title:
-      "Edunaaz Review of Global Management & Applied Economics",
-    heroAccentWord: "Management",
-    badge: "OPEN ACCESS",
-    issn: PLACEHOLDERS.JOURNAL_ISSN,
+    slug: "journal-of-intelligent-decision-making-and-information-science",
+    title: "Journal of Intelligent Decision Making and Information Science",
+    heroAccentWord: "Decision",
+    badge: "SCOPUS Q1",
+    issn: "e-ISSN: 3079-0875",
+    indexing: "Scopus Q1",
+    citeScore: "3.4 (CiteScore 2026)",
     description:
-      "Focuses on empirical investigations, financial strategy, public policy, econometric forecasting, and emerging market paradigms.",
+      "Leading peer-reviewed journal indexed in Scopus (Q1) with a CiteScore of 3.4 (2026), advancing computational intelligence, information science, and algorithmic decision modeling.",
     scope:
-      "Empirical investigations, organizational governance, financial strategy, public policy, econometric forecasting, international trade, and emerging market paradigms.",
-    frequency: "Bi-annual",
+      "Engineering, Computer Science: Artificial Intelligence, Computer Science: Information Systems, Decision Sciences: Information Systems and Management, Decision Sciences: Management Science and Operations Research.",
+    frequency: "Quarterly",
   },
   {
-    slug: "journal-of-modern-interdisciplinary-science-humanities",
-    title:
-      "Journal of Modern Interdisciplinary Science & Humanities",
-    heroAccentWord: "Interdisciplinary",
-    badge: "SCHOLARLY FORUM",
-    issn: PLACEHOLDERS.JOURNAL_ISSN,
+    slug: "adolescencia-e-saude",
+    title: "Adolescencia e Saude",
+    heroAccentWord: "Saude",
+    badge: "SCOPUS · PUBMED",
+    issn: "ISSN: 1679-9941 | e-ISSN: 2177-5281",
+    indexing: "Scopus, PubMed, Google Scholar",
     description:
-      "Platform fostering collaborative discourse across social sciences, applied sciences, education, and cultural research initiatives.",
+      "Prestigious peer-reviewed medical publication indexed in Scopus, PubMed, and Google Scholar, advancing clinical pediatrics, perinatology, child development, and multidisciplinary healthcare.",
     scope:
-      "Collaborative discourse uniting social sciences, humanities, applied scientific methodologies, higher education pedagogies, and cultural research initiatives.",
-    frequency: "Bi-annual",
+      "Medicine: Pediatrics, Perinatology and Child Health and Medical Related All Domain.",
+    frequency: "Quarterly",
   },
 ];
 

@@ -96,49 +96,66 @@ export default function FeaturedJournals() {
               <div className="p-7 sm:p-9 lg:p-10 flex-1 flex flex-col justify-between z-10 pl-8 sm:pl-10">
                 <div>
                   {/* Eyebrow */}
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2 mb-3">
                     <span className="text-[#7B2FBE] font-bold text-xs tracking-wider font-body">01</span>
                     <span className="text-[#7B2FBE]/50">/</span>
                     <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#7B2FBE] font-body">
-                      FEATURED JOURNAL
+                      SCOPUS Q1 · FEATURED JOURNAL
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading text-2xl sm:text-3xl lg:text-[32px] text-brand-dark leading-tight mb-4">
-                    International Journal of Advanced Engineering &amp; Scientific Research
+                  <h3 className="font-heading text-2xl sm:text-3xl lg:text-[32px] text-brand-dark leading-tight mb-3">
+                    <Link
+                      href="/journals/acta-innovations"
+                      className="hover:text-[#7B2FBE] transition-colors"
+                    >
+                      Acta Innovations
+                    </Link>
                   </h3>
 
                   {/* ISSN */}
-                  <p className="text-xs font-mono text-brand-muted mb-4">
-                    ISSN: [258X-XXXX (Online)]
+                  <p className="text-xs font-mono text-brand-muted mb-3">
+                    e-ISSN: 2300-5599
                   </p>
 
-                  {/* Description */}
-                  <p className="text-xs sm:text-[13px] text-brand-muted leading-relaxed font-body mb-8">
-                    Bi-annual multidisciplinary publication dedicated to contemporary engineering designs,
-                    computational innovations, and technological models.
-                  </p>
+                  {/* Description / Scope */}
+                  <div className="mb-6">
+                    <p className="text-[11px] uppercase tracking-wider font-semibold text-[#7B2FBE] mb-1">
+                      Subject Area:
+                    </p>
+                    <p className="text-xs sm:text-[13px] text-brand-muted leading-relaxed font-body">
+                      Social Sciences (miscellaneous), Arts and Humanities, Education, Engineering (miscellaneous), Medicine (miscellaneous), Environmental Sciences, Business, Management and Accounting, etc.
+                    </p>
+                  </div>
                 </div>
 
-                {/* Submit Article Button (Solid Purple) */}
-                <div className="pt-2">
+                {/* Action Buttons */}
+                <div className="pt-2 flex flex-wrap items-center gap-4">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-2.5 py-3.5 px-6 rounded-lg bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-[0.16em] shadow-[0_0_15px_rgba(123,47,190,0.35)] hover:shadow-[0_0_20px_rgba(123,47,190,0.5)] transition-all duration-200"
+                    className="inline-flex items-center gap-2.5 py-3 px-5 rounded-lg bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-[0.16em] shadow-[0_0_15px_rgba(123,47,190,0.35)] hover:shadow-[0_0_20px_rgba(123,47,190,0.5)] transition-all duration-200"
                     style={{ borderRadius: "8px" }}
                   >
                     <span>SUBMIT ARTICLE</span>
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
+                  </Link>
+                  <Link
+                    href="/journals/acta-innovations"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-brand-dark hover:text-[#7B2FBE] transition-colors"
+                  >
+                    <span>VIEW DETAILS</span>
+                    <span className="font-mono">→</span>
                   </Link>
                 </div>
               </div>
 
               {/* Image Side (Right) */}
               <div className="relative w-full md:w-[48%] min-h-[280px] md:min-h-full overflow-hidden bg-[#F3EFE9]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/journal-1.png"
-                  alt="International Journal of Advanced Engineering & Scientific Research"
+                  alt="Acta Innovations"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
@@ -148,14 +165,17 @@ export default function FeaturedJournals() {
                   className="absolute top-6 right-6 flex flex-col items-end gap-1 pointer-events-none select-none z-10"
                   aria-hidden="true"
                 >
-                  <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase">
+                  <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase bg-white/80 px-2 py-0.5 rounded backdrop-blur-sm">
+                    SCOPUS Q1
+                  </span>
+                  <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase bg-white/80 px-2 py-0.5 rounded backdrop-blur-sm">
+                    SOCIAL SCIENCES
+                  </span>
+                  <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase bg-white/80 px-2 py-0.5 rounded backdrop-blur-sm">
                     ENGINEERING
                   </span>
-                  <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase">
-                    SCIENCE
-                  </span>
-                  <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase">
-                    INNOVATION
+                  <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase bg-white/80 px-2 py-0.5 rounded backdrop-blur-sm">
+                    MEDICINE
                   </span>
                 </div>
 
@@ -176,7 +196,7 @@ export default function FeaturedJournals() {
           {/* ─────────────────────────────────────────────────────────── */}
           <div className="lg:col-span-5 flex flex-col gap-6 sm:gap-7">
             
-            {/* ─── Card 2: Open Access Journal (Light Card) ─── */}
+            {/* ─── Card 2: Journal of Intelligent Decision Making and Information Science ─── */}
             <article
               data-reveal="up"
               className="bg-[#FCFAF7] border border-[#EBE3D6] rounded-[24px] relative overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_18px_40px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col sm:flex-row flex-1 group"
@@ -190,29 +210,33 @@ export default function FeaturedJournals() {
                     <span className="text-[#7B2FBE] font-bold text-xs tracking-wider font-body">02</span>
                     <span className="text-[#7B2FBE]/50">/</span>
                     <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#7B2FBE] font-body">
-                      OPEN ACCESS
+                      SCOPUS Q1 · CITESCORE 3.4
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading text-lg sm:text-xl text-brand-dark leading-snug mb-2">
-                    Edunaaz Review of Global Management &amp; Applied Economics
+                  <h3 className="font-heading text-lg sm:text-xl text-brand-dark leading-snug mb-1.5">
+                    <Link
+                      href="/journals/journal-of-intelligent-decision-making-and-information-science"
+                      className="hover:text-[#7B2FBE] transition-colors"
+                    >
+                      Journal of Intelligent Decision Making and Information Science
+                    </Link>
                   </h3>
 
                   {/* ISSN */}
-                  <p className="text-[11px] font-mono text-brand-muted mb-2.5">
-                    ISSN: [258X-XXXX (Online)]
+                  <p className="text-[11px] font-mono text-brand-muted mb-2">
+                    e-ISSN: 3079-0875
                   </p>
 
                   {/* Description */}
-                  <p className="text-xs text-brand-muted leading-relaxed font-body mb-4">
-                    Focuses on empirical investigations, financial strategy, public policy,
-                    econometric forecasting, and emerging market paradigms.
+                  <p className="text-xs text-brand-muted leading-relaxed font-body mb-4 line-clamp-3">
+                    <span className="font-semibold text-brand-dark">Subject Area:</span> Engineering, Computer Science: Artificial Intelligence, Information Systems, Decision Sciences: Management Science &amp; Operations Research.
                   </p>
                 </div>
 
                 {/* Link */}
-                <div className="pt-1 mt-auto">
+                <div className="pt-1 mt-auto flex items-center gap-4">
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#7B2FBE] hover:text-[#6620A0] transition-colors"
@@ -220,14 +244,22 @@ export default function FeaturedJournals() {
                     <span>SUBMIT ARTICLE</span>
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
                   </Link>
+                  <Link
+                    href="/journals/journal-of-intelligent-decision-making-and-information-science"
+                    className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-muted hover:text-brand-dark transition-colors"
+                  >
+                    <span>DETAILS</span>
+                    <span className="font-mono">→</span>
+                  </Link>
                 </div>
               </div>
 
               {/* Image Side with Analytics Circular Badge */}
               <div className="relative w-full sm:w-[42%] min-h-[170px] sm:min-h-full overflow-hidden bg-[#F3EFE9]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/journal-2.png"
-                  alt="Edunaaz Review of Global Management & Applied Economics"
+                  alt="Journal of Intelligent Decision Making and Information Science"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
@@ -250,7 +282,7 @@ export default function FeaturedJournals() {
               </div>
             </article>
 
-            {/* ─── Card 3: Scholarly Forum (Dark Card with Purple Accent) ─── */}
+            {/* ─── Card 3: Adolescencia e Saude (Dark Card with Purple Accent) ─── */}
             <article
               data-reveal="up"
               className="bg-[#1C2438] border border-[#7B2FBE]/40 hover:border-[#7B2FBE] rounded-[24px] relative overflow-hidden shadow-[0_16px_40px_rgba(123,47,190,0.15)] hover:shadow-[0_22px_45px_rgba(123,47,190,0.25)] transition-all duration-300 flex flex-col sm:flex-row flex-1 group"
@@ -264,29 +296,33 @@ export default function FeaturedJournals() {
                     <span className="text-[#C084FC] font-bold text-xs tracking-wider font-body">03</span>
                     <span className="text-white/30">/</span>
                     <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C084FC] font-body">
-                      SCHOLARLY FORUM
+                      SCOPUS · PUBMED · GOOGLE SCHOLAR
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading text-lg sm:text-xl text-white leading-snug mb-2">
-                    Journal of Modern Interdisciplinary Science &amp; Humanities
+                  <h3 className="font-heading text-lg sm:text-xl text-white leading-snug mb-1.5">
+                    <Link
+                      href="/journals/adolescencia-e-saude"
+                      className="hover:text-[#C084FC] transition-colors"
+                    >
+                      Adolescencia e Saude
+                    </Link>
                   </h3>
 
                   {/* ISSN */}
-                  <p className="text-[11px] font-mono text-white/50 mb-2.5">
-                    ISSN: [258X-XXXX (Online)]
+                  <p className="text-[11px] font-mono text-white/50 mb-2">
+                    ISSN: 1679-9941 | e-ISSN: 2177-5281
                   </p>
 
                   {/* Description */}
                   <p className="text-xs text-white/70 leading-relaxed font-body mb-4">
-                    Platform fostering collaborative discourse across social sciences, applied
-                    sciences, education, and cultural research initiatives.
+                    <span className="font-semibold text-white">Subject Area:</span> Medicine: Pediatrics, Perinatology and Child Health and Medical Related All Domain.
                   </p>
                 </div>
 
                 {/* Link */}
-                <div className="pt-1 mt-auto">
+                <div className="pt-1 mt-auto flex items-center gap-4">
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#C084FC] hover:text-white transition-colors"
@@ -294,14 +330,22 @@ export default function FeaturedJournals() {
                     <span>SUBMIT ARTICLE</span>
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
                   </Link>
+                  <Link
+                    href="/journals/adolescencia-e-saude"
+                    className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/60 hover:text-white transition-colors"
+                  >
+                    <span>DETAILS</span>
+                    <span className="font-mono">→</span>
+                  </Link>
                 </div>
               </div>
 
               {/* Image Side with Book Badge and Floating Tags */}
               <div className="relative w-full sm:w-[42%] min-h-[170px] sm:min-h-full overflow-hidden bg-[#131929]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/journal-3.png"
-                  alt="Journal of Modern Interdisciplinary Science & Humanities"
+                  alt="Adolescencia e Saude"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
@@ -327,16 +371,13 @@ export default function FeaturedJournals() {
                   aria-hidden="true"
                 >
                   <span className="text-[9px] tracking-[0.2em] text-white/70 font-semibold uppercase">
-                    SCIENCE
+                    PEDIATRICS
                   </span>
                   <span className="text-[9px] tracking-[0.2em] text-white/70 font-semibold uppercase">
-                    SOCIETY
+                    MEDICINE
                   </span>
                   <span className="text-[9px] tracking-[0.2em] text-white/70 font-semibold uppercase">
-                    CULTURE
-                  </span>
-                  <span className="text-[9px] tracking-[0.2em] text-white/70 font-semibold uppercase">
-                    HUMANITY
+                    HEALTH
                   </span>
                 </div>
 

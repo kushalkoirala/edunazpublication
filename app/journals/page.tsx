@@ -56,13 +56,33 @@ export default function JournalsPage() {
                       {journal.title}
                     </Link>
                   </h3>
-                  <p className="text-xs font-mono text-brand-muted mb-4">
-                    ISSN: {journal.issn}
+                  <p className="text-xs font-mono text-brand-muted mb-2">
+                    {journal.issn}
                   </p>
+                  {journal.indexing && (
+                    <p className="text-xs font-medium text-brand-dark mb-1">
+                      Indexing: <span className="text-[#7B2FBE] font-semibold">{journal.indexing}</span>
+                    </p>
+                  )}
+                  {journal.citeScore && (
+                    <p className="text-xs font-medium text-brand-dark mb-2">
+                      CiteScore: <span className="font-semibold text-brand-dark">{journal.citeScore}</span>
+                    </p>
+                  )}
                   <div className="hairline-divider my-4" data-line />
-                  <p className="text-xs text-brand-muted leading-relaxed font-body">
+                  <p className="text-xs text-brand-muted leading-relaxed font-body mb-3">
                     {journal.description}
                   </p>
+                  {journal.scope && (
+                    <div className="pt-2">
+                      <p className="text-[11px] uppercase tracking-wider font-semibold text-[#7B2FBE] mb-1">
+                        Subject Area:
+                      </p>
+                      <p className="text-xs text-brand-muted leading-relaxed font-body">
+                        {journal.scope}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 <div className="pt-8 mt-auto flex flex-col space-y-3">

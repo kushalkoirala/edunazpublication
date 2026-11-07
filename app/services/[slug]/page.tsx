@@ -3,7 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
 import CtaBand from "@/components/ui/CtaBand";
+import InquiryButton from "@/components/ui/InquiryButton";
 import IsbnPublicationSections from "@/components/sections/IsbnPublicationSections";
+import WritingEditingServices from "@/components/sections/WritingEditingServices";
 import { SERVICES_DATA, getServiceBySlug } from "@/lib/content";
 
 type Props = {
@@ -41,6 +43,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   }
 
   const isIsbn = service.slug === "isbn-book-publication";
+  const isWritingEditing = service.slug === "writing-and-editing";
 
   return (
     <main>
@@ -66,7 +69,9 @@ export default async function ServiceDetailPage({ params }: Props) {
                 SERVICE OVERVIEW
               </p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl text-brand-dark font-heading leading-tight mb-6" data-split="lines">
-                Comprehensive Support for {service.title}
+                {isWritingEditing
+                  ? "Comprehensive Academic Writing & Editing Support"
+                  : `Comprehensive Support for ${service.title}`}
               </h2>
               <p className="text-brand-muted font-body text-base leading-relaxed mb-8">
                 {service.fullDescription}
@@ -74,33 +79,40 @@ export default async function ServiceDetailPage({ params }: Props) {
 
               <div className="hairline-divider mb-8" data-line />
 
-              <h3 className="font-heading text-xl text-brand-dark mb-6">
-                Key Deliverables &amp; Scope
-              </h3>
+              {/* Six Expandable Service Rows for Writing & Editing Excellence */}
+              {isWritingEditing ? (
+                <WritingEditingServices />
+              ) : (
+                <>
+                  <h3 className="font-heading text-xl text-brand-dark mb-6">
+                    Key Deliverables &amp; Scope
+                  </h3>
 
-              <ul className="space-y-4 mb-10" role="list" data-stagger>
-                {service.items.map((item, index) => (
-                  <li
-                    key={index}
-                    data-reveal="up"
-                    className="p-4 bg-brand-bgGray border border-brand-borderHairline flex items-center justify-between"
-                  >
-                    <div className="flex items-center space-x-3">
-                      <span className="w-1.5 h-1.5 bg-[#7B2FBE] flex-shrink-0" />
-                      <span className="text-sm font-body text-brand-dark font-medium">
-                        {item}
-                        {isIsbn && (
-                          /* TODO: take these four points from the client's ISBN Book Publication page */
-                          <span className="sr-only"> - Detail placeholder</span>
-                        )}
-                      </span>
-                    </div>
-                    <span className="font-mono text-xs text-[#7B2FBE] font-semibold">
-                      0{index + 1}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                  <ul className="space-y-4 mb-10" role="list" data-stagger>
+                    {service.items.map((item, index) => (
+                      <li
+                        key={index}
+                        data-reveal="up"
+                        className="p-4 bg-brand-bgGray border border-brand-borderHairline flex items-center justify-between"
+                      >
+                        <div className="flex items-center space-x-3">
+                          <span className="w-1.5 h-1.5 bg-[#7B2FBE] flex-shrink-0" />
+                          <span className="text-sm font-body text-brand-dark font-medium">
+                            {item}
+                            {isIsbn && (
+                              /* TODO: take these four points from the client's ISBN Book Publication page */
+                              <span className="sr-only"> - Detail placeholder</span>
+                            )}
+                          </span>
+                        </div>
+                        <span className="font-mono text-xs text-[#7B2FBE] font-semibold">
+                          0{index + 1}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
 
               {/* Enhanced Sections for ISBN Book Publication */}
               {isIsbn && <IsbnPublicationSections />}
@@ -111,10 +123,14 @@ export default async function ServiceDetailPage({ params }: Props) {
                   START YOUR SUBMISSION
                 </p>
                 <h3 className="font-heading text-2xl text-white mb-3">
-                  Have a manuscript ready for {service.title}?
+                  {isWritingEditing
+                    ? "Need Professional Support for Your Research Manuscript?"
+                    : `Have a manuscript ready for ${service.title}?`}
                 </h3>
                 <p className="text-white/80 font-body text-sm leading-relaxed mb-6 font-light">
-                  Get in touch with our editorial board to schedule a preliminary review and scope evaluation.
+                  {isWritingEditing
+                    ? "Get in touch with our editorial team to discuss your manuscript requirements and receive preliminary guidance."
+                    : "Get in touch with our editorial board to schedule a preliminary review and scope evaluation."}
                 </p>
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
@@ -125,14 +141,14 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <span>BOOK A CONSULTANT</span>
                     <span className="ml-2 font-mono transition-transform duration-200 group-hover:translate-x-0.5">→</span>
                   </Link>
-                  <Link
-                    href="/contact?type=inquiry"
-                    className="inline-flex items-center justify-center px-7 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white font-bold text-xs uppercase tracking-wider rounded-lg backdrop-blur-sm transition-all duration-200 group"
+                  <InquiryButton
+                    category={service.title}
+                    className="inline-flex items-center justify-center px-7 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white font-bold text-xs uppercase tracking-wider rounded-lg backdrop-blur-sm transition-all duration-200 group cursor-pointer"
                     style={{ borderRadius: "8px" }}
                   >
                     <span>INQUIRE NOW</span>
                     <span className="ml-2 font-mono transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-                  </Link>
+                  </InquiryButton>
                 </div>
               </div>
             </div>
@@ -171,7 +187,9 @@ export default async function ServiceDetailPage({ params }: Props) {
                     Editorial Support
                   </p>
                   <p className="leading-relaxed">
-                    Have questions regarding journal scope or indexing? Our editors are available 24x7 for author inquiries.
+                    {isWritingEditing
+                      ? "Have questions regarding academic writing, editing, or manuscript preparation? Our editorial team is available to assist you with your requirements."
+                      : "Have questions regarding journal scope or indexing? Our editors are available 24x7 for author inquiries."}
                   </p>
                   <Link
                     href="/contact"
@@ -186,7 +204,13 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </section>
 
-      <CtaBand />
+      <CtaBand
+        description={
+          isWritingEditing
+            ? "Get expert guidance for your manuscript, from initial preparation to final submission."
+            : undefined
+        }
+      />
     </main>
   );
 }

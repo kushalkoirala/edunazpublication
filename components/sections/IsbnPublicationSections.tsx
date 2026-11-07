@@ -11,8 +11,8 @@ const E_PUBLICATION_PACKAGES = [
     id: "silver-e",
     name: "Silver Package",
     badge: "1 Author",
-    priceInr: "₹2,000",
-    priceUsd: "$50",
+    priceInr: "₹5,000",
+    priceUsd: "$100",
     inquiryPrefill: "Silver E-Publication",
     suitableFor:
       "Suitable for solo authors, first-time writers and individual researchers.",
@@ -34,8 +34,8 @@ const E_PUBLICATION_PACKAGES = [
     id: "gold-e",
     name: "Gold Package",
     badge: "2 Authors",
-    priceInr: "₹3,000",
-    priceUsd: "$60",
+    priceInr: "₹7,000",
+    priceUsd: "$120",
     inquiryPrefill: "Gold E-Publication",
     suitableFor:
       "Suitable for co-authored academic books and collaborative research works.",
@@ -57,8 +57,8 @@ const E_PUBLICATION_PACKAGES = [
     id: "diamond-e",
     name: "Diamond Package",
     badge: "3 Authors",
-    priceInr: "₹4,000",
-    priceUsd: "$70",
+    priceInr: "₹9,000",
+    priceUsd: "$150",
     inquiryPrefill: "Diamond E-Publication",
     suitableFor:
       "Suitable for multi-author works, edited volumes and departmental publications.",
@@ -81,8 +81,8 @@ const E_PUBLICATION_PACKAGES = [
     id: "platinum-e",
     name: "Platinum Package",
     badge: "4 Authors",
-    priceInr: "₹5,000",
-    priceUsd: "$80",
+    priceInr: "₹12,000",
+    priceUsd: "$200",
     inquiryPrefill: "Platinum E-Publication",
     suitableFor:
       "Suitable for departmental textbooks, institutional reports and collaborative research monographs.",
@@ -111,8 +111,8 @@ const HARD_COPY_PACKAGES = [
     id: "silver-hard",
     name: "Silver Package",
     authors: "1 Author",
-    priceInr: "₹7,999",
-    priceUsd: "$150",
+    priceInr: "₹9,999",
+    priceUsd: "$250",
     inquiryPrefill: "Silver Hard Copy Publication",
     suitableFor: "Individual authors requiring premium physical printed copies with ISBN.",
   },
@@ -120,8 +120,8 @@ const HARD_COPY_PACKAGES = [
     id: "gold-hard",
     name: "Gold Package",
     authors: "2 Authors",
-    priceInr: "₹8,999",
-    priceUsd: "$160",
+    priceInr: "₹11,999",
+    priceUsd: "$300",
     inquiryPrefill: "Gold Hard Copy Publication",
     suitableFor: "Two collaborative authors seeking hardcover/paperback physical copies.",
   },
@@ -129,8 +129,8 @@ const HARD_COPY_PACKAGES = [
     id: "diamond-hard",
     name: "Diamond Package",
     authors: "3 Authors",
-    priceInr: "₹9,999",
-    priceUsd: "$170",
+    priceInr: "₹14,999",
+    priceUsd: "$400",
     inquiryPrefill: "Diamond Hard Copy Publication",
     suitableFor: "Multi-author research works and departmental book publications.",
   },
@@ -138,8 +138,8 @@ const HARD_COPY_PACKAGES = [
     id: "platinum-hard",
     name: "Platinum Package",
     authors: "4 Authors",
-    priceInr: "₹10,999",
-    priceUsd: "$180",
+    priceInr: "₹17,999",
+    priceUsd: "$600",
     inquiryPrefill: "Platinum Hard Copy Publication",
     suitableFor: "Institutional and collaborative monographs with up to 4 registered authors.",
   },
@@ -412,19 +412,19 @@ export default function IsbnPublicationSections() {
               <svg className="w-4 h-4 text-[#7B2FBE] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span><strong>Four physical copies</strong> provided to the first author</span>
+              <span>Hardcopy packages include a total of <strong>4 printed copies</strong>, which will be sent to the first author</span>
             </div>
             <div className="flex items-start gap-2 sm:col-span-2">
               <svg className="w-4 h-4 text-[#7B2FBE] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>Available in <strong>A4, A5, and B5 formats</strong></span>
+              <span>Available hardcopy formats: <strong>A4, A5, and B5</strong></span>
             </div>
           </div>
 
           <div className="mt-4 pt-3 border-t border-brand-borderHairline flex flex-col sm:flex-row sm:items-center justify-between text-xs text-brand-muted gap-2">
-            <span>• INR prices include postal charges except for foreign countries.</span>
-            <span>• USD prices exclude postal charges.</span>
+            <span>• INR prices include postal charges within India, except international postal charges.</span>
+            <span>• USD prices do not include postal charges.</span>
           </div>
         </div>
 
@@ -469,7 +469,7 @@ export default function IsbnPublicationSections() {
                   </p>
                   <p>• Perfect binding &amp; laminated cover</p>
                   <p>• Black-and-white interior printing</p>
-                  <p>• 4 copies delivered to first author</p>
+                  <p>• 4 printed copies sent to first author</p>
                 </div>
               </div>
 
