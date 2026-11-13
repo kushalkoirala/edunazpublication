@@ -23,8 +23,8 @@ export default function About() {
             <p data-reveal="up" className="text-brand-muted font-body text-sm leading-relaxed mb-8">
               EDUNAAZ PUBLICATION (OPC) PRIVATE LIMITED is registered under the Ministry of Corporate
               Affairs, Government of India. We support scholars and professionals with publication-ready
-              research articles, review papers and theses, guiding authors through journal selection,
-              manuscript preparation, formatting and submission.
+              research articles, review papers and thesis, guiding authors through journal selection,
+               Manuscript preperation, Formatting, Submission, upto final Publication.
             </p>
             <div data-line className="hairline-divider mb-8"></div>
             {/* CTA Button */}

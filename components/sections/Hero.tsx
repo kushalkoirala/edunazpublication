@@ -154,7 +154,7 @@ export default function Hero() {
                 </div>
                 <div className="hairline-divider bg-white/20 my-3.5"></div>
                 <p className="text-[12px] text-white/90 leading-relaxed font-normal">
-                  Writing and editing support for research articles, review papers and theses.
+                  Writing and editing support for research articles, review papers and thesis.
                 </p>
               </div>
               <div className="pt-4">

@@ -69,7 +69,7 @@ export default function Footer() {
                 Publication</Link></li>
               <li className=""><Link data-sweep className="hover:text-[#C084FC] transition-colors" href="/#process">Plagiarism &amp;
                 Formatting Audit</Link></li>
-              <li className=""><Link data-sweep className="hover:text-[#C084FC] transition-colors" href="/services/writing-and-editing">Theses &amp;
+              <li className=""><Link data-sweep className="hover:text-[#C084FC] transition-colors" href="/services/writing-and-editing">Thesis &amp;
                 Review Support</Link></li>
             </ul>
           </div>

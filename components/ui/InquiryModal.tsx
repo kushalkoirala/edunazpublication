@@ -195,7 +195,7 @@ export function InquiryModalProvider({ children }: { children: React.ReactNode }
                       {![
                         "Research Publication Guidance",
                         "Writing & Editorial Excellence",
-                        "Theses & Dissertations Support",
+                        "Thesis & Dissertations Support",
                         "ISBN Book Publication",
                         "Journal Scope & Indexing",
                         "General Academic Inquiry",
@@ -204,7 +204,7 @@ export function InquiryModalProvider({ children }: { children: React.ReactNode }
                       )}
                       <option value="Research Publication Guidance">Research Publication Guidance</option>
                       <option value="Writing & Editorial Excellence">Writing &amp; Editorial Excellence</option>
-                      <option value="Theses & Dissertations Support">Theses &amp; Dissertations Support</option>
+                      <option value="Thesis & Dissertations Support">Thesis &amp; Dissertations Support</option>
                       <option value="ISBN Book Publication">ISBN Book Publication</option>
                       <option value="Journal Scope & Indexing">Journal Scope &amp; Indexing Inquiry</option>
                       <option value="General Academic Inquiry">General Academic Inquiry</option>

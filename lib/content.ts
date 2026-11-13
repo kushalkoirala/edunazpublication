@@ -89,14 +89,14 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: "Writing & Editing Excellence",
     heroAccentWord: "Editing",
     shortDescription:
-      "Professional academic writing, editing, proofreading, and language refinement services for research articles, review papers, theses, dissertations, and research proposals.",
+      "Professional academic writing, editing, proofreading, and language refinement services for research articles, review papers, thesis, dissertations, and research proposals.",
     fullDescription:
       "EduNaaz Publication provides comprehensive academic writing and editorial support to researchers, scholars, and students. Our experienced team of subject specialists and academic editors helps improve the clarity, structure, language, and presentation of scholarly manuscripts while maintaining academic integrity and research quality.",
     iconName: "editing",
     items: [
       "Research articles",
       "Review papers",
-      "Theses & dissertations",
+      "Thesis & dissertations",
       "Proofreading and editing",
     ],
   },

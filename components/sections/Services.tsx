@@ -241,7 +241,7 @@ export default function Services() {
               {/* Description */}
               <p className="text-xs sm:text-[13px] font-body text-white/70 leading-relaxed mb-6">
                 Professional writing and editorial support for research articles, review papers,
-                theses and dissertations, ensuring clarity, structure and academic rigor.
+                thesis and dissertations, ensuring clarity, structure and academic rigor.
               </p>
 
               {/* Feature List */}
@@ -299,7 +299,7 @@ export default function Services() {
                     </svg>
                   </span>
                   <span className="text-xs sm:text-[13px] font-body text-white/90 font-medium">
-                    Theses &amp; dissertations
+                    Thesis &amp; dissertations
                   </span>
                 </li>
 

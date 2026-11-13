@@ -269,7 +269,7 @@ const TARGET_PARTICIPANTS = [
   {
     role: "Doctoral & Postgraduate Researchers",
     details:
-      "PhD scholars and master's researchers with completed dissertations, theses, or substantial empirical research projects ready for adaptation into high-impact articles.",
+      "PhD scholars and master's researchers with completed dissertations, thesis, or substantial empirical research projects ready for adaptation into high-impact articles.",
   },
   {
     role: "Independent Researchers & Practitioners",
@@ -1936,25 +1936,75 @@ export default function ApexPageContent() {
           {/* Two-Column Grid: Image Left + 5 Cards Right */}
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
-            {/* Left: Arched Image Frame */}
+            {/* Left: Arched Image Frame with Floating Overlays */}
             <div className="lg:col-span-5 flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-[420px]">
+              <div className="relative w-full max-w-[420px] pb-6 sm:pb-8">
                 {/* Lavender arched backing shadow */}
                 <div
-                  className="absolute -top-5 -left-5 w-full h-full bg-[#EDE0FF] opacity-70"
+                  className="absolute -top-5 -left-5 w-full h-[460px] sm:h-[500px] bg-[#EDE0FF] opacity-70"
                   style={{
                     borderRadius: "140px 28px 28px 28px",
                   }}
                 />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/apex-advantage.jpg"
-                  alt="Why Researchers Choose APEX"
-                  className="relative w-full h-[460px] sm:h-[500px] object-cover shadow-[0_20px_50px_rgba(123,47,190,0.14)]"
-                  style={{
-                    borderRadius: "130px 24px 24px 24px",
-                  }}
-                />
+
+                {/* Main Image with Soft Bottom Gradient */}
+                <div className="relative overflow-hidden shadow-[0_20px_50px_rgba(123,47,190,0.14)]" style={{ borderRadius: "130px 24px 24px 24px" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/apex-advantage.jpg"
+                    alt="Why Researchers Choose APEX"
+                    className="w-full h-[460px] sm:h-[500px] object-cover"
+                  />
+                  {/* Subtle vignette gradient at bottom of photo */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+                </div>
+
+                {/* Top-Left Floating Tag */}
+                <div className="absolute top-4 left-4 z-20">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#7B2FBE] text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-[0_4px_16px_rgba(123,47,190,0.4)]">
+                    <svg className="w-3 h-3 text-[#F3EAFF]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    12-Week Fast-Track
+                  </span>
+                </div>
+
+                {/* Top-Right Floating Glass Badge */}
+                <div className="absolute top-6 -right-3 sm:-right-5 z-20 bg-white/95 backdrop-blur-md border border-[#EBE7F2] rounded-[18px] py-2.5 px-3.5 sm:px-4 shadow-[0_12px_32px_rgba(123,47,190,0.18)] flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-[#EDE0FF] text-[#7B2FBE] flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-[#7B2FBE]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </span>
+                  <div>
+                    <span className="text-[9px] uppercase font-bold text-[#7B2FBE] tracking-wider block leading-none mb-1">
+                      ZERO APC FOCUS
+                    </span>
+                    <span className="text-xs font-semibold text-brand-dark block leading-tight">
+                      100% Free for Authors
+                    </span>
+                  </div>
+                </div>
+
+                {/* Bottom Floating Glass Card */}
+                <div className="absolute bottom-0 left-4 right-4 sm:left-6 sm:-right-4 z-20 bg-white/95 backdrop-blur-md border border-[#EBE7F2] rounded-[20px] p-3.5 sm:p-4 shadow-[0_16px_36px_rgba(123,47,190,0.20)] flex items-center gap-3.5">
+                  <span className="w-11 h-11 rounded-[13px] bg-gradient-to-br from-[#7B2FBE] to-[#9333EA] text-white flex items-center justify-center flex-shrink-0 shadow-[0_4px_14px_rgba(123,47,190,0.35)]">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.75" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6" />
+                    </svg>
+                  </span>
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-semibold text-brand-dark font-heading leading-tight mb-0.5">
+                      1-on-1 Research Mentorship
+                    </h4>
+                    <p className="text-[11px] text-brand-muted font-body leading-tight">
+                      Scopus &amp; Web of Science Indexing
+                    </p>
+                  </div>
+                </div>
+
               </div>
             </div>
 
