@@ -45,7 +45,7 @@ export default async function JournalDetailPage({ params }: Props) {
         eyebrow={journal.badge}
         title={journal.title}
         accentWord={journal.heroAccentWord}
-        intro={`ISSN: ${journal.issn} | Publication Frequency: ${journal.frequency}`}
+        intro={journal.issn ? `ISSN: ${journal.issn} | Publication Frequency: ${journal.frequency}` : `Publication Frequency: ${journal.frequency}`}
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Journals", href: "/journals" },
@@ -94,12 +94,29 @@ export default async function JournalDetailPage({ params }: Props) {
                     </span>
                     <span className="font-medium">{journal.frequency}</span>
                   </div>
-                  <div>
-                    <span className="text-brand-muted uppercase tracking-wider block mb-1">
-                      ISSN
-                    </span>
-                    <span className="font-mono">{journal.issn}</span>
-                  </div>
+                  {journal.issn && (
+                    <div>
+                      <span className="text-brand-muted uppercase tracking-wider block mb-1">
+                        ISSN
+                      </span>
+                      <span className="font-mono">{journal.issn}</span>
+                    </div>
+                  )}
+                  {journal.websiteUrl && (
+                    <div>
+                      <span className="text-brand-muted uppercase tracking-wider block mb-1">
+                        Journal Website
+                      </span>
+                      <a
+                        href={journal.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-[#7B2FBE] hover:text-[#6620A0] hover:underline transition-colors"
+                      >
+                        Visit Journal ↗
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
 

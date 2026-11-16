@@ -22,6 +22,7 @@ export interface JournalItem {
   frequency: string;
   indexing?: string;
   citeScore?: string;
+  websiteUrl?: string;
 }
 
 export interface FaqItem {
@@ -123,44 +124,43 @@ export const SERVICES_DATA: ServiceItem[] = [
 // ─────────────────────────────────────────────────────────────
 export const JOURNALS_DATA: JournalItem[] = [
   {
-    slug: "acta-innovations",
-    title: "Acta Innovations",
-    heroAccentWord: "Innovations",
-    badge: "SCOPUS Q1",
-    issn: "e-ISSN: 2300-5599",
-    indexing: "Scopus Q1",
+    slug: "acta-biomedica",
+    title: "Acta Biomedica",
+    heroAccentWord: "Biomedica",
+    badge: "SCOPUS Q3",
+    issn: "",
+    indexing: "Scopus Q3",
     description:
-      "Peer-reviewed multidisciplinary journal indexed in Scopus (Q1) dedicated to innovative scientific research, societal progress, environmental advances, and technological applications.",
-    scope:
-      "Social Sciences (miscellaneous), Arts and Humanities, Education, Engineering (miscellaneous), Medicine (miscellaneous), Environmental Sciences, Business, Management and Accounting, etc.",
+      "Peer-reviewed medical journal indexed in Scopus (Q3) covering a broad range of medical and health sciences research with a commitment to advancing clinical knowledge and patient care.",
+    scope: "Medical and Health Sciences",
     frequency: "Quarterly",
+    websiteUrl: "https://mattioli1885journals.com/index.php/actabiomedica",
   },
   {
-    slug: "journal-of-intelligent-decision-making-and-information-science",
-    title: "Journal of Intelligent Decision Making and Information Science",
-    heroAccentWord: "Decision",
+    slug: "studies-in-english-language-and-education",
+    title: "Studies in English Language and Education (SiELE)",
+    heroAccentWord: "Education",
     badge: "SCOPUS Q1",
-    issn: "e-ISSN: 3079-0875",
+    issn: "",
     indexing: "Scopus Q1",
-    citeScore: "3.4 (CiteScore 2026)",
     description:
-      "Leading peer-reviewed journal indexed in Scopus (Q1) with a CiteScore of 3.4 (2026), advancing computational intelligence, information science, and algorithmic decision modeling.",
-    scope:
-      "Engineering, Computer Science: Artificial Intelligence, Computer Science: Information Systems, Decision Sciences: Information Systems and Management, Decision Sciences: Management Science and Operations Research.",
+      "Leading peer-reviewed journal indexed in Scopus (Q1) dedicated to advancing research in English language learning, linguistics, and educational methodology across global academic contexts.",
+    scope: "English Language, Linguistics and Education",
     frequency: "Quarterly",
+    websiteUrl: "https://jurnal.usk.ac.id/SiELE",
   },
   {
-    slug: "adolescencia-e-saude",
-    title: "Adolescencia e Saude",
-    heroAccentWord: "Saude",
-    badge: "SCOPUS · PUBMED",
-    issn: "ISSN: 1679-9941 | e-ISSN: 2177-5281",
-    indexing: "Scopus, PubMed, Google Scholar",
+    slug: "3l-language-linguistics-literature",
+    title: "3L: Language, Linguistics, Literature – The Southeast Asian Journal of English Language Studies",
+    heroAccentWord: "Literature",
+    badge: "SCOPUS Q1",
+    issn: "",
+    indexing: "Scopus Q1",
     description:
-      "Prestigious peer-reviewed medical publication indexed in Scopus, PubMed, and Google Scholar, advancing clinical pediatrics, perinatology, child development, and multidisciplinary healthcare.",
-    scope:
-      "Medicine: Pediatrics, Perinatology and Child Health and Medical Related All Domain.",
+      "Distinguished peer-reviewed journal indexed in Scopus (Q1) focusing on language, linguistics, and literature research with a Southeast Asian perspective and global scholarly engagement.",
+    scope: "Language, Linguistics and Literature",
     frequency: "Quarterly",
+    websiteUrl: "https://ejournals.ukm.my/3l/index",
   },
 ];
 

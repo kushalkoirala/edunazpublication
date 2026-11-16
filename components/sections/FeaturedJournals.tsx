@@ -77,10 +77,10 @@ export default function FeaturedJournals() {
 
         {/* Asymmetrical Journal Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 sm:gap-8 items-stretch">
-          
-          {/* ─────────────────────────────────────────────────────────── */}
-          {/* Left Large Showcase Card (Journal 1 - 7 columns)            */}
-          {/* ─────────────────────────────────────────────────────────── */}
+
+          {/* ─────────────────────────────────────────────────────────────────── */}
+          {/* Left Large Showcase Card (Journal 1 — Acta Biomedica, 7 columns)   */}
+          {/* ─────────────────────────────────────────────────────────────────── */}
           <div className="lg:col-span-7 flex flex-col" data-reveal="up">
             <article
               className="bg-[#FCFAF7] border border-[#EBE3D6] rounded-[24px] relative overflow-hidden shadow-[0_12px_36px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.06)] transition-all duration-300 flex flex-col md:flex-row h-full group"
@@ -100,24 +100,19 @@ export default function FeaturedJournals() {
                     <span className="text-[#7B2FBE] font-bold text-xs tracking-wider font-body">01</span>
                     <span className="text-[#7B2FBE]/50">/</span>
                     <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#7B2FBE] font-body">
-                      SCOPUS Q1 · FEATURED JOURNAL
+                      SCOPUS Q3 · FEATURED JOURNAL
                     </span>
                   </div>
 
                   {/* Title */}
                   <h3 className="font-heading text-2xl sm:text-3xl lg:text-[32px] text-brand-dark leading-tight mb-3">
                     <Link
-                      href="/journals/acta-innovations"
+                      href="/journals/acta-biomedica"
                       className="hover:text-[#7B2FBE] transition-colors"
                     >
-                      Acta Innovations
+                      Acta Biomedica
                     </Link>
                   </h3>
-
-                  {/* ISSN */}
-                  <p className="text-xs font-mono text-brand-muted mb-3">
-                    e-ISSN: 2300-5599
-                  </p>
 
                   {/* Description / Scope */}
                   <div className="mb-6">
@@ -125,7 +120,7 @@ export default function FeaturedJournals() {
                       Subject Area:
                     </p>
                     <p className="text-xs sm:text-[13px] text-brand-muted leading-relaxed font-body">
-                      Social Sciences (miscellaneous), Arts and Humanities, Education, Engineering (miscellaneous), Medicine (miscellaneous), Environmental Sciences, Business, Management and Accounting, etc.
+                      Medical and Health Sciences
                     </p>
                   </div>
                 </div>
@@ -141,7 +136,7 @@ export default function FeaturedJournals() {
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
                   </Link>
                   <Link
-                    href="/journals/acta-innovations"
+                    href="/journals/acta-biomedica"
                     className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-brand-dark hover:text-[#7B2FBE] transition-colors"
                   >
                     <span>VIEW DETAILS</span>
@@ -155,7 +150,7 @@ export default function FeaturedJournals() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/journal-1.png"
-                  alt="Acta Innovations"
+                  alt="Acta Biomedica"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
@@ -166,16 +161,13 @@ export default function FeaturedJournals() {
                   aria-hidden="true"
                 >
                   <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase bg-white/80 px-2 py-0.5 rounded backdrop-blur-sm">
-                    SCOPUS Q1
-                  </span>
-                  <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase bg-white/80 px-2 py-0.5 rounded backdrop-blur-sm">
-                    SOCIAL SCIENCES
-                  </span>
-                  <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase bg-white/80 px-2 py-0.5 rounded backdrop-blur-sm">
-                    ENGINEERING
+                    SCOPUS Q3
                   </span>
                   <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase bg-white/80 px-2 py-0.5 rounded backdrop-blur-sm">
                     MEDICINE
+                  </span>
+                  <span className="text-[10px] tracking-[0.22em] text-[#6A6560] font-semibold uppercase bg-white/80 px-2 py-0.5 rounded backdrop-blur-sm">
+                    HEALTH
                   </span>
                 </div>
 
@@ -191,12 +183,12 @@ export default function FeaturedJournals() {
             </article>
           </div>
 
-          {/* ─────────────────────────────────────────────────────────── */}
-          {/* Right Column: Stacked Cards (Journal 2 & 3 - 5 columns)     */}
-          {/* ─────────────────────────────────────────────────────────── */}
+          {/* ─────────────────────────────────────────────────────────────────── */}
+          {/* Right Column: Stacked Cards (Journal 2 & 3 — 5 columns)            */}
+          {/* ─────────────────────────────────────────────────────────────────── */}
           <div className="lg:col-span-5 flex flex-col gap-6 sm:gap-7">
-            
-            {/* ─── Card 2: Journal of Intelligent Decision Making and Information Science ─── */}
+
+            {/* ─── Card 2: Studies in English Language and Education (SiELE) ─── */}
             <article
               data-reveal="up"
               className="bg-[#FCFAF7] border border-[#EBE3D6] rounded-[24px] relative overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_18px_40px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col sm:flex-row flex-1 group"
@@ -210,28 +202,23 @@ export default function FeaturedJournals() {
                     <span className="text-[#7B2FBE] font-bold text-xs tracking-wider font-body">02</span>
                     <span className="text-[#7B2FBE]/50">/</span>
                     <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#7B2FBE] font-body">
-                      SCOPUS Q1 · CITESCORE 3.4
+                      SCOPUS Q1
                     </span>
                   </div>
 
                   {/* Title */}
                   <h3 className="font-heading text-lg sm:text-xl text-brand-dark leading-snug mb-1.5">
                     <Link
-                      href="/journals/journal-of-intelligent-decision-making-and-information-science"
+                      href="/journals/studies-in-english-language-and-education"
                       className="hover:text-[#7B2FBE] transition-colors"
                     >
-                      Journal of Intelligent Decision Making and Information Science
+                      Studies in English Language and Education (SiELE)
                     </Link>
                   </h3>
 
-                  {/* ISSN */}
-                  <p className="text-[11px] font-mono text-brand-muted mb-2">
-                    e-ISSN: 3079-0875
-                  </p>
-
                   {/* Description */}
                   <p className="text-xs text-brand-muted leading-relaxed font-body mb-4 line-clamp-3">
-                    <span className="font-semibold text-brand-dark">Subject Area:</span> Engineering, Computer Science: Artificial Intelligence, Information Systems, Decision Sciences: Management Science &amp; Operations Research.
+                    <span className="font-semibold text-brand-dark">Subject Area:</span> English Language, Linguistics and Education
                   </p>
                 </div>
 
@@ -245,7 +232,7 @@ export default function FeaturedJournals() {
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
                   </Link>
                   <Link
-                    href="/journals/journal-of-intelligent-decision-making-and-information-science"
+                    href="/journals/studies-in-english-language-and-education"
                     className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-muted hover:text-brand-dark transition-colors"
                   >
                     <span>DETAILS</span>
@@ -254,17 +241,17 @@ export default function FeaturedJournals() {
                 </div>
               </div>
 
-              {/* Image Side with Analytics Circular Badge */}
+              {/* Image Side */}
               <div className="relative w-full sm:w-[42%] min-h-[170px] sm:min-h-full overflow-hidden bg-[#F3EFE9]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/journal-2.png"
-                  alt="Journal of Intelligent Decision Making and Information Science"
+                  alt="Studies in English Language and Education"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
 
-                {/* Floating Analytics Circular Badge at Junction */}
+                {/* Floating Badge */}
                 <div
                   className="absolute top-5 left-4 sm:-left-4.5 w-9 h-9 rounded-full bg-white shadow-md border border-[#EBE3D6] text-[#7B2FBE] flex items-center justify-center z-10 pointer-events-none"
                   style={{ borderRadius: "9999px" }}
@@ -275,14 +262,14 @@ export default function FeaturedJournals() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="1.8"
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
                     />
                   </svg>
                 </div>
               </div>
             </article>
 
-            {/* ─── Card 3: Adolescencia e Saude (Dark Card with Purple Accent) ─── */}
+            {/* ─── Card 3: 3L Language, Linguistics, Literature (Dark Card) ─── */}
             <article
               data-reveal="up"
               className="bg-[#1C2438] border border-[#7B2FBE]/40 hover:border-[#7B2FBE] rounded-[24px] relative overflow-hidden shadow-[0_16px_40px_rgba(123,47,190,0.15)] hover:shadow-[0_22px_45px_rgba(123,47,190,0.25)] transition-all duration-300 flex flex-col sm:flex-row flex-1 group"
@@ -296,28 +283,28 @@ export default function FeaturedJournals() {
                     <span className="text-[#C084FC] font-bold text-xs tracking-wider font-body">03</span>
                     <span className="text-white/30">/</span>
                     <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C084FC] font-body">
-                      SCOPUS · PUBMED · GOOGLE SCHOLAR
+                      SCOPUS Q1
                     </span>
                   </div>
 
                   {/* Title */}
                   <h3 className="font-heading text-lg sm:text-xl text-white leading-snug mb-1.5">
                     <Link
-                      href="/journals/adolescencia-e-saude"
+                      href="/journals/3l-language-linguistics-literature"
                       className="hover:text-[#C084FC] transition-colors"
                     >
-                      Adolescencia e Saude
+                      3L: Language, Linguistics, Literature
                     </Link>
                   </h3>
 
-                  {/* ISSN */}
-                  <p className="text-[11px] font-mono text-white/50 mb-2">
-                    ISSN: 1679-9941 | e-ISSN: 2177-5281
+                  {/* Subtitle */}
+                  <p className="text-[11px] font-body text-white/50 mb-2">
+                    The Southeast Asian Journal of English Language Studies
                   </p>
 
                   {/* Description */}
-                  <p className="text-xs text-white/70 leading-relaxed font-body mb-4">
-                    <span className="font-semibold text-white">Subject Area:</span> Medicine: Pediatrics, Perinatology and Child Health and Medical Related All Domain.
+                  <p className="text-xs text-white/70 leading-relaxed font-body mb-4 line-clamp-2">
+                    <span className="font-semibold text-white">Subject Area:</span> Language, Linguistics and Literature
                   </p>
                 </div>
 
@@ -331,7 +318,7 @@ export default function FeaturedJournals() {
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
                   </Link>
                   <Link
-                    href="/journals/adolescencia-e-saude"
+                    href="/journals/3l-language-linguistics-literature"
                     className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/60 hover:text-white transition-colors"
                   >
                     <span>DETAILS</span>
@@ -340,12 +327,12 @@ export default function FeaturedJournals() {
                 </div>
               </div>
 
-              {/* Image Side with Book Badge and Floating Tags */}
+              {/* Image Side */}
               <div className="relative w-full sm:w-[42%] min-h-[170px] sm:min-h-full overflow-hidden bg-[#131929]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/images/journal-3.png"
-                  alt="Adolescencia e Saude"
+                  alt="3L: Language, Linguistics, Literature"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
@@ -371,13 +358,13 @@ export default function FeaturedJournals() {
                   aria-hidden="true"
                 >
                   <span className="text-[9px] tracking-[0.2em] text-white/70 font-semibold uppercase">
-                    PEDIATRICS
+                    LANGUAGE
                   </span>
                   <span className="text-[9px] tracking-[0.2em] text-white/70 font-semibold uppercase">
-                    MEDICINE
+                    LINGUISTICS
                   </span>
                   <span className="text-[9px] tracking-[0.2em] text-white/70 font-semibold uppercase">
-                    HEALTH
+                    LITERATURE
                   </span>
                 </div>
 
