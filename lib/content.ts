@@ -231,7 +231,6 @@ export const JOURNALS_DATA: JournalItem[] = [
     publisher: "Associated Management Consultants Pvt. Ltd.",
     indexedIn: "Scopus, UGC-CARE Group II, Google Scholar, J-Gate, NISCAIR, Crossref, Cabell's Journalytics",
     websiteUrl: "https://www.indianjournalofmanagement.com/",
-    note: "Quartile discrepancy: The official journal website currently displays Q2, while client-provided information indicates Q3. Please confirm the correct quartile before publishing.",
   },
 ];
 
