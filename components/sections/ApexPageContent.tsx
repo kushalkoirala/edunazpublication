@@ -446,7 +446,7 @@ const ENROLLMENT_STEPS_DATA = [
     step: "STEP 03",
     title: "Consultation & Fit Assessment",
     details:
-      "Schedule an initial consultation with Program Coordinator Dr. Sukhwinder Singh to discuss your research goals, assess program suitability, review manuscript scope, and confirm enrollment.",
+      "Schedule an initial consultation with our program mentor to discuss your research goals, assess program suitability, review manuscript scope, and confirm enrollment.",
     image: "/images/apex-included.jpg",
     imageFocus: "object-top",
   },
@@ -467,7 +467,7 @@ const FAQS_DATA = [
   },
   {
     q: "What if my manuscript needs extensive revision?",
-    a: "Our program accommodates manuscripts at various stages of development. Dr. Singh will assess your manuscript and develop a customized revision plan. If substantial work is needed, we prioritize the most impactful improvements within the 3-month timeline.",
+    a: "Our program accommodates manuscripts at various stages of development. Our mentor will assess your manuscript and develop a customized revision plan. If substantial work is needed, we prioritize the most impactful improvements within the 3-month timeline.",
   },
   {
     q: "What if my manuscript gets desk-rejected?",
@@ -487,7 +487,7 @@ const FAQS_DATA = [
   },
   {
     q: "How do I know if software training (SigmaPlot/CorelDRAW) is included?",
-    a: "Software training is integrated into your personalized program based on your specific manuscript needs. During initial assessment, Dr. Singh will determine which software training sessions will benefit your work most.",
+    a: "Software training is integrated into your personalized program based on your specific manuscript needs. During initial assessment, our mentor will determine which software training sessions will benefit your work most.",
   },
   {
     q: "Is there a possibility of earlier publication before 3 months?",

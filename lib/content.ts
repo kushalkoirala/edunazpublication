@@ -23,6 +23,11 @@ export interface JournalItem {
   indexing?: string;
   citeScore?: string;
   websiteUrl?: string;
+  snip?: string;
+  sjr?: string;
+  publisher?: string;
+  indexedIn?: string;
+  note?: string;
 }
 
 export interface FaqItem {
@@ -128,12 +133,13 @@ export const JOURNALS_DATA: JournalItem[] = [
     title: "Acta Biomedica",
     heroAccentWord: "Biomedica",
     badge: "SCOPUS Q3",
-    issn: "",
-    indexing: "Scopus Q3",
+    issn: "ISSN: 0392-4203 | e-ISSN: 2531-6745",
+    indexing: "Scopus Q3 · CiteScore 2.8 (2025)",
+    citeScore: "2.8 (68th centile, 2025)",
     description:
-      "Peer-reviewed medical journal indexed in Scopus (Q3) covering a broad range of medical and health sciences research with a commitment to advancing clinical knowledge and patient care.",
-    scope: "Medical and Health Sciences",
-    frequency: "Quarterly",
+      "Peer-reviewed medical journal indexed in Scopus (Q3) with a CiteScore of 2.8 (2025), covering clinical and surgical aspects of medicine. Published 6 issues per year, indexed in Scopus, EMBASE, Europe PMC, BIOSIS, Portico, and Google Scholar.",
+    scope: "Clinical and Surgical Aspects of Medicine",
+    frequency: "6 issues / year",
     websiteUrl: "https://mattioli1885journals.com/index.php/actabiomedica",
   },
   {
@@ -161,6 +167,71 @@ export const JOURNALS_DATA: JournalItem[] = [
     scope: "Language, Linguistics and Literature",
     frequency: "Quarterly",
     websiteUrl: "https://ejournals.ukm.my/3l/index",
+  },
+  {
+    slug: "ssrg-ijeee",
+    title: "SSRG International Journal of Electrical and Electronics Engineering (IJEEE)",
+    heroAccentWord: "Electronics",
+    badge: "SCOPUS",
+    issn: "e-ISSN: 2348-8379",
+    indexing: "Scopus",
+    description:
+      "Peer-reviewed international journal indexed in Scopus, covering research in electrical engineering, electronics, power systems, control systems, signal processing, and related fields.",
+    scope: "Electrical and Electronics Engineering",
+    frequency: "12 issues / year",
+    publisher: "Seventh Sense Research Group",
+    websiteUrl: "https://www.internationaljournalssrg.org/IJEEE/index.html",
+  },
+  {
+    slug: "ssrg-ijce",
+    title: "SSRG International Journal of Civil Engineering (IJCE)",
+    heroAccentWord: "Civil",
+    badge: "SCOPUS Q2",
+    issn: "e-ISSN: 2348-8352",
+    indexing: "Scopus Q2",
+    description:
+      "Peer-reviewed international journal indexed in Scopus (Q2) covering research across all major disciplines of civil engineering including structural, geotechnical, transportation, environmental, and construction engineering.",
+    scope: "Civil Engineering",
+    frequency: "12 issues / year",
+    publisher: "Seventh Sense Research Group",
+    websiteUrl: "https://www.internationaljournalssrg.org/IJCE/index.html",
+  },
+  {
+    slug: "indian-journal-of-finance",
+    title: "Indian Journal of Finance",
+    heroAccentWord: "Finance",
+    badge: "SCOPUS Q2",
+    issn: "ISSN: 0973-8711",
+    indexing: "Scopus Q2",
+    citeScore: "2.8 (2025)",
+    snip: "0.565",
+    sjr: "0.283",
+    description:
+      "Leading peer-reviewed journal indexed in Scopus (Q2) with a CiteScore of 2.8 (2025), dedicated to advancing research in finance, capital markets, banking, investment, and financial economics across Indian and global contexts.",
+    scope: "Finance and Markets",
+    frequency: "Monthly",
+    publisher: "Associated Management Consultants Pvt. Ltd.",
+    indexedIn: "Scopus, UGC-CARE Group II, Google Scholar, J-Gate, NISCAIR, Crossref",
+    websiteUrl: "https://www.indianjournaloffinance.co.in/",
+  },
+  {
+    slug: "prabandhan-indian-journal-of-management",
+    title: "Prabandhan: Indian Journal of Management",
+    heroAccentWord: "Management",
+    badge: "SCOPUS Q3",
+    issn: "ISSN: 0975-2854",
+    indexing: "Scopus Q3",
+    citeScore: "3.5 (2025)",
+    snip: "0.672",
+    sjr: "0.310",
+    description:
+      "Distinguished peer-reviewed journal indexed in Scopus with a CiteScore of 3.5 (2025), publishing original research in management, human resource management, organizational behavior, international business, and corporate governance.",
+    scope: "Management, Human Resource Management, Organizational Behavior, International Business and Corporate Governance",
+    frequency: "Monthly",
+    publisher: "Associated Management Consultants Pvt. Ltd.",
+    indexedIn: "Scopus, UGC-CARE Group II, Google Scholar, J-Gate, NISCAIR, Crossref, Cabell's Journalytics",
+    websiteUrl: "https://www.indianjournalofmanagement.com/",
+    note: "Quartile discrepancy: The official journal website currently displays Q2, while client-provided information indicates Q3. Please confirm the correct quartile before publishing.",
   },
 ];
 

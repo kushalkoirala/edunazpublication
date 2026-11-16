@@ -44,13 +44,13 @@ export const APEX_STAGES: ApexStage[] = [
       "Personalized publication strategy document",
     ],
     overview:
-      "Stage 01 establishes the intellectual and methodological foundation of your publication journey. Through structured one-on-one diagnostic sessions with program mentor Dr. Sukhwinder Singh, your current draft undergoes exhaustive scientific evaluation to identify structural bottlenecks, empirical strengths, and strategic journal targets.",
+      "Stage 01 establishes the intellectual and methodological foundation of your publication journey. Through structured one-on-one diagnostic sessions with our program mentor, your current draft undergoes exhaustive scientific evaluation to identify structural bottlenecks, empirical strengths, and strategic journal targets.",
     weeks: [
       {
         badge: "Weeks 1–2",
         title: "Initial Consultation & Diagnostic Assessment",
         description:
-          "Comprehensive diagnostic manuscript review and one-on-one consultation with Dr. Sukhwinder Singh to evaluate empirical rigor and publication objectives.",
+          "Comprehensive diagnostic manuscript review and one-on-one consultation with our program mentor to evaluate empirical rigor and publication objectives.",
         activities: [
           "One-on-one consultation to understand research background, empirical dataset, and publication goals.",
           "Exhaustive diagnostic manuscript review assessing conceptual framing, literature depth, and structural soundness.",

@@ -457,7 +457,7 @@ export default async function ApexStageDetailPage({ params }: Props) {
             Enroll in APEX &amp; Begin {stage.stageNumber}
           </h2>
           <p className="text-white/80 font-body text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            Discuss your research with program mentor Dr. Sukhwinder Singh and receive immediate diagnostic guidance on manuscript readiness.
+            Discuss your research with program mentor and receive immediate diagnostic guidance on manuscript readiness.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">

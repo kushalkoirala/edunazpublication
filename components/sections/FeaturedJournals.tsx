@@ -52,7 +52,7 @@ export default function FeaturedJournals() {
           <div className="flex items-center justify-center gap-3 mb-3.5" data-reveal="up">
             <span className="w-8 h-px bg-[#7B2FBE]/70" />
             <span className="text-xs uppercase tracking-[0.22em] text-[#7B2FBE] font-semibold font-body">
-              OUR JOURNALS
+              JOURNALS
             </span>
             <span className="w-8 h-px bg-[#7B2FBE]/70" />
           </div>
@@ -105,7 +105,7 @@ export default function FeaturedJournals() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading text-2xl sm:text-3xl lg:text-[32px] text-brand-dark leading-tight mb-3">
+                  <h3 className="font-heading text-2xl sm:text-3xl lg:text-[32px] text-brand-dark leading-tight mb-1.5">
                     <Link
                       href="/journals/acta-biomedica"
                       className="hover:text-[#7B2FBE] transition-colors"
@@ -114,19 +114,80 @@ export default function FeaturedJournals() {
                     </Link>
                   </h3>
 
-                  {/* Description / Scope */}
-                  <div className="mb-6">
-                    <p className="text-[11px] uppercase tracking-wider font-semibold text-[#7B2FBE] mb-1">
+                  {/* Subject Area */}
+                  <div className="mb-5">
+                    <p className="text-[11px] uppercase tracking-wider font-semibold text-[#7B2FBE] mb-0.5">
                       Subject Area:
                     </p>
                     <p className="text-xs sm:text-[13px] text-brand-muted leading-relaxed font-body">
-                      Medical and Health Sciences
+                      Clinical and Surgical Aspects of Medicine
+                    </p>
+                  </div>
+
+                  {/* Thin divider */}
+                  <div className="w-full h-px bg-[#EBE3D6] mb-5" />
+
+                  {/* Publication Details + Metrics — two micro-columns */}
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-3 mb-5">
+                    {/* Publication Details */}
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#7B2FBE] mb-2">
+                        Publication Details
+                      </p>
+                      <dl className="space-y-1 font-body">
+                        <div className="flex items-baseline gap-1.5">
+                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">Frequency</dt>
+                          <dd className="text-[11px] font-semibold text-brand-dark">6 issues / year</dd>
+                        </div>
+                        <div className="flex items-baseline gap-1.5">
+                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">ISSN</dt>
+                          <dd className="text-[11px] font-mono text-brand-dark">0392-4203</dd>
+                        </div>
+                        <div className="flex items-baseline gap-1.5">
+                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">e-ISSN</dt>
+                          <dd className="text-[11px] font-mono text-brand-dark">2531-6745</dd>
+                        </div>
+                      </dl>
+                    </div>
+
+                    {/* Journal Metrics */}
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#7B2FBE] mb-2">
+                        Journal Metrics 2025
+                      </p>
+                      <dl className="space-y-1 font-body">
+                        <div className="flex items-baseline gap-1.5">
+                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">CiteScore</dt>
+                          <dd className="text-[11px] font-semibold text-brand-dark">2.8 <span className="font-normal text-brand-muted">(68th centile)</span></dd>
+                        </div>
+                        <div className="flex items-baseline gap-1.5">
+                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">SNIP</dt>
+                          <dd className="text-[11px] font-semibold text-brand-dark">0.679</dd>
+                        </div>
+                        <div className="flex items-baseline gap-1.5">
+                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">SJR</dt>
+                          <dd className="text-[11px] font-semibold text-brand-dark">0.427</dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
+
+                  {/* Thin divider */}
+                  <div className="w-full h-px bg-[#EBE3D6] mb-4" />
+
+                  {/* Indexed In */}
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#7B2FBE] mb-1.5">
+                      Indexed In
+                    </p>
+                    <p className="text-[11px] text-brand-muted leading-relaxed font-body">
+                      Scopus · SJR · Portico · EMBASE · Elsevier BioBASE · Bibliovigilance · BIOSIS · Europe PMC · Google Scholar
                     </p>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="pt-2 flex flex-wrap items-center gap-4">
+                <div className="pt-5 flex flex-wrap items-center gap-4">
                   <Link
                     href="/contact"
                     className="inline-flex items-center gap-2.5 py-3 px-5 rounded-lg bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-[0.16em] shadow-[0_0_15px_rgba(123,47,190,0.35)] hover:shadow-[0_0_20px_rgba(123,47,190,0.5)] transition-all duration-200"
