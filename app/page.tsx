@@ -7,6 +7,7 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import FeaturedJournals from "@/components/sections/FeaturedJournals";
 import Apex from "@/components/sections/Apex";
 import Indexing from "@/components/sections/Indexing";
+import VideoTestimonials from "@/components/sections/VideoTestimonials";
 import Faq from "@/components/sections/Faq";
 import ContactBand from "@/components/sections/ContactBand";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <FeaturedJournals />
       <Apex />
       <Indexing />
+      <VideoTestimonials />
       <Faq />
       <ContactBand />
     </main>
