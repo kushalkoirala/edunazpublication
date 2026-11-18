@@ -93,7 +93,7 @@ export default function FeaturedJournals() {
               />
 
               {/* Text Side (Left) */}
-              <div className="p-7 sm:p-9 lg:p-10 flex-1 flex flex-col justify-between z-10 pl-8 sm:pl-10">
+              <div className="p-5 sm:p-9 lg:p-10 flex-1 flex flex-col justify-between z-10 pl-6 sm:pl-10 min-w-0 max-w-full">
                 <div>
                   {/* Eyebrow */}
                   <div className="flex items-center gap-2 mb-3">
@@ -105,7 +105,7 @@ export default function FeaturedJournals() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-heading text-2xl sm:text-3xl lg:text-[32px] text-brand-dark leading-tight mb-1.5">
+                  <h3 className="font-heading text-2xl sm:text-3xl lg:text-[32px] text-brand-dark leading-tight mb-1.5 break-words">
                     <Link
                       href="/journals/acta-biomedica"
                       className="hover:text-[#7B2FBE] transition-colors"
@@ -127,24 +127,24 @@ export default function FeaturedJournals() {
                   {/* Thin divider */}
                   <div className="w-full h-px bg-[#EBE3D6] mb-5" />
 
-                  {/* Publication Details + Metrics — two micro-columns */}
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-3 mb-5">
+                  {/* Publication Details + Metrics — responsive columns */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mb-5 min-w-0">
                     {/* Publication Details */}
                     <div>
                       <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#7B2FBE] mb-2">
                         Publication Details
                       </p>
-                      <dl className="space-y-1 font-body">
-                        <div className="flex items-baseline gap-1.5">
-                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">Frequency</dt>
+                      <dl className="space-y-1.5 font-body">
+                        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                          <dt className="text-[10px] text-brand-muted">Frequency</dt>
                           <dd className="text-[11px] font-semibold text-brand-dark">6 issues / year</dd>
                         </div>
-                        <div className="flex items-baseline gap-1.5">
-                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">ISSN</dt>
+                        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                          <dt className="text-[10px] text-brand-muted">ISSN</dt>
                           <dd className="text-[11px] font-mono text-brand-dark">0392-4203</dd>
                         </div>
-                        <div className="flex items-baseline gap-1.5">
-                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">e-ISSN</dt>
+                        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                          <dt className="text-[10px] text-brand-muted">e-ISSN</dt>
                           <dd className="text-[11px] font-mono text-brand-dark">2531-6745</dd>
                         </div>
                       </dl>
@@ -155,17 +155,17 @@ export default function FeaturedJournals() {
                       <p className="text-[10px] uppercase tracking-[0.18em] font-semibold text-[#7B2FBE] mb-2">
                         Journal Metrics 2025
                       </p>
-                      <dl className="space-y-1 font-body">
-                        <div className="flex items-baseline gap-1.5">
-                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">CiteScore</dt>
+                      <dl className="space-y-1.5 font-body">
+                        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                          <dt className="text-[10px] text-brand-muted">CiteScore</dt>
                           <dd className="text-[11px] font-semibold text-brand-dark">2.8 <span className="font-normal text-brand-muted">(68th centile)</span></dd>
                         </div>
-                        <div className="flex items-baseline gap-1.5">
-                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">SNIP</dt>
+                        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                          <dt className="text-[10px] text-brand-muted">SNIP</dt>
                           <dd className="text-[11px] font-semibold text-brand-dark">0.679</dd>
                         </div>
-                        <div className="flex items-baseline gap-1.5">
-                          <dt className="text-[10px] text-brand-muted whitespace-nowrap">SJR</dt>
+                        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                          <dt className="text-[10px] text-brand-muted">SJR</dt>
                           <dd className="text-[11px] font-semibold text-brand-dark">0.427</dd>
                         </div>
                       </dl>

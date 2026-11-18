@@ -54,7 +54,7 @@ export default async function JournalDetailPage({ params }: Props) {
       />
 
       {/* Main Structural Sections */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Content Column */}

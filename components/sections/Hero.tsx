@@ -4,12 +4,13 @@ import InquiryButton from "@/components/ui/InquiryButton";
 export default function Hero() {
   return (
     /* BEGIN: HeroSection */
-    <section className="relative overflow-visible lg:mb-[140px]" id="hero">
+    <section className="relative overflow-x-clip lg:overflow-visible lg:mb-[140px]" id="hero">
       {/* Hero Outer Frame with desktop height ~720px */}
       <div className="relative bg-[#3F4056] min-h-[640px] lg:min-h-[720px] flex items-center overflow-hidden">
         {/* Background Photography with subject positioned at 70% center and moody filter */}
         <div id="hero-bg-wrapper" className="absolute inset-0 z-0 overflow-hidden">
           <div id="hero-image-wrapper" className="absolute inset-0 w-full h-full">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               id="hero-image"
               alt="Scholarly Classical Library Architecture"
@@ -47,7 +48,7 @@ export default function Hero() {
             <h1
               id="hero-title"
               aria-label="Research That Reaches The World"
-              className="text-4xl sm:text-5xl lg:text-[68px] lg:whitespace-nowrap text-white font-heading font-normal tracking-tight leading-[1.12] mb-6"
+              className="text-[32px] sm:text-5xl lg:text-[68px] lg:whitespace-nowrap text-white font-heading font-normal tracking-tight leading-[1.12] mb-6 break-words"
             >
               <span className="block overflow-hidden">
                 <span className="hero-title-line block">Research That</span>

@@ -82,9 +82,10 @@ export default function ContactBand() {
 
   return (
     /* BEGIN: ContactBandSection */
-    <section className="relative py-24 bg-brand-slate text-white" id="contact">
+    <section className="relative py-24 bg-brand-slate text-white overflow-hidden" id="contact">
       {/* Full-Width Background Photo with Slate Overlay */}
       <div data-parallax="0.1" className="absolute inset-0 z-0 scale-105">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           alt="Books in academic library"
           className="w-full h-full object-cover opacity-20"

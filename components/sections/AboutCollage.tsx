@@ -8,14 +8,14 @@ export default function AboutCollage() {
         
         {/* Decorative Background Shape: Warm Cream Circle (Upper Left) */}
         <div
-          className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-52 h-52 sm:w-64 sm:h-64 rounded-full bg-[#F5ECE1] -z-10 pointer-events-none"
+          className="absolute -top-4 left-0 sm:-top-6 sm:-left-6 w-52 h-52 sm:w-64 sm:h-64 rounded-full bg-[#F5ECE1] -z-10 pointer-events-none"
           style={{ borderRadius: "9999px" }}
           aria-hidden="true"
         />
 
         {/* Decorative Background Shape: Warm Cream Arc (Right Edge) */}
         <div
-          className="absolute bottom-12 -right-4 sm:bottom-16 sm:-right-8 w-44 h-60 sm:w-56 sm:h-72 rounded-full bg-[#F5ECE1]/70 -z-10 pointer-events-none"
+          className="absolute bottom-12 right-0 sm:bottom-16 sm:-right-8 w-44 h-60 sm:w-56 sm:h-72 rounded-full bg-[#F5ECE1]/70 -z-10 pointer-events-none"
           style={{ borderRadius: "9999px" }}
           aria-hidden="true"
         />
@@ -68,6 +68,7 @@ export default function AboutCollage() {
           style={{ borderRadius: "22px" }}
           data-reveal="fade"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/about-image-top-right.png"
             alt="Academic research literature and library collection"
@@ -82,6 +83,7 @@ export default function AboutCollage() {
           style={{ borderRadius: "28px" }}
           data-reveal="scale"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/about-image.png"
             alt="Scholar examining research document with magnifying glass"
@@ -96,6 +98,7 @@ export default function AboutCollage() {
           style={{ borderRadius: "24px" }}
           data-reveal="fade"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/about-image-bottom-left.png"
             alt="Author drafting academic manuscript with pen"

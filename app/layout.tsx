@@ -60,7 +60,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased max-w-full w-full overflow-x-hidden relative">
         <MotionProvider>
           <InquiryModalProvider>
             <Header />

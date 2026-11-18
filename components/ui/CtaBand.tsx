@@ -33,9 +33,10 @@ export default function CtaBand({
   };
 
   return (
-    <section className="relative py-24 bg-brand-slate text-white">
+    <section className="relative py-24 bg-brand-slate text-white overflow-hidden">
       {/* Full-Width Background Photo with Slate Overlay (matching ContactBand) */}
       <div data-parallax="0.1" className="absolute inset-0 z-0 pointer-events-none scale-105">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           alt="Books in academic library"
           className="w-full h-full object-cover opacity-20"

@@ -148,20 +148,20 @@ export default function Header() {
   return (
     <header
       id="site-header"
-      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-transform duration-300 ${
         isHeaderVisible ? "translate-y-0" : "-translate-y-full"
       }${isHeaderSolid ? " solid" : ""}`}
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[72px]">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex items-center justify-between h-[72px] w-full gap-2">
           {/* Brand Wordmark & Circle Logo Emblem */}
           <Link
             id="header-brand"
-            className="flex items-center space-x-3.5 group text-left flex-shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3.5 group text-left min-w-0 flex-1 sm:flex-initial"
             href="/"
           >
             <div
-              className="w-12 h-12 sm:w-[54px] sm:h-[54px] flex items-center justify-center flex-shrink-0 rounded-full bg-[#FFFFFF] p-[2px] shadow-[0_2px_10px_rgba(0,0,0,0.3)] transition-all duration-300 group-hover:scale-105"
+              className="w-11 h-11 sm:w-[54px] sm:h-[54px] flex items-center justify-center flex-shrink-0 rounded-full bg-[#FFFFFF] p-[2px] shadow-[0_2px_10px_rgba(0,0,0,0.3)] transition-all duration-300 group-hover:scale-105"
               style={{ borderRadius: "50%" }}
             >
               <Image
@@ -173,11 +173,11 @@ export default function Header() {
                 priority
               />
             </div>
-            <div>
-              <span className="block font-heading text-lg sm:text-xl text-white tracking-wide leading-tight whitespace-nowrap">
+            <div className="min-w-0">
+              <span className="block font-heading text-base sm:text-xl text-white tracking-wide leading-tight truncate">
                 Edunaaz <span className="text-[#C084FC]">Publication</span>
               </span>
-              <span className="block text-[9px] tracking-[0.25em] text-[#C084FC] font-body uppercase font-medium mt-0.5 whitespace-nowrap">
+              <span className="block text-[8px] sm:text-[9px] tracking-[0.2em] sm:tracking-[0.25em] text-[#C084FC] font-body uppercase font-medium mt-0.5 truncate">
                 OPC PVT LTD
               </span>
             </div>
@@ -355,7 +355,7 @@ export default function Header() {
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-panel"
-            className={`lg:hidden w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center p-2 text-white hover:text-[#C084FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FBE] cursor-pointer z-50 ${
+            className={`lg:hidden w-11 h-11 min-w-[44px] min-h-[44px] flex-shrink-0 flex items-center justify-center p-2 text-white hover:text-[#C084FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FBE] cursor-pointer z-50 ${
               mobileOpen ? "is-active" : ""
             }`}
             type="button"

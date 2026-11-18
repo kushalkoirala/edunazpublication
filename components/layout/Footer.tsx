@@ -86,7 +86,7 @@ export default function Footer() {
               </p>
               <p className="">
                 <span className="text-white/90">Email:</span>
-                <a className="hover:text-[#C084FC] transition-colors block"
+                <a className="hover:text-[#C084FC] transition-colors block break-all"
                   href="mailto:editor@edunaazpublication.com">editor@edunaazpublication.com</a>
               </p>
               <p className="">

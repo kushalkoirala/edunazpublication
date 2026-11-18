@@ -40,18 +40,18 @@ export default function JournalsPage() {
             {JOURNALS_DATA.map((journal) => (
               <div
                 key={journal.slug}
-                className="bg-white p-8 border border-brand-borderHairline flex flex-col justify-between"
+                className="bg-white p-6 sm:p-8 border border-brand-borderHairline flex flex-col justify-between min-w-0 max-w-full"
                 data-reveal="up"
                 data-hover="journal-card"
               >
-                <div>
+                <div className="min-w-0">
                   {/* Badge */}
                   <span className="text-[10px] uppercase tracking-widest text-[#7B2FBE] font-semibold block mb-2">
                     {journal.badge}
                   </span>
 
                   {/* Title */}
-                  <h3 className="font-heading text-xl text-brand-dark mb-2 leading-snug">
+                  <h3 className="font-heading text-xl text-brand-dark mb-2 leading-snug break-words">
                     <Link
                       href={`/journals/${journal.slug}`}
                       className="hover:text-[#7B2FBE] transition-colors"
@@ -62,7 +62,7 @@ export default function JournalsPage() {
 
                   {/* ISSN */}
                   {journal.issn && (
-                    <p className="text-xs font-mono text-brand-muted mb-2">
+                    <p className="text-xs font-mono text-brand-muted mb-2 break-words">
                       {journal.issn}
                     </p>
                   )}

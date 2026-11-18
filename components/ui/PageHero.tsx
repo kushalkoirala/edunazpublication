@@ -59,11 +59,11 @@ export default function PageHero({
       <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <nav data-reveal="fade" aria-label="Breadcrumb" className="mb-4">
-          <ol className="flex items-center space-x-2 text-xs font-body text-white/60">
+          <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-body text-white/60">
             {breadcrumbs.map((crumb, idx) => {
               const isLast = idx === breadcrumbs.length - 1;
               return (
-                <li key={idx} className="flex items-center space-x-2">
+                <li key={idx} className="inline-flex items-center gap-2 max-w-full break-words">
                   {crumb.href && !isLast ? (
                     <Link
                       href={crumb.href}
@@ -89,7 +89,7 @@ export default function PageHero({
         </p>
 
         {/* Marcellus H1 with one gold accent word */}
-        <h1 data-split="lines" className="text-3xl sm:text-4xl lg:text-[46px] text-white font-heading leading-tight max-w-4xl">
+        <h1 data-split="lines" className="text-3xl sm:text-4xl lg:text-[46px] text-white font-heading leading-tight max-w-4xl break-words">
           {renderTitle()}
         </h1>
 

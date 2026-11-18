@@ -108,7 +108,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       inert={!isOpen ? true : undefined}
       tabIndex={-1}
       data-lenis-prevent
-      className={`mobile-menu-panel lg:hidden fixed top-[72px] left-0 w-full h-[calc(100dvh-72px)] z-40 bg-[#180A28] text-white flex flex-col justify-between overflow-y-auto overscroll-contain ${
+      className={`mobile-menu-panel lg:hidden fixed top-[72px] left-0 right-0 w-full max-w-full h-[calc(100dvh-72px)] z-40 bg-[#180A28] text-white flex flex-col justify-between overflow-y-auto overflow-x-hidden overscroll-contain ${
         isOpen ? "is-open" : ""
       }`}
     >
@@ -258,7 +258,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </a>
             <a
               href="mailto:editor@edunaazpublication.com"
-              className="hover:text-[#C084FC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FBE] py-0.5"
+              className="hover:text-[#C084FC] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7B2FBE] py-0.5 break-all"
             >
               editor@edunaazpublication.com
             </a>

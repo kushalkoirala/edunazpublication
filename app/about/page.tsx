@@ -293,7 +293,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── 6. LET'S GROW TOGETHER (FINAL CTA) ── */}
-      <section className="relative py-24 bg-brand-slate text-white" id="cta-grow">
+      <section className="relative py-24 bg-brand-slate text-white overflow-hidden" id="cta-grow">
         {/* Full-Width Background Photo with Slate Overlay */}
         <div data-parallax="0.1" className="absolute inset-0 z-0 pointer-events-none scale-105">
           {/* eslint-disable-next-line @next/next/no-img-element */}
