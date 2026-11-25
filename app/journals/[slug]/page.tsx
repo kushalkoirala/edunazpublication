@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
 import CtaBand from "@/components/ui/CtaBand";
 import { JOURNALS_DATA, getJournalBySlug, PLACEHOLDERS } from "@/lib/content";
+import { getSanityJournalBySlug } from "@/lib/sanity/getJournalCards";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -17,27 +18,55 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const journal = getJournalBySlug(slug);
+  const staticJournal = getJournalBySlug(slug);
+  const sanityJournal = await getSanityJournalBySlug(slug);
 
-  if (!journal) {
+  const title = sanityJournal?.journalName || staticJournal?.title;
+  const description = sanityJournal?.description || staticJournal?.description;
+
+  if (!title) {
     return {
       title: "Journal Not Found",
     };
   }
 
   return {
-    title: journal.title,
-    description: journal.description,
+    title,
+    description,
   };
 }
 
 export default async function JournalDetailPage({ params }: Props) {
   const { slug } = await params;
-  const journal = getJournalBySlug(slug);
+  const staticJournal = getJournalBySlug(slug);
+  const sanityJournal = await getSanityJournalBySlug(slug);
 
-  if (!journal) {
+  if (!staticJournal && !sanityJournal) {
     notFound();
   }
+
+  const journal = {
+    ...staticJournal,
+    slug,
+    title: sanityJournal?.journalName || staticJournal?.title || "",
+    heroAccentWord: staticJournal?.heroAccentWord || "",
+    badge: sanityJournal?.journalCategory || staticJournal?.badge || "SCOPUS",
+    issn: sanityJournal?.issn
+      ? `${sanityJournal.issn}${sanityJournal.eIssn ? ` | e-ISSN: ${sanityJournal.eIssn}` : ""}`
+      : sanityJournal?.eIssn
+      ? `e-ISSN: ${sanityJournal.eIssn}`
+      : staticJournal?.issn || "",
+    frequency: sanityJournal?.frequency || staticJournal?.frequency || "",
+    indexing: sanityJournal?.indexingInfo || staticJournal?.indexing || "",
+    citeScore: sanityJournal?.citeScore || staticJournal?.citeScore || "",
+    snip: sanityJournal?.snip || staticJournal?.snip || "",
+    sjr: sanityJournal?.sjr || staticJournal?.sjr || "",
+    description: sanityJournal?.description || staticJournal?.description || "",
+    scope: sanityJournal?.subjectArea || staticJournal?.scope || "",
+    indexedIn: sanityJournal?.indexedIn || staticJournal?.indexedIn || "",
+    publisher: sanityJournal?.publisher || staticJournal?.publisher || "",
+    websiteUrl: sanityJournal?.websiteUrl || staticJournal?.websiteUrl || "",
+  };
 
   return (
     <main>

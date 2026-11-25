@@ -28,6 +28,8 @@ export interface JournalItem {
   publisher?: string;
   indexedIn?: string;
   note?: string;
+  submitButtonText?: string;
+  detailsButtonText?: string;
 }
 
 export interface FaqItem {

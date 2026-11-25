@@ -1,7 +1,15 @@
 import React from "react";
 import Link from "next/link";
+import { getJournalCards } from "@/lib/sanity/getJournalCards";
 
-export default function FeaturedJournals() {
+export default async function FeaturedJournals() {
+  const sanityJournals = await getJournalCards();
+
+  // Find cards by displayOrder (1, 2, 3) or fallback to index
+  const card1 = sanityJournals.find((j) => j.displayOrder === 1) || sanityJournals[0];
+  const card2 = sanityJournals.find((j) => j.displayOrder === 2) || sanityJournals[1];
+  const card3 = sanityJournals.find((j) => j.displayOrder === 3) || sanityJournals[2];
+
   return (
     /* BEGIN: FeaturedJournalsSection */
     <section className="py-24 bg-[#FAF8F5] relative overflow-hidden" id="journals">
@@ -97,10 +105,10 @@ export default function FeaturedJournals() {
                 <div>
                   {/* Eyebrow */}
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-[#7B2FBE] font-bold text-xs tracking-wider font-body">01</span>
+                    <span className="text-[#7B2FBE] font-bold text-xs tracking-wider font-body">{card1?.journalNumber || "01"}</span>
                     <span className="text-[#7B2FBE]/50">/</span>
                     <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#7B2FBE] font-body">
-                      SCOPUS Q3 · FEATURED JOURNAL
+                      {card1?.journalCategory || "SCOPUS Q3 · FEATURED JOURNAL"}
                     </span>
                   </div>
 
@@ -110,7 +118,7 @@ export default function FeaturedJournals() {
                       href="/journals/acta-biomedica"
                       className="hover:text-[#7B2FBE] transition-colors"
                     >
-                      Acta Biomedica
+                      {card1?.journalName || "Acta Biomedica"}
                     </Link>
                   </h3>
 
@@ -120,7 +128,7 @@ export default function FeaturedJournals() {
                       Subject Area:
                     </p>
                     <p className="text-xs sm:text-[13px] text-brand-muted leading-relaxed font-body">
-                      Clinical and Surgical Aspects of Medicine
+                      {card1?.subjectArea || "Clinical and Surgical Aspects of Medicine"}
                     </p>
                   </div>
 
@@ -137,15 +145,15 @@ export default function FeaturedJournals() {
                       <dl className="space-y-1.5 font-body">
                         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                           <dt className="text-[10px] text-brand-muted">Frequency</dt>
-                          <dd className="text-[11px] font-semibold text-brand-dark">6 issues / year</dd>
+                          <dd className="text-[11px] font-semibold text-brand-dark">{card1?.frequency || "6 issues / year"}</dd>
                         </div>
                         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                           <dt className="text-[10px] text-brand-muted">ISSN</dt>
-                          <dd className="text-[11px] font-mono text-brand-dark">0392-4203</dd>
+                          <dd className="text-[11px] font-mono text-brand-dark">{card1?.issn || "0392-4203"}</dd>
                         </div>
                         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                           <dt className="text-[10px] text-brand-muted">e-ISSN</dt>
-                          <dd className="text-[11px] font-mono text-brand-dark">2531-6745</dd>
+                          <dd className="text-[11px] font-mono text-brand-dark">{card1?.eIssn || "2531-6745"}</dd>
                         </div>
                       </dl>
                     </div>
@@ -158,15 +166,15 @@ export default function FeaturedJournals() {
                       <dl className="space-y-1.5 font-body">
                         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                           <dt className="text-[10px] text-brand-muted">CiteScore</dt>
-                          <dd className="text-[11px] font-semibold text-brand-dark">2.8 <span className="font-normal text-brand-muted">(68th centile)</span></dd>
+                          <dd className="text-[11px] font-semibold text-brand-dark">{card1?.citeScore || "2.8"} <span className="font-normal text-brand-muted">({card1?.citeScore ? "" : "68th centile"})</span></dd>
                         </div>
                         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                           <dt className="text-[10px] text-brand-muted">SNIP</dt>
-                          <dd className="text-[11px] font-semibold text-brand-dark">0.679</dd>
+                          <dd className="text-[11px] font-semibold text-brand-dark">{card1?.snip || "0.679"}</dd>
                         </div>
                         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
                           <dt className="text-[10px] text-brand-muted">SJR</dt>
-                          <dd className="text-[11px] font-semibold text-brand-dark">0.427</dd>
+                          <dd className="text-[11px] font-semibold text-brand-dark">{card1?.sjr || "0.427"}</dd>
                         </div>
                       </dl>
                     </div>
@@ -181,7 +189,7 @@ export default function FeaturedJournals() {
                       Indexed In
                     </p>
                     <p className="text-[11px] text-brand-muted leading-relaxed font-body">
-                      Scopus · SJR · Portico · EMBASE · Elsevier BioBASE · Bibliovigilance · BIOSIS · Europe PMC · Google Scholar
+                      {card1?.indexingInfo || "Scopus · SJR · Portico · EMBASE · Elsevier BioBASE · Bibliovigilance · BIOSIS · Europe PMC · Google Scholar"}
                     </p>
                   </div>
                 </div>
@@ -193,14 +201,14 @@ export default function FeaturedJournals() {
                     className="inline-flex items-center gap-2.5 py-3 px-5 rounded-lg bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-[0.16em] shadow-[0_0_15px_rgba(123,47,190,0.35)] hover:shadow-[0_0_20px_rgba(123,47,190,0.5)] transition-all duration-200"
                     style={{ borderRadius: "8px" }}
                   >
-                    <span>SUBMIT ARTICLE</span>
+                    <span>{card1?.submitButtonText || "SUBMIT ARTICLE"}</span>
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
                   </Link>
                   <Link
                     href="/journals/acta-biomedica"
                     className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-brand-dark hover:text-[#7B2FBE] transition-colors"
                   >
-                    <span>VIEW DETAILS</span>
+                    <span>{card1?.detailsButtonText || "VIEW DETAILS"}</span>
                     <span className="font-mono">→</span>
                   </Link>
                 </div>
@@ -260,10 +268,10 @@ export default function FeaturedJournals() {
                 <div>
                   {/* Eyebrow */}
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[#7B2FBE] font-bold text-xs tracking-wider font-body">02</span>
+                    <span className="text-[#7B2FBE] font-bold text-xs tracking-wider font-body">{card2?.journalNumber || "02"}</span>
                     <span className="text-[#7B2FBE]/50">/</span>
                     <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#7B2FBE] font-body">
-                      SCOPUS Q1
+                      {card2?.journalCategory || "SCOPUS Q1"}
                     </span>
                   </div>
 
@@ -273,13 +281,13 @@ export default function FeaturedJournals() {
                       href="/journals/studies-in-english-language-and-education"
                       className="hover:text-[#7B2FBE] transition-colors"
                     >
-                      Studies in English Language and Education (SiELE)
+                      {card2?.journalName || "Studies in English Language and Education (SiELE)"}
                     </Link>
                   </h3>
 
                   {/* Description */}
                   <p className="text-xs text-brand-muted leading-relaxed font-body mb-4 line-clamp-3">
-                    <span className="font-semibold text-brand-dark">Subject Area:</span> English Language, Linguistics and Education
+                    <span className="font-semibold text-brand-dark">Subject Area:</span> {card2?.subjectArea || "English Language, Linguistics and Education"}
                   </p>
                 </div>
 
@@ -289,14 +297,14 @@ export default function FeaturedJournals() {
                     href="/contact"
                     className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#7B2FBE] hover:text-[#6620A0] transition-colors"
                   >
-                    <span>SUBMIT ARTICLE</span>
+                    <span>{card2?.submitButtonText || "SUBMIT ARTICLE"}</span>
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
                   </Link>
                   <Link
                     href="/journals/studies-in-english-language-and-education"
                     className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-muted hover:text-brand-dark transition-colors"
                   >
-                    <span>DETAILS</span>
+                    <span>{card2?.detailsButtonText || "DETAILS"}</span>
                     <span className="font-mono">→</span>
                   </Link>
                 </div>
@@ -341,10 +349,10 @@ export default function FeaturedJournals() {
                 <div>
                   {/* Eyebrow */}
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[#C084FC] font-bold text-xs tracking-wider font-body">03</span>
+                    <span className="text-[#C084FC] font-bold text-xs tracking-wider font-body">{card3?.journalNumber || "03"}</span>
                     <span className="text-white/30">/</span>
                     <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C084FC] font-body">
-                      SCOPUS Q1
+                      {card3?.journalCategory || "SCOPUS Q1"}
                     </span>
                   </div>
 
@@ -354,18 +362,18 @@ export default function FeaturedJournals() {
                       href="/journals/3l-language-linguistics-literature"
                       className="hover:text-[#C084FC] transition-colors"
                     >
-                      3L: Language, Linguistics, Literature
+                      {card3?.journalName || "3L: Language, Linguistics, Literature"}
                     </Link>
                   </h3>
 
                   {/* Subtitle */}
                   <p className="text-[11px] font-body text-white/50 mb-2">
-                    The Southeast Asian Journal of English Language Studies
+                    {card3?.subtitle || "The Southeast Asian Journal of English Language Studies"}
                   </p>
 
                   {/* Description */}
                   <p className="text-xs text-white/70 leading-relaxed font-body mb-4 line-clamp-2">
-                    <span className="font-semibold text-white">Subject Area:</span> Language, Linguistics and Literature
+                    <span className="font-semibold text-white">Subject Area:</span> {card3?.subjectArea || "Language, Linguistics and Literature"}
                   </p>
                 </div>
 
@@ -375,14 +383,14 @@ export default function FeaturedJournals() {
                     href="/contact"
                     className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#C084FC] hover:text-white transition-colors"
                   >
-                    <span>SUBMIT ARTICLE</span>
+                    <span>{card3?.submitButtonText || "SUBMIT ARTICLE"}</span>
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
                   </Link>
                   <Link
                     href="/journals/3l-language-linguistics-literature"
                     className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/60 hover:text-white transition-colors"
                   >
-                    <span>DETAILS</span>
+                    <span>{card3?.detailsButtonText || "DETAILS"}</span>
                     <span className="font-mono">→</span>
                   </Link>
                 </div>

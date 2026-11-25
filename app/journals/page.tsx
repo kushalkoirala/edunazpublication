@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import CtaBand from "@/components/ui/CtaBand";
 import { JOURNALS_DATA } from "@/lib/content";
+import { getAllJournals } from "@/lib/sanity/getJournalCards";
 
 export const metadata: Metadata = {
   title: "Academic Journals",
@@ -10,7 +11,67 @@ export const metadata: Metadata = {
     "Explore peer-reviewed and open-access journals published by Edunaaz Publication covering engineering, management, applied economics, and interdisciplinary sciences.",
 };
 
-export default function JournalsPage() {
+export default async function JournalsPage() {
+  const sanityJournals = await getAllJournals();
+
+  // Merge Sanity live data with JOURNALS_DATA fallback
+  const journals = JOURNALS_DATA.map((staticJournal) => {
+    const sanityMatch = sanityJournals.find(
+      (sj) =>
+        sj.slug === staticJournal.slug ||
+        sj.journalName?.toLowerCase() === staticJournal.title.toLowerCase()
+    );
+
+    if (!sanityMatch) return staticJournal;
+
+    return {
+      ...staticJournal,
+      title: sanityMatch.journalName || staticJournal.title,
+      badge: sanityMatch.journalCategory || staticJournal.badge,
+      issn: sanityMatch.issn
+        ? `ISSN: ${sanityMatch.issn}${sanityMatch.eIssn ? ` | e-ISSN: ${sanityMatch.eIssn}` : ""}`
+        : sanityMatch.eIssn
+        ? `e-ISSN: ${sanityMatch.eIssn}`
+        : staticJournal.issn,
+      frequency: sanityMatch.frequency || staticJournal.frequency,
+      indexing: sanityMatch.indexingInfo || staticJournal.indexing,
+      citeScore: sanityMatch.citeScore || staticJournal.citeScore,
+      snip: sanityMatch.snip || staticJournal.snip,
+      sjr: sanityMatch.sjr || staticJournal.sjr,
+      description: sanityMatch.description || staticJournal.description,
+      scope: sanityMatch.subjectArea || staticJournal.scope,
+      indexedIn: sanityMatch.indexedIn || staticJournal.indexedIn,
+      submitButtonText: sanityMatch.submitButtonText || "SUBMIT ARTICLE",
+      detailsButtonText: sanityMatch.detailsButtonText || "VIEW JOURNAL DETAILS",
+    };
+  });
+
+  // Include any additional journals created in Sanity that aren't in static content
+  const extraJournals = sanityJournals
+    .filter((sj) => !JOURNALS_DATA.some((staticJ) => staticJ.slug === sj.slug))
+    .map((sj) => ({
+      slug: sj.slug || `journal-${sj.displayOrder}`,
+      title: sj.journalName,
+      badge: sj.journalCategory || "SCOPUS",
+      issn: sj.issn
+        ? `ISSN: ${sj.issn}${sj.eIssn ? ` | e-ISSN: ${sj.eIssn}` : ""}`
+        : sj.eIssn
+        ? `e-ISSN: ${sj.eIssn}`
+        : "",
+      frequency: sj.frequency || "",
+      indexing: sj.indexingInfo || "",
+      citeScore: sj.citeScore || "",
+      snip: sj.snip || "",
+      sjr: sj.sjr || "",
+      description: sj.description || "",
+      scope: sj.subjectArea || "",
+      indexedIn: sj.indexedIn || "",
+      submitButtonText: sj.submitButtonText || "SUBMIT ARTICLE",
+      detailsButtonText: sj.detailsButtonText || "VIEW JOURNAL DETAILS",
+    }));
+
+  const allDisplayedJournals = [...journals, ...extraJournals];
+
   return (
     <main>
       <PageHero
@@ -37,7 +98,7 @@ export default function JournalsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-stagger>
-            {JOURNALS_DATA.map((journal) => (
+            {allDisplayedJournals.map((journal) => (
               <div
                 key={journal.slug}
                 className="bg-white p-6 sm:p-8 border border-brand-borderHairline flex flex-col justify-between min-w-0 max-w-full"
@@ -145,8 +206,8 @@ export default function JournalsPage() {
                     className="text-xs font-semibold uppercase tracking-wider text-[#7B2FBE] hover:text-brand-dark transition-colors flex items-center group"
                     href={`/journals/${journal.slug}`}
                   >
-                    VIEW JOURNAL DETAILS{" "}
-                    <span className="ml-2 transition-transform duration-200 group-hover:translate-x-1">
+                    <span>{journal.detailsButtonText || "VIEW JOURNAL DETAILS"}</span>
+                    <span className="ml-2 transition-transform duration-200 group-hover:translate-x-1 font-mono">
                       →
                     </span>
                   </Link>
@@ -154,8 +215,8 @@ export default function JournalsPage() {
                     className="text-xs font-semibold uppercase tracking-wider text-brand-muted hover:text-[#7B2FBE] transition-colors flex items-center group"
                     href="/contact"
                   >
-                    SUBMIT ARTICLE{" "}
-                    <span className="ml-2 transition-transform duration-200 group-hover:translate-x-1">
+                    <span>{journal.submitButtonText || "SUBMIT ARTICLE"}</span>
+                    <span className="ml-2 transition-transform duration-200 group-hover:translate-x-1 font-mono">
                       →
                     </span>
                   </Link>
