@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
 import CtaBand from "@/components/ui/CtaBand";
+import InquiryButton from "@/components/ui/InquiryButton";
 import { JOURNALS_DATA, getJournalBySlug, PLACEHOLDERS } from "@/lib/content";
 import { getSanityJournalBySlug } from "@/lib/sanity/getJournalCards";
 
@@ -242,9 +243,9 @@ export default async function JournalDetailPage({ params }: Props) {
                   Authors interested in submitting their research to this journal can transmit their manuscript details directly to our editorial liaison team.
                 </p>
                 <div className="inline-flex" data-magnetic>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-stretch bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] transition-all duration-200 text-white rounded-lg overflow-hidden shadow-[0_0_15px_rgba(123,47,190,0.4)] group"
+                  <InquiryButton
+                    category={`Journal Submission: ${journal.title}`}
+                    className="inline-flex items-stretch bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] transition-all duration-200 text-white rounded-lg overflow-hidden shadow-[0_0_15px_rgba(123,47,190,0.4)] group cursor-pointer"
                   >
                     <span className="px-7 py-3 text-xs font-semibold uppercase tracking-wider flex items-center">
                       SUBMIT ARTICLE
@@ -259,7 +260,7 @@ export default async function JournalDetailPage({ params }: Props) {
                         />
                       </svg>
                     </span>
-                  </Link>
+                  </InquiryButton>
                 </div>
               </div>
             </div>
@@ -302,12 +303,13 @@ export default async function JournalDetailPage({ params }: Props) {
                   <p className="leading-relaxed">
                     All manuscripts submitted undergo rigorous peer review and similarity auditing prior to editorial acceptance.
                   </p>
-                  <Link
-                    href="/contact"
-                    className="text-[#7B2FBE] font-semibold hover:text-[#6620A0] hover:underline inline-block pt-1"
+                  <InquiryButton
+                    category={`Editorial Liaison: ${journal.title}`}
+                    variant="link"
+                    className="text-[#7B2FBE] font-semibold hover:text-[#6620A0] hover:underline inline-block pt-1 cursor-pointer"
                   >
                     Contact Editorial Liaison →
-                  </Link>
+                  </InquiryButton>
                 </div>
               </div>
             </div>

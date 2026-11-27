@@ -230,10 +230,10 @@ export default function TermsPage() {
             <p className="font-body text-xs text-brand-muted leading-relaxed">
               For questions about these policies, please contact us at{" "}
               <a
-                href="mailto:edunazpublication@gmail.com"
+                href="mailto:editor@edunaazpublication.com"
                 className="text-[#7B2FBE] hover:underline"
               >
-                edunazpublication@gmail.com
+                editor@edunaazpublication.com
               </a>
               {" "}or visit the{" "}
               <a href="/contact" className="text-[#7B2FBE] hover:underline">

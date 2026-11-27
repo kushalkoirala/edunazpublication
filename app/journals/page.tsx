@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import CtaBand from "@/components/ui/CtaBand";
+import InquiryButton from "@/components/ui/InquiryButton";
 import { JOURNALS_DATA } from "@/lib/content";
 import { getAllJournals } from "@/lib/sanity/getJournalCards";
 
@@ -211,15 +212,16 @@ export default async function JournalsPage() {
                       →
                     </span>
                   </Link>
-                  <Link
-                    className="text-xs font-semibold uppercase tracking-wider text-brand-muted hover:text-[#7B2FBE] transition-colors flex items-center group"
-                    href="/contact"
+                  <InquiryButton
+                    category={`Journal Submission: ${journal.title}`}
+                    variant="link"
+                    className="text-xs font-semibold uppercase tracking-wider text-brand-muted hover:text-[#7B2FBE] transition-colors flex items-center group cursor-pointer text-left"
                   >
                     <span>{journal.submitButtonText || "SUBMIT ARTICLE"}</span>
                     <span className="ml-2 transition-transform duration-200 group-hover:translate-x-1 font-mono">
                       →
                     </span>
-                  </Link>
+                  </InquiryButton>
                 </div>
               </div>
             ))}

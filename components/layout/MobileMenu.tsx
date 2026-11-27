@@ -281,14 +281,23 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             >
               BOOK A CONSULTANT →
             </Link>
-            <Link
-              href="/contact?type=inquiry"
-              onClick={onClose}
-              className="inline-flex items-center justify-center px-6 py-3 bg-transparent border border-white/30 hover:border-[#C084FC] hover:text-[#C084FC] text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center"
+            <button
+              type="button"
+              onClick={() => {
+                onClose();
+                if (typeof window !== "undefined") {
+                  window.dispatchEvent(
+                    new CustomEvent("open-inquiry-modal", {
+                      detail: { category: "General Academic Inquiry" },
+                    })
+                  );
+                }
+              }}
+              className="inline-flex items-center justify-center px-6 py-3 bg-transparent border border-white/30 hover:border-[#C084FC] hover:text-[#C084FC] text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors text-center cursor-pointer"
               style={{ borderRadius: "8px" }}
             >
               INQUIRE NOW →
-            </Link>
+            </button>
           </div>
         </div>
       </div>

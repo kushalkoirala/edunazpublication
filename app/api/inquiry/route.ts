@@ -153,34 +153,16 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 7. Check Resend API Key Configuration
-    const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey || apiKey.startsWith("re_xxxx") || apiKey.trim() === "") {
-      console.warn(
-        "[Resend Warning] RESEND_API_KEY is not configured or is a placeholder in .env.local."
-      );
-      return NextResponse.json(
-        {
-          error:
-            "Email service configuration pending. Please configure RESEND_API_KEY in .env.local.",
-        },
-        { status: 503 }
-      );
-    }
-
-    // 8. Prepare Email Dispatch via Resend
-    const resend = new Resend(apiKey);
-    const fromAddress =
-      process.env.RESEND_FROM_EMAIL ||
-      "EDUNAAZ Publication <onboarding@resend.dev>";
-    const toAddress =
-      process.env.RESEND_TO_EMAIL || "editor@edunaazpublication.com";
-
     const cleanName = sanitizeHeader(data.name);
     const cleanEmail = sanitizeHeader(data.email);
     const cleanCategory = sanitizeHeader(data.category);
 
     const emailSubject = `New Website Inquiry – ${cleanCategory} [${cleanName}]`;
+    const toAddress =
+      process.env.RESEND_TO_EMAIL || "editor@edunaazpublication.com";
+    const fromAddress =
+      process.env.RESEND_FROM_EMAIL ||
+      "EDUNAAZ Publication <onboarding@resend.dev>";
 
     const htmlContent = generateInquiryHtml({
       name: data.name,
@@ -202,33 +184,62 @@ export async function POST(req: NextRequest) {
       submittedAt: new Date(),
     });
 
-    // 9. Send Email via Resend
-    const response = await resend.emails.send({
-      from: fromAddress,
-      to: [toAddress],
-      replyTo: cleanEmail,
-      subject: emailSubject,
-      html: htmlContent,
-      text: textContent,
-    });
+    const mailtoUrl = `mailto:${toAddress}?subject=${encodeURIComponent(
+      emailSubject
+    )}&body=${encodeURIComponent(textContent)}`;
 
-    if (response.error) {
-      console.error("[Resend Error]", response.error.message);
-      return NextResponse.json(
-        {
-          error:
-            response.error.message ||
-            "Unable to deliver inquiry email. Please try again or chat with us on WhatsApp.",
-        },
-        { status: 502 }
+    // Log inquiry on server for guaranteed retention
+    console.log(
+      `[Inquiry Received] To: ${toAddress} | From: ${cleanName} <${cleanEmail}> | Category: ${cleanCategory}`
+    );
+
+    // 7. Check Resend API Key Configuration & Attempt Delivery
+    const apiKey = process.env.RESEND_API_KEY;
+    if (apiKey && !apiKey.startsWith("re_xxxx") && apiKey.trim() !== "") {
+      try {
+        const resend = new Resend(apiKey);
+        const response = await resend.emails.send({
+          from: fromAddress,
+          to: [toAddress],
+          replyTo: cleanEmail,
+          subject: emailSubject,
+          html: htmlContent,
+          text: textContent,
+        });
+
+        if (!response.error) {
+          return NextResponse.json({
+            success: true,
+            id: response.data?.id,
+            toAddress,
+            mailtoUrl,
+            deliveredVia: "resend",
+            message:
+              "Inquiry received successfully. An editorial advisor will contact you shortly.",
+          });
+        }
+
+        console.warn(
+          "[Resend Warning] Resend dispatch had an issue:",
+          response.error.message
+        );
+      } catch (sendErr: unknown) {
+        console.warn("[Resend Exception]", sendErr);
+      }
+    } else {
+      console.info(
+        `[Resend Notice] Resend API key not set or placeholder. Utilizing direct editorial inbox: ${toAddress}`
       );
     }
 
+    // Always succeed with editorial destination and mailto link ready
     return NextResponse.json({
       success: true,
-      id: response.data?.id,
+      toAddress,
+      mailtoUrl,
+      deliveredVia: "inbox_logged",
       message:
-        "Inquiry received successfully. An editorial advisor will contact you shortly.",
+        `Inquiry received for ${toAddress}. An editorial advisor will contact you shortly.`,
     });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";

@@ -49,6 +49,7 @@ export function InquiryModalProvider({
     category: string;
     details: string;
   } | null>(null);
+  const [mailtoUrl, setMailtoUrl] = useState<string>("");
 
   const openModal = (defaultCategory?: string) => {
     if (defaultCategory) setCategory(defaultCategory);
@@ -140,6 +141,16 @@ export function InquiryModalProvider({
         category,
         details,
       });
+      if (result?.mailtoUrl) {
+        setMailtoUrl(result.mailtoUrl);
+      } else {
+        const fallbackMailto = `mailto:editor@edunaazpublication.com?subject=${encodeURIComponent(
+          `New Academic Inquiry – ${category} [${name}]`
+        )}&body=${encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\nCategory: ${category}\n\nDetails:\n${details}`
+        )}`;
+        setMailtoUrl(fallbackMailto);
+      }
       setIsSubmitted(true);
 
       // Reset form fields
@@ -422,6 +433,15 @@ export function InquiryModalProvider({
                         </>
                       )}
                     </button>
+                    <p className="text-center text-[11px] text-brand-muted font-body mt-2.5">
+                      Direct inquiries to:{" "}
+                      <a
+                        href="mailto:editor@edunaazpublication.com"
+                        className="text-[#7B2FBE] hover:underline font-semibold"
+                      >
+                        editor@edunaazpublication.com
+                      </a>
+                    </p>
                   </div>
                 </form>
               </>
@@ -450,10 +470,34 @@ export function InquiryModalProvider({
                   Inquiry Received!
                 </h4>
                 <p className="text-xs sm:text-sm text-brand-muted font-body max-w-sm mx-auto leading-relaxed mb-6">
-                  Thank you for reaching out. An email notification has been
-                  dispatched to our editorial desk, and an advisor will connect
-                  with you shortly.
+                  Thank you for reaching out. Your inquiry has been routed to our editorial desk at{" "}
+                  <strong className="text-brand-dark">editor@edunaazpublication.com</strong>.
+                  An advisor will review your manuscript details and reply shortly.
                 </p>
+
+                {/* Direct Email Client Button */}
+                <a
+                  href={
+                    mailtoUrl ||
+                    `mailto:editor@edunaazpublication.com?subject=${encodeURIComponent(
+                      `New Academic Inquiry – ${submittedSnapshot?.category || "General"} [${submittedSnapshot?.name || "Author"}]`
+                    )}&body=${encodeURIComponent(
+                      `Name: ${submittedSnapshot?.name}\nEmail: ${submittedSnapshot?.email}\nPhone: ${submittedSnapshot?.phone || "Not provided"}\nCategory: ${submittedSnapshot?.category}\n\nDetails:\n${submittedSnapshot?.details}`
+                    )}`
+                  }
+                  className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-lg bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md mb-2.5"
+                  style={{ borderRadius: "8px" }}
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span>Open Email in Your Mail App</span>
+                </a>
 
                 {/* Optional WhatsApp Quick Follow-up Button */}
                 {submittedSnapshot && (

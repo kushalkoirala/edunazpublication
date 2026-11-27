@@ -151,11 +151,24 @@ export default function ContactBand() {
             </h3>
             <p className="text-white/80 text-xs sm:text-sm font-body leading-relaxed mb-6">
               Thank you for reaching out. An editorial notification has been sent
-              to our desk, and an editor will contact you shortly at{" "}
+              to our desk at <strong className="text-white">editor@edunaazpublication.com</strong>, and an editor will contact you shortly at{" "}
               <strong className="text-white">{submittedSnapshot?.email}</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <a
+                href={`mailto:editor@edunaazpublication.com?subject=${encodeURIComponent(
+                  `Research Publication Inquiry [${submittedSnapshot?.name || "Author"}]`
+                )}&body=${encodeURIComponent(
+                  `Name: ${submittedSnapshot?.name}\nEmail: ${submittedSnapshot?.email}\n\nManuscript Details:\n${submittedSnapshot?.manuscript}`
+                )}`}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>Open in Email App</span>
+              </a>
               {submittedSnapshot && (
                 <a
                   href={`https://wa.me/919395707581?text=${encodeURIComponent(

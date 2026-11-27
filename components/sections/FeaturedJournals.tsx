@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import InquiryButton from "@/components/ui/InquiryButton";
 import { getJournalCards } from "@/lib/sanity/getJournalCards";
 
 export default async function FeaturedJournals() {
@@ -196,14 +197,14 @@ export default async function FeaturedJournals() {
 
                 {/* Action Buttons */}
                 <div className="pt-5 flex flex-wrap items-center gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2.5 py-3 px-5 rounded-lg bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-[0.16em] shadow-[0_0_15px_rgba(123,47,190,0.35)] hover:shadow-[0_0_20px_rgba(123,47,190,0.5)] transition-all duration-200"
+                  <InquiryButton
+                    category={`Journal Submission: ${card1?.journalName || "Acta Biomedica"}`}
+                    className="inline-flex items-center gap-2.5 py-3 px-5 rounded-lg bg-gradient-to-r from-[#7B2FBE] to-[#9333EA] hover:from-[#6620A0] hover:to-[#7B2FBE] text-white font-bold text-xs uppercase tracking-[0.16em] shadow-[0_0_15px_rgba(123,47,190,0.35)] hover:shadow-[0_0_20px_rgba(123,47,190,0.5)] transition-all duration-200 cursor-pointer"
                     style={{ borderRadius: "8px" }}
                   >
                     <span>{card1?.submitButtonText || "SUBMIT ARTICLE"}</span>
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
-                  </Link>
+                  </InquiryButton>
                   <Link
                     href="/journals/acta-biomedica"
                     className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.14em] text-brand-dark hover:text-[#7B2FBE] transition-colors"
@@ -293,13 +294,14 @@ export default async function FeaturedJournals() {
 
                 {/* Link */}
                 <div className="pt-1 mt-auto flex items-center gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#7B2FBE] hover:text-[#6620A0] transition-colors"
+                  <InquiryButton
+                    category={`Journal Submission: ${card2?.journalName || "Studies in English Language and Education (SiELE)"}`}
+                    variant="link"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#7B2FBE] hover:text-[#6620A0] transition-colors cursor-pointer"
                   >
                     <span>{card2?.submitButtonText || "SUBMIT ARTICLE"}</span>
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
-                  </Link>
+                  </InquiryButton>
                   <Link
                     href="/journals/studies-in-english-language-and-education"
                     className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-muted hover:text-brand-dark transition-colors"
@@ -379,13 +381,14 @@ export default async function FeaturedJournals() {
 
                 {/* Link */}
                 <div className="pt-1 mt-auto flex items-center gap-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#C084FC] hover:text-white transition-colors"
+                  <InquiryButton
+                    category={`Journal Submission: ${card3?.journalName || "3L: Language, Linguistics, Literature"}`}
+                    variant="link"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-[#C084FC] hover:text-white transition-colors cursor-pointer"
                   >
                     <span>{card3?.submitButtonText || "SUBMIT ARTICLE"}</span>
                     <span className="transition-transform group-hover:translate-x-1 font-mono">→</span>
-                  </Link>
+                  </InquiryButton>
                   <Link
                     href="/journals/3l-language-linguistics-literature"
                     className="inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/60 hover:text-white transition-colors"
